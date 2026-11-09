@@ -1,0 +1,369 @@
+{
+ "target": "t07",
+ "method": "v2",
+ "idor_found": true,
+ "confirmed": [
+  {
+   "route": "PUT /accounts/:id/attach",
+   "judge": "vulnerable",
+   "refuter": "upheld",
+   "files": [
+    "app/controllers/application_controller.rb",
+    "app/controllers/entities_controller.rb",
+    "app/models/entities/account.rb",
+    "app/views/entities/attach.js.haml"
+   ]
+  },
+  {
+   "route": "POST /accounts/:id/discard",
+   "judge": "vulnerable",
+   "refuter": "upheld",
+   "files": [
+    "app/controllers/application_controller.rb",
+    "app/controllers/entities_controller.rb",
+    "app/models/entities/account.rb",
+    "app/views/entities/discard.js.haml"
+   ]
+  },
+  {
+   "route": "GET /accounts/field_group",
+   "judge": "vulnerable",
+   "refuter": "upheld",
+   "files": [
+    "app/controllers/entities_controller.rb",
+    "app/views/fields/_group.html.haml",
+    "app/views/fields/_group_table.html.haml",
+    "app/views/fields/group.js.erb"
+   ]
+  },
+  {
+   "route": "GET /accounts/new",
+   "judge": "vulnerable",
+   "refuter": "upheld",
+   "files": []
+  },
+  {
+   "route": "PUT /campaigns/:id/attach",
+   "judge": "vulnerable",
+   "refuter": "upheld",
+   "files": [
+    "app/controllers/application_controller.rb",
+    "app/controllers/entities_controller.rb",
+    "app/models/entities/campaign.rb",
+    "app/models/entities/lead.rb",
+    "app/views/entities/attach.js.haml"
+   ]
+  },
+  {
+   "route": "POST /campaigns/:id/discard",
+   "judge": "vulnerable",
+   "refuter": "upheld",
+   "files": [
+    "app/controllers/application_controller.rb",
+    "app/controllers/entities_controller.rb",
+    "app/models/entities/campaign.rb",
+    "app/models/entities/lead.rb"
+   ]
+  },
+  {
+   "route": "GET /campaigns/field_group",
+   "judge": "vulnerable",
+   "refuter": "upheld",
+   "files": [
+    "app/controllers/entities_controller.rb",
+    "app/views/fields/_group_table.html.haml",
+    "app/views/fields/group.js.erb",
+    "config/routes.rb"
+   ]
+  },
+  {
+   "route": "POST /contacts",
+   "judge": "vulnerable",
+   "refuter": "upheld",
+   "files": [
+    "app/controllers/entities/contacts_controller.rb",
+    "app/models/entities/account.rb",
+    "app/models/entities/contact.rb"
+   ]
+  },
+  {
+   "route": "PATCH,PUT /contacts/:id",
+   "judge": "vulnerable",
+   "refuter": "upheld",
+   "files": [
+    "app/controllers/entities/contacts_controller.rb",
+    "app/models/entities/account.rb",
+    "app/models/entities/contact.rb"
+   ]
+  },
+  {
+   "route": "PUT /contacts/:id/attach",
+   "judge": "vulnerable",
+   "refuter": "upheld",
+   "files": [
+    "app/controllers/entities_controller.rb",
+    "app/models/entities/contact.rb"
+   ]
+  },
+  {
+   "route": "POST /contacts/:id/discard",
+   "judge": "vulnerable",
+   "refuter": "upheld",
+   "files": [
+    "app/controllers/entities_controller.rb",
+    "app/models/entities/contact.rb"
+   ]
+  },
+  {
+   "route": "GET /contacts/field_group",
+   "judge": "vulnerable",
+   "refuter": "upheld",
+   "files": [
+    "app/controllers/entities_controller.rb",
+    "app/views/fields/_group_table.html.haml",
+    "app/views/fields/group.js.erb"
+   ]
+  },
+  {
+   "route": "DELETE /emails/:id",
+   "judge": "vulnerable",
+   "refuter": "upheld",
+   "files": [
+    "app/controllers/emails_controller.rb",
+    "app/models/polymorphic/email.rb",
+    "config/routes.rb"
+   ]
+  },
+  {
+   "route": "ANY /home/timeline",
+   "judge": "vulnerable",
+   "refuter": "upheld",
+   "files": [
+    "app/controllers/home_controller.rb",
+    "app/models/polymorphic/comment.rb",
+    "app/models/polymorphic/email.rb"
+   ]
+  },
+  {
+   "route": "POST /leads",
+   "judge": "vulnerable",
+   "refuter": "upheld",
+   "files": [
+    "app/controllers/entities/leads_controller.rb",
+    "app/models/entities/lead.rb"
+   ]
+  },
+  {
+   "route": "PATCH,PUT /leads/:id",
+   "judge": "vulnerable",
+   "refuter": "upheld",
+   "files": [
+    "app/controllers/entities/leads_controller.rb",
+    "app/models/entities/lead.rb"
+   ]
+  },
+  {
+   "route": "PUT /leads/:id/attach",
+   "judge": "vulnerable",
+   "refuter": "upheld",
+   "files": [
+    "app/controllers/application_controller.rb",
+    "app/controllers/entities_controller.rb",
+    "app/models/entities/lead.rb",
+    "config/routes.rb"
+   ]
+  },
+  {
+   "route": "POST /leads/:id/discard",
+   "judge": "vulnerable",
+   "refuter": "upheld",
+   "files": [
+    "app/controllers/application_controller.rb",
+    "app/controllers/entities_controller.rb",
+    "app/models/entities/lead.rb",
+    "app/models/polymorphic/task.rb"
+   ]
+  },
+  {
+   "route": "GET /leads/field_group",
+   "judge": "vulnerable",
+   "refuter": "upheld",
+   "files": [
+    "app/controllers/entities_controller.rb",
+    "app/views/fields/_group_table.html.haml",
+    "app/views/fields/group.js.erb"
+   ]
+  },
+  {
+   "route": "ANY /leads/:id/promote",
+   "judge": "vulnerable",
+   "refuter": "upheld",
+   "files": [
+    "app/controllers/entities/leads_controller.rb",
+    "app/models/entities/account.rb",
+    "app/models/entities/contact.rb",
+    "app/models/entities/lead.rb",
+    "app/models/entities/opportunity.rb"
+   ]
+  },
+  {
+   "route": "DELETE /lists/:id",
+   "judge": "vulnerable",
+   "refuter": "upheld",
+   "files": [
+    "app/controllers/lists_controller.rb",
+    "app/models/list.rb",
+    "app/views/lists/_sidebar.html.haml"
+   ]
+  },
+  {
+   "route": "POST /opportunities",
+   "judge": "vulnerable",
+   "refuter": "upheld",
+   "files": [
+    "app/controllers/entities/opportunities_controller.rb",
+    "app/models/entities/account.rb",
+    "app/models/entities/opportunity.rb"
+   ]
+  },
+  {
+   "route": "PATCH,PUT /opportunities/:id",
+   "judge": "vulnerable",
+   "refuter": "upheld",
+   "files": [
+    "app/controllers/entities/opportunities_controller.rb",
+    "app/models/entities/account.rb",
+    "app/models/entities/opportunity.rb"
+   ]
+  },
+  {
+   "route": "PUT /opportunities/:id/attach",
+   "judge": "vulnerable",
+   "refuter": "upheld",
+   "files": [
+    "app/controllers/application_controller.rb",
+    "app/controllers/entities_controller.rb",
+    "app/models/entities/opportunity.rb",
+    "app/views/entities/attach.js.haml"
+   ]
+  },
+  {
+   "route": "POST /opportunities/:id/discard",
+   "judge": "vulnerable",
+   "refuter": "upheld",
+   "files": [
+    "app/controllers/application_controller.rb",
+    "app/controllers/entities_controller.rb",
+    "app/models/entities/opportunity.rb"
+   ]
+  },
+  {
+   "route": "GET /opportunities/field_group",
+   "judge": "vulnerable",
+   "refuter": "upheld",
+   "files": [
+    "app/controllers/entities_controller.rb",
+    "app/views/fields/_group_table.html.haml",
+    "app/views/fields/group.js.erb"
+   ]
+  },
+  {
+   "route": "POST /tasks",
+   "judge": "vulnerable",
+   "refuter": "upheld",
+   "files": [
+    "app/controllers/tasks_controller.rb",
+    "app/models/polymorphic/task.rb",
+    "app/views/tasks/_assigned.html.haml",
+    "app/views/tasks/_pending.html.haml"
+   ]
+  },
+  {
+   "route": "PATCH,PUT /tasks/:id",
+   "judge": "vulnerable",
+   "refuter": "upheld",
+   "files": [
+    "app/controllers/tasks_controller.rb",
+    "app/views/tasks/_pending.html.haml"
+   ]
+  }
+ ],
+ "judge_vulnerable": [
+  "PUT /accounts/:id/attach",
+  "POST /accounts/:id/discard",
+  "GET /accounts/field_group",
+  "GET /accounts/new",
+  "PUT /campaigns/:id/attach",
+  "POST /campaigns/:id/discard",
+  "GET /campaigns/field_group",
+  "POST /contacts",
+  "PATCH,PUT /contacts/:id",
+  "PUT /contacts/:id/attach",
+  "POST /contacts/:id/discard",
+  "GET /contacts/field_group",
+  "DELETE /emails/:id",
+  "ANY /home/timeline",
+  "POST /leads",
+  "PATCH,PUT /leads/:id",
+  "PUT /leads/:id/attach",
+  "POST /leads/:id/discard",
+  "GET /leads/field_group",
+  "ANY /leads/:id/promote",
+  "DELETE /lists/:id",
+  "POST /opportunities",
+  "PATCH,PUT /opportunities/:id",
+  "PUT /opportunities/:id/attach",
+  "POST /opportunities/:id/discard",
+  "GET /opportunities/field_group",
+  "POST /tasks",
+  "PATCH,PUT /tasks/:id"
+ ],
+ "refuted": [],
+ "investigator_vulnerable": [
+  "POST /accounts  (app/controllers/entities/accounts_controller.rb)",
+  "GET /accounts/:id  (app/controllers/entities/accounts_controller.rb)",
+  "PATCH,PUT /accounts/:id  (app/controllers/entities/accounts_controller.rb)",
+  "PUT /accounts/:id/attach  (app/controllers/entities_controller.rb)",
+  "GET /accounts/:id/contacts  (app/controllers/entities_controller.rb)",
+  "POST /accounts/:id/discard  (app/controllers/entities_controller.rb)",
+  "GET /accounts/field_group  (app/controllers/entities_controller.rb)",
+  "GET /accounts/:id/opportunities  (app/controllers/entities_controller.rb)",
+  "GET /activities  (app/controllers/home_controller.rb)",
+  "POST /campaigns  (app/controllers/entities/campaigns_controller.rb)",
+  "GET /campaigns/:id  (app/controllers/entities/campaigns_controller.rb)",
+  "PATCH,PUT /campaigns/:id  (app/controllers/entities/campaigns_controller.rb)",
+  "PUT /campaigns/:id/attach  (app/controllers/entities_controller.rb)",
+  "POST /campaigns/:id/discard  (app/controllers/entities_controller.rb)",
+  "GET /campaigns/field_group  (app/controllers/entities_controller.rb)",
+  "GET /campaigns/:id/leads  (app/controllers/entities_controller.rb)",
+  "GET /campaigns/:id/opportunities  (app/controllers/entities_controller.rb)",
+  "PATCH,PUT /comments/:id  (app/controllers/comments_controller.rb)",
+  "POST /contacts  (app/controllers/entities/contacts_controller.rb)",
+  "PATCH,PUT /contacts/:id  (app/controllers/entities/contacts_controller.rb)",
+  "PUT /contacts/:id/attach  (app/controllers/entities_controller.rb)",
+  "ANY /contacts/auto_complete  (app/controllers/application_controller.rb)",
+  "POST /contacts/:id/discard  (app/controllers/entities_controller.rb)",
+  "GET /contacts/field_group  (app/controllers/entities_controller.rb)",
+  "GET /contacts/:id/opportunities  (app/controllers/entities_controller.rb)",
+  "DELETE /emails/:id  (app/controllers/emails_controller.rb)",
+  "POST /home/redraw  (app/controllers/home_controller.rb)",
+  "ANY /home/timeline  (app/controllers/home_controller.rb)",
+  "POST /leads  (app/controllers/entities/leads_controller.rb)",
+  "PATCH,PUT /leads/:id  (app/controllers/entities/leads_controller.rb)",
+  "PUT /leads/:id/attach  (config/routes.rb)",
+  "GET /leads/autocomplete_account_name  (app/controllers/entities/leads_controller.rb)",
+  "POST /leads/:id/discard  (app/controllers/entities_controller.rb)",
+  "GET /leads/field_group  (app/controllers/entities_controller.rb)",
+  "ANY /leads/:id/promote  (app/controllers/entities/leads_controller.rb)",
+  "POST /lists  (app/controllers/lists_controller.rb)",
+  "DELETE /lists/:id  (app/controllers/lists_controller.rb)",
+  "POST /opportunities  (app/controllers/entities/opportunities_controller.rb)",
+  "PATCH,PUT /opportunities/:id  (app/controllers/entities/opportunities_controller.rb)",
+  "PUT /opportunities/:id/attach  (app/views/entities/attach.js.haml)",
+  "POST /opportunities/:id/discard  (app/controllers/entities_controller.rb)",
+  "GET /opportunities/field_group  (app/views/fields/group.js.erb)",
+  "POST /tasks  (app/controllers/tasks_controller.rb)",
+  "PATCH,PUT /tasks/:id  (app/controllers/tasks_controller.rb)"
+ ],
+ "routes_investigated": 227
+}

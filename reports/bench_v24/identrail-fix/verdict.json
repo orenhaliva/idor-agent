@@ -1,0 +1,15 @@
+{
+ "target": "t40",
+ "method": "v2",
+ "idor_found": false,
+ "confirmed": [],
+ "judge_vulnerable": [],
+ "refuted": [],
+ "investigator_vulnerable": [
+  "POST /auth/manual  (api/auth_routes.go)",
+  "GET /v1/organizations/current  (api/router.go)",
+  "PUT /v1/organizations/current  (api/router.go)",
+  "GET /v1/workspaces  (api/router.go)"
+ ],
+ "routes_investigated": 172
+}

@@ -1,0 +1,134 @@
+[
+ {
+  "slug": "snipe-it",
+  "repo_url": "https://github.com/grokability/snipe-it",
+  "advisory_id": "GHSA-crv3-j83j-f3r6",
+  "cve": "CVE-2026-55478",
+  "language": "PHP",
+  "framework": "Laravel",
+  "fix_commit": "0d870d540d27107634f3134e0e7f106b3faa6992",
+  "vuln_commit": "144772cfbe68115aba415b647ad56961d00f7156",
+  "vulnerable_routes": [
+   "POST /api/v1/kits/{kit_id}/licenses",
+   "POST /api/v1/kits/{kit_id}/consumables",
+   "POST /api/v1/kits/{kit_id}/accessories"
+  ],
+  "vulnerable_files": [
+   "app/Http/Controllers/Api/PredefinedKitsController.php"
+  ],
+  "summary": "Kits API attach endpoints take a license/consumable/accessory id from the request body and attach it without a view authorization check on that object (missing object-level authorization).",
+  "analysis_root": ".",
+  "analysis_root_collector": "app",
+  "also_real": {
+   "routes": [
+    "PUT /v1/kits/{kit_id}/accessories/{accessory_id}",
+    "PUT /kits/{kit}/accessories/{accessory_id}",
+    "PUT /v1/kits/{kit_id}/consumables/{consumable_id}",
+    "PUT /kits/{kit}/consumables/{consumable_id}",
+    "PUT /v1/kits/{kit_id}/licenses/{license_id}",
+    "PUT /kits/{kit}/licenses/{license_id}"
+   ],
+   "evidence": "upstream 0d870d540 (2026-06-08, API update* methods) and 095f79484 (2026-08-31, web update* methods) add the missing view check on the attached object; recorded after the run, from public history"
+  }
+ },
+ {
+  "slug": "vikunja",
+  "repo_url": "https://github.com/go-vikunja/vikunja",
+  "advisory_id": "GHSA-5pg6-m483-7vrg",
+  "cve": "CVE-2026-55066",
+  "language": "Go",
+  "framework": "Echo + Huma (xorm)",
+  "fix_commit": "36cdc2ce2be0b8ccc74227d178b92047d59cd65f",
+  "vuln_commit": "37c35c64fb9b58b79475bc1fe971a46921c7ab24",
+  "vulnerable_routes": [
+   "PUT /api/v2/projects/{project}/views/{view}/buckets/{bucket}/tasks"
+  ],
+  "vulnerable_files": [
+   "pkg/models/kanban_task_bucket.go",
+   "pkg/routes/api/v2/task_bucket.go"
+  ],
+  "summary": "Moving a task into a kanban bucket authorizes only the path bucket/project; the body task_id (possibly in another project/tenant) was never write-checked.",
+  "analysis_root": "pkg"
+ },
+ {
+  "slug": "wger",
+  "repo_url": "https://github.com/wger-project/wger",
+  "advisory_id": "GHSA-rjpf-7pf5-q54x",
+  "cve": "CVE-2026-46438",
+  "language": "Python",
+  "framework": "Django REST Framework",
+  "fix_commit": "b29cf178651bbcc243d21673932e32bd42017893",
+  "vuln_commit": "67fbf067a60d341cc5c6227257e3013ec31220e0",
+  "vulnerable_routes": [
+   "POST /api/v2/workoutlog/",
+   "PUT /api/v2/workoutlog/{id}/",
+   "PATCH /api/v2/workoutlog/{id}/",
+   "POST /api/v2/workoutsession/"
+  ],
+  "vulnerable_files": [
+   "wger/manager/api/views.py",
+   "wger/manager/models/log.py",
+   "wger/manager/models/slot_entry.py"
+  ],
+  "summary": "Workout log/session API ownership checks omitted the slot_entry, next_log and day foreign keys, so a user could reference another user's objects.",
+  "analysis_root": "wger"
+ },
+ {
+  "slug": "spree",
+  "repo_url": "https://github.com/spree/spree",
+  "advisory_id": "GHSA-4825-p4xm-pcf2",
+  "cve": "CVE-2026-94462",
+  "language": "Ruby",
+  "framework": "Rails (Spree API v3)",
+  "fix_commit": "8834230a1f47bb5988f23f45dbd162776cf592bd",
+  "vuln_commit": "c281af5b7978cee49157b994cc60b195529875b2",
+  "vulnerable_routes": [
+   "PATCH /api/v3/store/carts/{id}/associate"
+  ],
+  "vulnerable_files": [
+   "spree/api/app/controllers/spree/api/v3/store/carts_controller.rb"
+  ],
+  "summary": "Cart associate endpoint looked up a cart by id and associated it with the caller without requiring the cart token, allowing claim of another guest's cart.",
+  "analysis_root": "spree",
+  "analysis_root_collector": "spree/api"
+ },
+ {
+  "slug": "nl-portal",
+  "repo_url": "https://github.com/nl-portal/nl-portal-backend-libraries",
+  "advisory_id": "GHSA-6h3c-r723-7fx3",
+  "cve": "CVE-2026-49464",
+  "language": "Kotlin",
+  "framework": "Spring Boot + GraphQL",
+  "fix_commit": "8e699add04d597dfc5c99e5e444bc2a9b6a4654a",
+  "vuln_commit": "f592af1b6e34bc8fe757e6e6c05806e170d4663c",
+  "vulnerable_routes": [
+   "POST /graphql (mutation submitTaakV2)"
+  ],
+  "vulnerable_files": [
+   "zgw/taak/src/main/kotlin/nl/nlportal/zgw/taak/service/TaakService.kt"
+  ],
+  "summary": "submitTaakV2 fetched a task by UUID and completed/overwrote it without checking it belonged to the authenticated user.",
+  "analysis_root": ".",
+  "analysis_root_collector": "zgw/taak"
+ },
+ {
+  "slug": "oqtane",
+  "repo_url": "https://github.com/oqtane/oqtane.framework",
+  "advisory_id": "GHSA-2hr5-cvwp-jr5w",
+  "cve": "CVE-2024-55186",
+  "language": "C#",
+  "framework": "ASP.NET Core (Oqtane)",
+  "fix_commit": "ffea9e321074f4cb73887d867ba61f74c6623ab6",
+  "vuln_commit": "f71a3a1ce3b899962a60d3c58f4b8a644f0d18e7",
+  "vulnerable_routes": [
+   "GET /api/Notification/{id}",
+   "PUT /api/Notification/{id}",
+   "DELETE /api/Notification/{id}"
+  ],
+  "vulnerable_files": [
+   "Oqtane.Server/Controllers/NotificationController.cs"
+  ],
+  "summary": "Notification controller IsAuthorized defaulted to true when the user id was null, letting any logged-in user read other users' notifications by id.",
+  "analysis_root": "Oqtane.Server"
+ }
+]

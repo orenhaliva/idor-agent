@@ -1,0 +1,156 @@
+{
+ "target": "t03",
+ "method": "v2",
+ "idor_found": true,
+ "confirmed": [
+  {
+   "route": "ANY /api/extclients/{network}/{clientid}",
+   "judge": "vulnerable",
+   "refuter": "upheld",
+   "files": [
+    "controllers/ext_client.go",
+    "database/sqlite.go",
+    "logic/extpeers.go"
+   ]
+  },
+  {
+   "route": "ANY /api/extclients/{network}/{clientid}/{type}",
+   "judge": "vulnerable",
+   "refuter": "upheld",
+   "files": [
+    "controllers/ext_client.go",
+    "logic/security.go",
+    "models/extclient.go"
+   ]
+  },
+  {
+   "route": "ANY /api/extclients/{network}/{nodeid}",
+   "judge": "vulnerable",
+   "refuter": "upheld",
+   "files": [
+    "controllers/ext_client.go",
+    "database/sqlite.go",
+    "logic/extpeers.go"
+   ]
+  },
+  {
+   "route": "ANY /api/v1/host",
+   "judge": "vulnerable",
+   "refuter": "upheld",
+   "files": [
+    "controllers/hosts.go",
+    "controllers/node.go",
+    "logic/jwts.go"
+   ]
+  },
+  {
+   "route": "ANY /api/hosts/{hostid}/relay",
+   "judge": "vulnerable",
+   "refuter": "upheld",
+   "files": [
+    "controllers/relay.go",
+    "logic/relay.go",
+    "logic/security.go"
+   ]
+  },
+  {
+   "route": "ANY /api/nodes/{network}/{nodeid}",
+   "judge": "vulnerable",
+   "refuter": "upheld",
+   "files": [
+    "controllers/node.go",
+    "models/api_node.go",
+    "models/host.go"
+   ]
+  },
+  {
+   "route": "ANY /api/nodes/{network}/{nodeid}/creategateway",
+   "judge": "vulnerable",
+   "refuter": "upheld",
+   "files": [
+    "controllers/node.go",
+    "logic/gateway.go"
+   ]
+  },
+  {
+   "route": "ANY /api/nodes/{network}/{nodeid}/createingress",
+   "judge": "vulnerable",
+   "refuter": "upheld",
+   "files": [
+    "controllers/node.go",
+    "logic/gateway.go"
+   ]
+  },
+  {
+   "route": "ANY /api/nodes/{network}/{nodeid}/createrelay",
+   "judge": "vulnerable",
+   "refuter": "upheld",
+   "files": [
+    "controllers/node.go",
+    "controllers/relay.go",
+    "logic/relay.go"
+   ]
+  },
+  {
+   "route": "ANY /api/nodes/{network}/{nodeid}/deletegateway",
+   "judge": "vulnerable",
+   "refuter": "upheld",
+   "files": [
+    "controllers/node.go",
+    "logic/gateway.go"
+   ]
+  },
+  {
+   "route": "ANY /api/nodes/{network}/{nodeid}/deleteingress",
+   "judge": "vulnerable",
+   "refuter": "upheld",
+   "files": [
+    "controllers/node.go",
+    "logic/gateway.go"
+   ]
+  },
+  {
+   "route": "ANY /api/nodes/{network}/{nodeid}/deleterelay",
+   "judge": "vulnerable",
+   "refuter": "upheld",
+   "files": [
+    "controllers/node.go",
+    "controllers/relay.go",
+    "logic/relay.go"
+   ]
+  }
+ ],
+ "judge_vulnerable": [
+  "ANY /api/extclients/{network}/{clientid}",
+  "ANY /api/extclients/{network}/{clientid}/{type}",
+  "ANY /api/extclients/{network}/{nodeid}",
+  "ANY /api/v1/host",
+  "ANY /api/hosts/{hostid}/relay",
+  "ANY /api/nodes/{network}/{nodeid}",
+  "ANY /api/nodes/{network}/{nodeid}/creategateway",
+  "ANY /api/nodes/{network}/{nodeid}/createingress",
+  "ANY /api/nodes/{network}/{nodeid}/createrelay",
+  "ANY /api/nodes/{network}/{nodeid}/deletegateway",
+  "ANY /api/nodes/{network}/{nodeid}/deleteingress",
+  "ANY /api/nodes/{network}/{nodeid}/deleterelay"
+ ],
+ "refuted": [],
+ "investigator_vulnerable": [
+  "ANY /api/extclients/{network}/{clientid}  (controllers/ext_client.go)",
+  "ANY /api/extclients/{network}/{clientid}/{type}  (controllers/ext_client.go)",
+  "ANY /api/extclients/{network}/{nodeid}  (controllers/ext_client.go)",
+  "ANY /api/v1/host  (controllers/hosts.go)",
+  "ANY /api/v1/host/register/{token}  (controllers/enrollmentkeys.go)",
+  "ANY /api/hosts/{hostid}/relay  (controllers/relay.go)",
+  "ANY /api/nodes/{network}/{nodeid}  (controllers/node.go)",
+  "ANY /api/nodes/{network}/{nodeid}/creategateway  (controllers/node.go)",
+  "ANY /api/nodes/{network}/{nodeid}/createingress  (logic/security.go)",
+  "ANY /api/nodes/{network}/{nodeid}/createrelay  (controllers/node.go)",
+  "ANY /api/nodes/{network}/{nodeid}/deletegateway  (controllers/node.go)",
+  "ANY /api/nodes/{network}/{nodeid}/deleteingress  (logic/security.go)",
+  "ANY /api/nodes/{network}/{nodeid}/deleterelay  (controllers/node.go)",
+  "ANY /api/v1/nodes/migrate  (controllers/migrate.go)",
+  "ANY /api/users/{username}  (controllers/user.go)"
+ ],
+ "routes_investigated": 68
+}

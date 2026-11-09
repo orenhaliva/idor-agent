@@ -1,0 +1,118 @@
+{
+ "target": "t32",
+ "method": "v2",
+ "idor_found": true,
+ "confirmed": [
+  {
+   "route": "PUT /v1/kits/{kit_id}/accessories/{accessory_id}  (app/Http/Controllers/Api/PredefinedKitsController.php)",
+   "judge": "vulnerable",
+   "refuter": "upheld",
+   "files": []
+  },
+  {
+   "route": "PUT /kits/{kit}/accessories/{accessory_id}  (app/Http/Controllers/Kits/PredefinedKitsController.php)",
+   "judge": "vulnerable",
+   "refuter": "upheld",
+   "files": []
+  },
+  {
+   "route": "PUT /v1/kits/{kit_id}/consumables/{consumable_id}  (app/Http/Controllers/Api/PredefinedKitsController.php)",
+   "judge": "vulnerable",
+   "refuter": "upheld",
+   "files": []
+  },
+  {
+   "route": "PUT /kits/{kit}/consumables/{consumable_id}  (app/Http/Controllers/Kits/PredefinedKitsController.php)",
+   "judge": "vulnerable",
+   "refuter": "upheld",
+   "files": []
+  },
+  {
+   "route": "PUT /v1/kits/{kit_id}/licenses/{license_id}  (app/Http/Controllers/Api/PredefinedKitsController.php)",
+   "judge": "vulnerable",
+   "refuter": "upheld",
+   "files": [
+    "app/Http/Controllers/Api/PredefinedKitsController.php",
+    "app/Models/Traits/CompanyableTrait.php"
+   ]
+  },
+  {
+   "route": "PUT /kits/{kit}/licenses/{license_id}  (app/Http/Controllers/Kits/PredefinedKitsController.php)",
+   "judge": "vulnerable",
+   "refuter": "upheld",
+   "files": [
+    "app/Http/Controllers/Kits/PredefinedKitsController.php",
+    "app/Models/PredefinedKit.php"
+   ]
+  },
+  {
+   "route": "PUT,PATCH /v1/maintenances/{maintenance}  (app/Http/Controllers/Api/MaintenancesController.php)",
+   "judge": "vulnerable",
+   "refuter": "upheld",
+   "files": [
+    "app/Http/Controllers/Api/MaintenancesController.php",
+    "app/Models/Maintenance.php"
+   ]
+  },
+  {
+   "route": "DELETE /reports/unaccepted_assets/{acceptanceId}/delete  (routes/web.php)",
+   "judge": "vulnerable",
+   "refuter": "upheld",
+   "files": [
+    "app/Http/Controllers/ReportsController.php",
+    "app/Models/CheckoutAcceptance.php",
+    "routes/web.php"
+   ]
+  },
+  {
+   "route": "POST /users/bulksave  (app/Http/Controllers/Users/BulkUsersController.php)",
+   "judge": "vulnerable",
+   "refuter": "upheld",
+   "files": [
+    "app/Http/Controllers/Users/BulkUsersController.php"
+   ]
+  }
+ ],
+ "judge_vulnerable": [
+  "POST /v1/imports/process/{import}  (app/Http/Controllers/Api/ImportController.php)",
+  "PUT /v1/kits/{kit_id}/accessories/{accessory_id}  (app/Http/Controllers/Api/PredefinedKitsController.php)",
+  "PUT /kits/{kit}/accessories/{accessory_id}  (app/Http/Controllers/Kits/PredefinedKitsController.php)",
+  "PUT /v1/kits/{kit_id}/consumables/{consumable_id}  (app/Http/Controllers/Api/PredefinedKitsController.php)",
+  "PUT /kits/{kit}/consumables/{consumable_id}  (app/Http/Controllers/Kits/PredefinedKitsController.php)",
+  "PUT /v1/kits/{kit_id}/licenses/{license_id}  (app/Http/Controllers/Api/PredefinedKitsController.php)",
+  "PUT /kits/{kit}/licenses/{license_id}  (app/Http/Controllers/Kits/PredefinedKitsController.php)",
+  "PUT,PATCH /v1/maintenances/{maintenance}  (app/Http/Controllers/Api/MaintenancesController.php)",
+  "DELETE /reports/unaccepted_assets/{acceptanceId}/delete  (routes/web.php)",
+  "POST /users/bulksave  (app/Http/Controllers/Users/BulkUsersController.php)",
+  "POST <path not extracted>  (app/Providers/LivewireServiceProvider.php)"
+ ],
+ "refuted": [
+  "POST /v1/imports/process/{import}  (app/Http/Controllers/Api/ImportController.php)",
+  "POST <path not extracted>  (app/Providers/LivewireServiceProvider.php)"
+ ],
+ "investigator_vulnerable": [
+  "POST /{asset}/audit  (app/Http/Controllers/Assets/AssetsController.php)",
+  "POST /bulksave  (app/Http/Controllers/Assets/BulkAssetsController.php)",
+  "GET /{asset}/clone  (routes/web/hardware.php)",
+  "POST /v1/components  (app/Http/Controllers/Api/ComponentsController.php)",
+  "PUT,PATCH /v1/components/{component}  (app/Http/Controllers/Api/ComponentsController.php)",
+  "POST /components  (app/Http/Controllers/Components/ComponentsController.php)",
+  "PUT,PATCH /components/{component}  (app/Http/Controllers/Components/ComponentsController.php)",
+  "POST /v1/consumables/{consumable}/checkout  (app/Http/Controllers/Api/ConsumablesController.php)",
+  "POST /v1/hardware/bytag/{any}/checkout  (app/Http/Controllers/Api/AssetsController.php)",
+  "POST /v1/hardware/{id}/checkout  (app/Http/Controllers/Api/AssetsController.php)",
+  "POST /history  (app/Http/Controllers/Assets/AssetsController.php)",
+  "POST /v1/imports/process/{import}  (app/Http/Controllers/Api/ImportController.php)",
+  "PUT /v1/kits/{kit_id}/licenses/{license_id}  (app/Http/Controllers/Api/PredefinedKitsController.php)",
+  "PUT /kits/{kit}/licenses/{license_id}  (app/Http/Controllers/Kits/PredefinedKitsController.php)",
+  "PUT,PATCH /v1/maintenances/{maintenance}  (app/Http/Controllers/Api/MaintenancesController.php)",
+  "GET /{asset}/qr_code  (app/Http/Controllers/Assets/AssetsController.php)",
+  "DELETE /reports/unaccepted_assets/{acceptanceId}/delete  (routes/web.php)",
+  "PUT,PATCH /v1/users/{user}  (app/Http/Controllers/Api/UsersController.php)",
+  "PUT,PATCH /users/{user}  (app/Http/Controllers/Users/UsersController.php)",
+  "POST /users/bulkeditsave  (app/Http/Controllers/Users/BulkUsersController.php)",
+  "POST /users/bulksave  (app/Http/Controllers/Users/BulkUsersController.php)",
+  "POST <path not extracted>  (app/Providers/LivewireServiceProvider.php)"
+ ],
+ "routes_investigated": 676
+}

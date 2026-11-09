@@ -1,0 +1,207 @@
+[
+ {
+  "slug": "aegra",
+  "repo_url": "https://github.com/ibbybuilds/aegra",
+  "advisory_id": "",
+  "cve": "",
+  "language": "Python",
+  "framework": "FastAPI",
+  "fix_commit": "e1b2042",
+  "vuln_commit": "d7d80c8",
+  "vulnerable_routes": [
+   "POST /threads/{thread_id}/runs",
+   "POST /threads/{thread_id}/runs/stream",
+   "POST /threads/{thread_id}/runs/wait"
+  ],
+  "vulnerable_files": [],
+  "summary": "Development case: thread run endpoints lacked proper ownership checks on thread_id. Not cloned.",
+  "src_root": "libs/aegra-api/src",
+  "also_real": {
+   "routes": [
+    "POST /runs",
+    "POST /runs/stream",
+    "POST /runs/wait",
+    "POST /threads/{thread_id}/history",
+    "POST /threads/{thread_id}/runs",
+    "POST /threads/{thread_id}/runs/stream",
+    "POST /threads/{thread_id}/runs/wait",
+    "POST /threads/{thread_id}/state"
+   ],
+   "evidence": "fixed later: a5ae9f9 (#424, assistant ownership in run preparation) and 2695989 (#431, client-supplied configurable.thread_id / checkpoint override); 2695989 diff: create_run_config forced server thread_id (all run routes) and strip_pinned_config_keys on checkpoint in threads.py state/history"
+  }
+ },
+ {
+  "slug": "filebrowser",
+  "repo_url": "https://github.com/filebrowser/filebrowser",
+  "advisory_id": "GHSA-6cqf-cfhv-659g",
+  "cve": "CVE-2025-64523",
+  "language": "Go",
+  "framework": "gorilla/mux (net/http)",
+  "fix_commit": "291223b3cefe1e50fae8f73d70464b1dc25351a4",
+  "vuln_commit": "99aeb766c3b8e4520acbdb51e16f0ef28f1e21be",
+  "vulnerable_routes": [
+   "DELETE /api/share/{hash}"
+  ],
+  "vulnerable_files": [
+   "http/share.go"
+  ],
+  "summary": "shareDeleteHandler deleted a share link by hash without checking that the link belongs to the caller, so any user with share permission could delete other users' shares. The fix loads the share and returns 403 unless the caller owns it or is admin.",
+  "src_root": "http"
+ },
+ {
+  "slug": "netmaker",
+  "repo_url": "https://github.com/gravitl/netmaker",
+  "advisory_id": "GHSA-256m-j5qw-38f4",
+  "cve": "CVE-2023-32078",
+  "language": "Go",
+  "framework": "gorilla/mux (net/http)",
+  "fix_commit": "b3be57c65bf0bbfab43b66853c8e3637a43e2839",
+  "vuln_commit": "b5e6836a6c8a9b1cf12ca87c734ce22502cca0a9",
+  "vulnerable_routes": [
+   "PUT /api/users/{username}"
+  ],
+  "vulnerable_files": [
+   "controllers/user.go",
+   "logic/jwts.go"
+  ],
+  "summary": "updateUser trusted the {username} path parameter, letting an authenticated user update another user's account including the password. The fix verifies the JWT subject matches the target username (or caller is admin) and blocks self-promotion to admin.",
+  "src_root": "controllers"
+ },
+ {
+  "slug": "publify",
+  "repo_url": "https://github.com/publify/publify",
+  "advisory_id": "GHSA-c273-c6vg-4pv5",
+  "cve": "CVE-2022-1810",
+  "language": "Ruby",
+  "framework": "Rails",
+  "fix_commit": "c0aba87844d1e47da50c0d99a3465164a4d244ce",
+  "vuln_commit": "d254b06983335eae40d31653ed2f1472edd85099",
+  "vulnerable_routes": [
+   "PATCH /admin/content/:id",
+   "PUT /admin/content/:id"
+  ],
+  "vulnerable_files": [
+   "publify_core/app/controllers/admin/content_controller.rb",
+   "publify_core/spec/controllers/admin/content_controller_spec.rb"
+  ],
+  "summary": "Admin::ContentController#update checked access against params[:id] but loaded the Article using params[:article][:id], so a low-privileged user could modify or delete other users' articles. The fix uses only the main id parameter for both check and lookup.",
+  "src_root": "publify_core/app",
+  "also_real": {
+   "routes": [
+    "PATCH /admin/content/:id",
+    "PUT /admin/content/:id",
+    "POST /admin/content",
+    "POST /admin/autosave",
+    "PUT /admin/autosave"
+   ],
+   "evidence": "still open after c0aba878; fixed later in c2e345e1 'Only allow publisher to autosave their own articles' (PR #1065) and GHSA-v3j7-88wx-xf6h (2026-10-23, admin article-create overwrite)"
+  }
+ },
+ {
+  "slug": "fat_free_crm",
+  "repo_url": "https://github.com/fatfreecrm/fat_free_crm",
+  "advisory_id": "GHSA-9pm8-vwc5-w2hm",
+  "cve": "",
+  "language": "Ruby",
+  "framework": "Rails (CanCanCan)",
+  "fix_commit": "0b26f9cb4ea9a7f8056893745a3104f63043786f",
+  "vuln_commit": "3c3199328dd10414b1f039ab8e4a82fe0f3baf87",
+  "vulnerable_routes": [
+   "DELETE /emails/:id"
+  ],
+  "vulnerable_files": [
+   "app/controllers/emails_controller.rb",
+   "app/models/users/ability.rb",
+   "spec/controllers/emails_controller_spec.rb"
+  ],
+  "summary": "EmailsController#destroy used Email.find(params[:id]) with no authorization, so any authenticated user could delete emails belonging to another user. The fix adds load_and_authorize_resource plus an Email ability rule.",
+  "src_root": "app"
+ },
+ {
+  "slug": "easyappointments",
+  "repo_url": "https://github.com/alextselegidis/easyappointments",
+  "advisory_id": "GHSA-8hm4-r66f-29wr",
+  "cve": "CVE-2026-52841",
+  "language": "PHP",
+  "framework": "CodeIgniter 3 (legacy MVC, auto-routing)",
+  "fix_commit": "4b2d245d2cd2058dc76e05f6eb65b26699268471",
+  "vuln_commit": "6eb9336a91cfb276379506625e81f5bd9ed3a536",
+  "vulnerable_routes": [
+   "GET /google/oauth/{provider_id}",
+   "GET /google/oauth_callback"
+  ],
+  "vulnerable_files": [
+   "CHANGELOG.md",
+   "application/controllers/Google.php"
+  ],
+  "summary": "Google::oauth stored the URL-supplied provider_id in the session and oauth_callback saved the Google token against that provider without checking ownership, so any backend user could rebind a peer provider's calendar sync. The fix validates the id and requires PRIV_USERS edit permission or id equal to the session user.",
+  "src_root": "application",
+  "label_disputed": "At vuln_commit 6eb9336a, Google::oauth() already rejects provider_id != session user unless PRIV_USERS edit (application/controllers/Google.php:452, present since c8a9e2c2, 2023) and show_error() exits; oauth_callback only reads the session value set after that check. Fix 4b2d245 adds the same check in the callback (defense in depth). The agent rated both routes safe on both commits with that reasoning."
+ },
+ {
+  "slug": "xxl-job",
+  "repo_url": "https://github.com/xuxueli/xxl-job",
+  "advisory_id": "GHSA-gjx6-h8hm-c9rq",
+  "cve": "CVE-2025-9264",
+  "language": "Java",
+  "framework": "Spring MVC / Spring Boot",
+  "fix_commit": "b683e65168d17f87ba4cbabdee444e19c4824e65",
+  "vuln_commit": "260874b849de79dc8833d6bd132349e7ca108502",
+  "vulnerable_routes": [
+   "POST /jobinfo/remove",
+   "POST /jobinfo/start",
+   "POST /jobinfo/stop",
+   "POST /jobinfo/pageList"
+  ],
+  "vulnerable_files": [
+   "xxl-job-admin/src/main/java/com/xxl/job/admin/controller/biz/JobInfoController.java",
+   "xxl-job-admin/src/main/java/com/xxl/job/admin/service/XxlJobService.java",
+   "xxl-job-admin/src/main/java/com/xxl/job/admin/service/impl/XxlJobServiceImpl.java"
+  ],
+  "summary": "JobInfoController remove/start/stop took a job id and acted on it without checking the caller's access to the job's jobGroup, allowing cross-group job manipulation (IDOR). The fix passes the login user into the service layer and enforces hasJobGroupPermission (also on pageList); mappings are plain @RequestMapping so all HTTP methods are accepted.",
+  "src_root": "xxl-job-admin/src/main/java"
+ },
+ {
+  "slug": "khoj",
+  "repo_url": "https://github.com/khoj-ai/khoj",
+  "advisory_id": "GHSA-hq4h-w933-jm6c",
+  "cve": "CVE-2024-52294",
+  "language": "Python",
+  "framework": "FastAPI/Starlette",
+  "fix_commit": "47d3c8c23597900af708bdc60aced3ae5d2064c1",
+  "vuln_commit": "d7027109a5f3894cc4f4f90cd571092a5b8b75d4",
+  "vulnerable_routes": [
+   "PATCH /api/subscription"
+  ],
+  "vulnerable_files": [
+   "src/interface/web/app/settings/page.tsx",
+   "src/khoj/routers/api_subscription.py"
+  ],
+  "summary": "update_subscription accepted an arbitrary email query parameter to select the Stripe customer, so any authenticated user could modify another user's subscription. The fix drops the parameter and derives the email from request.user.",
+  "src_root": "src/khoj"
+ },
+ {
+  "slug": "flowise",
+  "repo_url": "https://github.com/FlowiseAI/Flowise",
+  "advisory_id": "GHSA-2364-jh4q-m9vm",
+  "cve": "",
+  "language": "TypeScript",
+  "framework": "Express (TypeORM)",
+  "fix_commit": "4d7899d02ca370a5510406be5c91483085a412f9",
+  "vuln_commit": "e9bf04ac748dbcd9b7db6616bfee8080e0190739",
+  "vulnerable_routes": [
+   "GET /api/v1/organization/customer-default-source",
+   "GET /api/v1/organization/additional-seats-quantity",
+   "GET /api/v1/organization/additional-seats-proration",
+   "GET /api/v1/organization/plan-proration",
+   "POST /api/v1/organization/update-additional-seats",
+   "POST /api/v1/organization/update-subscription-plan"
+  ],
+  "vulnerable_files": [
+   "packages/server/src/enterprise/controllers/organization.controller.ts",
+   "packages/server/src/enterprise/utils/tenantRequestGuards.ts"
+  ],
+  "summary": "Organization billing endpoints used a caller-supplied customerId/subscriptionId query parameter against Stripe with no check against the session's organization, leaking other tenants' billing data. The fix adds assertStripeIdMatchesSession comparing the requested id to the caller's active organization ids.",
+  "src_root": "packages/server/src"
+ }
+]

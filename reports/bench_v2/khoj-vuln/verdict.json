@@ -1,0 +1,45 @@
+{
+ "target": "t14",
+ "method": "v2",
+ "idor_found": true,
+ "confirmed": [
+  {
+   "route": "GET /auth/callback",
+   "judge": "vulnerable",
+   "refuter": "upheld",
+   "files": [
+    "routers/notion.py"
+   ]
+  },
+  {
+   "route": "POST /",
+   "judge": "vulnerable",
+   "refuter": "upheld",
+   "files": [
+    "database/adapters/__init__.py",
+    "routers/api_phone.py"
+   ]
+  },
+  {
+   "route": "PATCH /",
+   "judge": "vulnerable",
+   "refuter": "upheld",
+   "files": [
+    "routers/api_subscription.py"
+   ]
+  }
+ ],
+ "judge_vulnerable": [
+  "GET /auth/callback",
+  "POST /",
+  "PATCH /"
+ ],
+ "refuted": [],
+ "investigator_vulnerable": [
+  "GET /auth/callback  (routers/notion.py)",
+  "POST /share/fork  (routers/api_chat.py)",
+  "POST /  (routers/api_phone.py)",
+  "PATCH /  (routers/api_subscription.py)"
+ ],
+ "routes_investigated": 83
+}

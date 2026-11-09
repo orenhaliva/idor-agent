@@ -1,0 +1,37 @@
+{
+ "target": "t48",
+ "method": "v2",
+ "idor_found": true,
+ "confirmed": [
+  {
+   "route": "PUT /account/order/{orderId}/subscription-mollie/cancel  (config/routes/shop/subscription_mollie.yaml)",
+   "judge": "vulnerable",
+   "refuter": "upheld",
+   "files": [
+    "config/routes/shop/subscription_mollie.yaml",
+    "config/state_machine/mollie_subscription_manual.php",
+    "src/Repository/MollieSubscriptionRepository.php"
+   ]
+  },
+  {
+   "route": "ANY /complete-payment  (config/routes/shop/payum.yaml)",
+   "judge": "vulnerable",
+   "refuter": "upheld",
+   "files": [
+    "config/routes/shop/payum.yaml",
+    "src/Controller/Shop/PayumController.php"
+   ]
+  }
+ ],
+ "judge_vulnerable": [
+  "PUT /account/order/{orderId}/subscription-mollie/cancel  (config/routes/shop/subscription_mollie.yaml)",
+  "ANY /complete-payment  (config/routes/shop/payum.yaml)"
+ ],
+ "refuted": [],
+ "investigator_vulnerable": [
+  "PUT /account/order/{orderId}/subscription-mollie/cancel  (config/routes/shop/subscription_mollie.yaml)",
+  "ANY /complete-payment  (config/routes/shop/payum.yaml)",
+  "ANY /remove-code  (config/routes/shop/qrCode.yaml)"
+ ],
+ "routes_investigated": 27
+}

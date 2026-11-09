@@ -1,0 +1,70 @@
+{
+ "target": "t49",
+ "method": "v2",
+ "idor_found": true,
+ "confirmed": [
+  {
+   "route": "PUT /account/order/{orderId}/subscription-mollie/cancel  (config/routes/shop/subscription_mollie.yaml)",
+   "judge": "vulnerable",
+   "refuter": "upheld",
+   "files": [
+    "config/routes/shop/subscription_mollie.yaml",
+    "config/services/controller/admin.xml",
+    "src/Repository/MollieSubscriptionRepository.php"
+   ]
+  },
+  {
+   "route": "ANY /complete-payment  (config/routes/shop/payum.yaml)",
+   "judge": "vulnerable",
+   "refuter": "upheld",
+   "files": [
+    "config/routes/shop/payum.yaml",
+    "src/Controller/Shop/PayumController.php"
+   ]
+  },
+  {
+   "route": "ANY /get-code  (config/routes/shop/qrCode.yaml)",
+   "judge": "vulnerable",
+   "refuter": "upheld",
+   "files": [
+    "config/routes/shop/qrCode.yaml",
+    "src/Controller/Shop/QrCodeAction.php"
+   ]
+  },
+  {
+   "route": "ANY /thank-you  (config/routes/shop/pageRedirect.yaml)",
+   "judge": "vulnerable",
+   "refuter": "upheld",
+   "files": [
+    "config/routes/shop/pageRedirect.yaml",
+    "src/Controller/Shop/PageRedirectController.php"
+   ]
+  },
+  {
+   "route": "ANY /update-payment  (config/routes/shop/paymentWebhook.yaml)",
+   "judge": "vulnerable",
+   "refuter": "upheld",
+   "files": [
+    "config/routes/shop/paymentWebhook.yaml",
+    "src/Controller/Shop/PaymentWebhookController.php"
+   ]
+  }
+ ],
+ "judge_vulnerable": [
+  "PUT /account/order/{orderId}/subscription-mollie/cancel  (config/routes/shop/subscription_mollie.yaml)",
+  "ANY /complete-payment  (config/routes/shop/payum.yaml)",
+  "ANY /get-code  (config/routes/shop/qrCode.yaml)",
+  "ANY /thank-you  (config/routes/shop/pageRedirect.yaml)",
+  "ANY /update-payment  (config/routes/shop/paymentWebhook.yaml)"
+ ],
+ "refuted": [],
+ "investigator_vulnerable": [
+  "PUT /account/order/{orderId}/subscription-mollie/cancel  (config/routes/shop/subscription_mollie.yaml)",
+  "ANY /complete-payment  (config/routes/shop/payum.yaml)",
+  "ANY /get-code  (config/routes/shop/qrCode.yaml)",
+  "POST,GET /mollie/apple-direct/complete  (config/routes/shop/applePay.yaml)",
+  "ANY /thank-you  (config/routes/shop/pageRedirect.yaml)",
+  "ANY /update-payment  (config/routes/shop/paymentWebhook.yaml)"
+ ],
+ "routes_investigated": 27
+}

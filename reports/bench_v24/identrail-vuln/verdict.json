@@ -1,0 +1,38 @@
+{
+ "target": "t35",
+ "method": "v2",
+ "idor_found": true,
+ "confirmed": [
+  {
+   "route": "POST /v1/connectors/github/complete  (api/router.go)",
+   "judge": "vulnerable",
+   "refuter": "upheld",
+   "files": [
+    "api/github_connect.go",
+    "api/router.go"
+   ]
+  },
+  {
+   "route": "POST /v1/workspaces/:workspace_id/members  (api/router.go)",
+   "judge": "escalated",
+   "refuter": "upheld",
+   "files": [
+    "api/router.go",
+    "api/service.go",
+    "db/postgres_tenancy.go"
+   ]
+  }
+ ],
+ "judge_vulnerable": [
+  "POST /v1/connectors/github/complete  (api/router.go)"
+ ],
+ "refuted": [],
+ "investigator_vulnerable": [
+  "POST /v1/connectors/github/complete  (api/router.go)",
+  "GET /v1/workspaces  (api/router.go)",
+  "POST /v1/workspaces/:workspace_id/members  (api/router.go)",
+  "DELETE /v1/workspaces/:workspace_id/members/:member_id  (api/router.go)",
+  "POST /v1/workspaces/:workspace_id/projects/:project_id/github/connect/complete  (api/router.go)"
+ ],
+ "routes_investigated": 172
+}

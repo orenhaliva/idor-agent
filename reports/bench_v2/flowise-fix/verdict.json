@@ -1,0 +1,859 @@
+{
+ "target": "t17",
+ "method": "v2",
+ "idor_found": true,
+ "confirmed": [
+  {
+   "route": "PUT /abort/  (src/routes/chat-messages/index.ts)",
+   "judge": "vulnerable",
+   "refuter": "upheld",
+   "files": [
+    "src/controllers/chat-messages/index.ts",
+    "src/routes/chat-messages/index.ts",
+    "src/services/chat-messages/index.ts"
+   ]
+  },
+  {
+   "route": "POST /abort  (src/routes/text-to-speech/index.ts)",
+   "judge": "vulnerable",
+   "refuter": "upheld",
+   "files": [
+    "src/controllers/text-to-speech/index.ts",
+    "src/routes/text-to-speech/index.ts"
+   ]
+  },
+  {
+   "route": "GET /callback  (src/routes/oauth2/index.ts)",
+   "judge": "vulnerable",
+   "refuter": "upheld",
+   "files": [
+    "src/routes/oauth2/index.ts"
+   ]
+  },
+  {
+   "route": "DELETE /chunks/:storeId/:loaderId/:chunkId  (src/routes/documentstore/index.ts)",
+   "judge": "vulnerable",
+   "refuter": "upheld",
+   "files": [
+    "src/controllers/documentstore/index.ts",
+    "src/routes/documentstore/index.ts",
+    "src/services/documentstore/index.ts"
+   ]
+  },
+  {
+   "route": "PUT /chunks/:storeId/:loaderId/:chunkId  (src/routes/documentstore/index.ts)",
+   "judge": "vulnerable",
+   "refuter": "upheld",
+   "files": [
+    "src/controllers/documentstore/index.ts",
+    "src/routes/documentstore/index.ts",
+    "src/services/documentstore/index.ts"
+   ]
+  },
+  {
+   "route": "POST /download/  (src/routes/openai-assistants-files/index.ts)",
+   "judge": "vulnerable",
+   "refuter": "upheld",
+   "files": [
+    "src/controllers/openai-assistants/index.ts",
+    "src/routes/openai-assistants-files/index.ts"
+   ]
+  },
+  {
+   "route": "POST /  (src/enterprise/routes/organization-user.route.ts)",
+   "judge": "vulnerable",
+   "refuter": "upheld",
+   "files": [
+    "src/enterprise/controllers/organization-user.controller.ts",
+    "src/enterprise/routes/organization-user.route.ts",
+    "src/enterprise/services/organization-user.service.ts"
+   ]
+  },
+  {
+   "route": "PUT /  (src/enterprise/routes/organization-user.route.ts)",
+   "judge": "vulnerable",
+   "refuter": "upheld",
+   "files": [
+    "src/enterprise/controllers/organization-user.controller.ts",
+    "src/enterprise/routes/organization-user.route.ts",
+    "src/enterprise/services/organization-user.service.ts"
+   ]
+  },
+  {
+   "route": "GET /  (src/routes/openai-assistants/index.ts)",
+   "judge": "vulnerable",
+   "refuter": "upheld",
+   "files": [
+    "src/controllers/openai-assistants/index.ts",
+    "src/routes/openai-assistants/index.ts",
+    "src/services/openai-assistants/index.ts"
+   ]
+  },
+  {
+   "route": "DELETE /  (src/enterprise/routes/organization-user.route.ts)",
+   "judge": "vulnerable",
+   "refuter": "upheld",
+   "files": [
+    "src/enterprise/controllers/organization-user.controller.ts",
+    "src/enterprise/routes/organization-user.route.ts",
+    "src/enterprise/services/organization-user.service.ts"
+   ]
+  },
+  {
+   "route": "PUT /  (src/enterprise/routes/organization.route.ts)",
+   "judge": "vulnerable",
+   "refuter": "upheld",
+   "files": [
+    "src/enterprise/controllers/organization.controller.ts",
+    "src/enterprise/database/entities/organization.entity.ts",
+    "src/enterprise/routes/organization.route.ts",
+    "src/enterprise/services/organization.service.ts"
+   ]
+  },
+  {
+   "route": "PUT /  (src/enterprise/routes/role.route.ts)",
+   "judge": "vulnerable",
+   "refuter": "upheld",
+   "files": [
+    "src/enterprise/controllers/role.controller.ts",
+    "src/enterprise/routes/role.route.ts",
+    "src/enterprise/services/role.service.ts"
+   ]
+  },
+  {
+   "route": "DELETE /  (src/enterprise/routes/role.route.ts)",
+   "judge": "vulnerable",
+   "refuter": "upheld",
+   "files": [
+    "src/enterprise/controllers/role.controller.ts",
+    "src/enterprise/routes/role.route.ts",
+    "src/enterprise/services/role.service.ts"
+   ]
+  },
+  {
+   "route": "POST /  (src/enterprise/routes/workspace-user.route.ts)",
+   "judge": "vulnerable",
+   "refuter": "upheld",
+   "files": [
+    "src/enterprise/controllers/workspace-user.controller.ts",
+    "src/enterprise/routes/workspace-user.route.ts",
+    "src/enterprise/services/workspace-user.service.ts"
+   ]
+  },
+  {
+   "route": "PUT /  (src/enterprise/routes/workspace-user.route.ts)",
+   "judge": "vulnerable",
+   "refuter": "upheld",
+   "files": [
+    "src/enterprise/controllers/workspace-user.controller.ts",
+    "src/enterprise/routes/workspace-user.route.ts",
+    "src/enterprise/services/workspace-user.service.ts"
+   ]
+  },
+  {
+   "route": "DELETE /  (src/enterprise/routes/workspace-user.route.ts)",
+   "judge": "vulnerable",
+   "refuter": "upheld",
+   "files": [
+    "src/enterprise/controllers/workspace-user.controller.ts",
+    "src/enterprise/routes/workspace-user.route.ts",
+    "src/enterprise/services/workspace-user.service.ts"
+   ]
+  },
+  {
+   "route": "POST /  (src/enterprise/routes/workspace.route.ts)",
+   "judge": "vulnerable",
+   "refuter": "upheld",
+   "files": [
+    "src/enterprise/controllers/workspace.controller.ts",
+    "src/enterprise/routes/workspace.route.ts",
+    "src/enterprise/services/workspace-user.service.ts"
+   ]
+  },
+  {
+   "route": "PUT /  (src/enterprise/routes/workspace.route.ts)",
+   "judge": "vulnerable",
+   "refuter": "upheld",
+   "files": [
+    "src/enterprise/controllers/workspace.controller.ts",
+    "src/enterprise/routes/workspace.route.ts",
+    "src/enterprise/services/workspace.service.ts"
+   ]
+  },
+  {
+   "route": "DELETE /  (src/enterprise/routes/workspace.route.ts)",
+   "judge": "vulnerable",
+   "refuter": "upheld",
+   "files": [
+    "src/enterprise/controllers/workspace.controller.ts",
+    "src/enterprise/routes/workspace.route.ts",
+    "src/enterprise/services/workspace.service.ts"
+   ]
+  },
+  {
+   "route": "DELETE /  (src/routes/chat-messages/index.ts)",
+   "judge": "vulnerable",
+   "refuter": "upheld",
+   "files": [
+    "src/controllers/chat-messages/index.ts",
+    "src/database/entities/ChatMessageFeedback.ts",
+    "src/routes/chat-messages/index.ts",
+    "src/services/chat-messages/index.ts"
+   ]
+  },
+  {
+   "route": "POST /  (src/routes/credentials/index.ts:7 credentialsController.createCredential)  (src/routes/credentials/index.ts)",
+   "judge": "vulnerable",
+   "refuter": "upheld",
+   "files": [
+    "src/controllers/credentials/index.ts",
+    "src/database/entities/Credential.ts",
+    "src/routes/credentials/index.ts",
+    "src/services/credentials/index.ts",
+    "src/utils/index.ts"
+   ]
+  },
+  {
+   "route": "POST /  (src/routes/evaluations/index.ts)",
+   "judge": "vulnerable",
+   "refuter": "upheld",
+   "files": [
+    "src/controllers/evaluations/index.ts",
+    "src/routes/evaluations/index.ts",
+    "src/services/evaluations/index.ts"
+   ]
+  },
+  {
+   "route": "PATCH /  (src/routes/evaluations/index.ts)",
+   "judge": "vulnerable",
+   "refuter": "upheld",
+   "files": [
+    "src/controllers/evaluations/index.ts",
+    "src/routes/evaluations/index.ts",
+    "src/services/evaluations/index.ts"
+   ]
+  },
+  {
+   "route": "DELETE /:id  (src/routes/executions/index.ts)",
+   "judge": "vulnerable",
+   "refuter": "upheld",
+   "files": [
+    "src/controllers/executions/index.ts",
+    "src/routes/executions/index.ts",
+    "src/services/executions/index.ts"
+   ]
+  },
+  {
+   "route": "DELETE /  (src/routes/executions/index.ts)",
+   "judge": "vulnerable",
+   "refuter": "upheld",
+   "files": [
+    "src/controllers/executions/index.ts",
+    "src/routes/executions/index.ts",
+    "src/services/executions/index.ts"
+   ]
+  },
+  {
+   "route": "POST /  (src/routes/feedback/index.ts)",
+   "judge": "vulnerable",
+   "refuter": "upheld",
+   "files": [
+    "src/controllers/feedback/index.ts",
+    "src/routes/feedback/index.ts",
+    "src/services/feedback/validation.ts"
+   ]
+  },
+  {
+   "route": "GET /  (src/routes/feedback/index.ts)",
+   "judge": "vulnerable",
+   "refuter": "upheld",
+   "files": [
+    "src/controllers/feedback/index.ts",
+    "src/routes/feedback/index.ts",
+    "src/services/feedback/index.ts",
+    "src/utils/getChatMessageFeedback.ts"
+   ]
+  },
+  {
+   "route": "PUT /  (src/routes/feedback/index.ts)",
+   "judge": "vulnerable",
+   "refuter": "upheld",
+   "files": [
+    "src/controllers/feedback/index.ts",
+    "src/routes/feedback/index.ts",
+    "src/utils/updateChatMessageFeedback.ts"
+   ]
+  },
+  {
+   "route": "GET /  (src/routes/get-upload-file/index.ts)",
+   "judge": "vulnerable",
+   "refuter": "upheld",
+   "files": []
+  },
+  {
+   "route": "GET /  (src/controllers/openai-assistants/index.ts)",
+   "judge": "vulnerable",
+   "refuter": "upheld",
+   "files": [
+    "src/controllers/openai-assistants/index.ts",
+    "src/services/openai-assistants/index.ts"
+   ]
+  },
+  {
+   "route": "GET /  (src/controllers/openai-realtime/index.ts)",
+   "judge": "vulnerable",
+   "refuter": "upheld",
+   "files": [
+    "src/controllers/openai-realtime/index.ts",
+    "src/services/openai-realtime/index.ts"
+   ]
+  },
+  {
+   "route": "POST /  (src/controllers/openai-realtime/index.ts)",
+   "judge": "vulnerable",
+   "refuter": "upheld",
+   "files": [
+    "src/controllers/openai-realtime/index.ts",
+    "src/services/openai-realtime/index.ts"
+   ]
+  },
+  {
+   "route": "POST /generate  (src/routes/text-to-speech/index.ts)",
+   "judge": "vulnerable",
+   "refuter": "upheld",
+   "files": [
+    "src/controllers/text-to-speech/index.ts",
+    "src/routes/text-to-speech/index.ts"
+   ]
+  },
+  {
+   "route": "POST /generate-tool-desc/:id  (src/controllers/documentstore/index.ts)",
+   "judge": "vulnerable",
+   "refuter": "upheld",
+   "files": [
+    "src/controllers/documentstore/index.ts",
+    "src/services/documentstore/index.ts"
+   ]
+  },
+  {
+   "route": "POST /invite  (src/enterprise/controllers/account.controller.ts)",
+   "judge": "vulnerable",
+   "refuter": "upheld",
+   "files": [
+    "src/enterprise/controllers/account.controller.ts",
+    "src/enterprise/services/account.service.ts",
+    "src/enterprise/services/role.service.ts",
+    "src/enterprise/services/workspace.service.ts"
+   ]
+  },
+  {
+   "route": "DELETE /:id/listener/:listenerId  (src/controllers/webhook-listener/index.ts)",
+   "judge": "vulnerable",
+   "refuter": "upheld",
+   "files": [
+    "src/controllers/webhook-listener/index.ts",
+    "src/services/webhook-listener/registry.ts"
+   ]
+  },
+  {
+   "route": "POST /refresh/:credentialId  (src/routes/oauth2/index.ts)",
+   "judge": "vulnerable",
+   "refuter": "upheld",
+   "files": [
+    "src/routes/oauth2/index.ts"
+   ]
+  },
+  {
+   "route": "POST /reorder  (src/routes/dataset/index.ts)",
+   "judge": "vulnerable",
+   "refuter": "upheld",
+   "files": [
+    "src/controllers/dataset/index.ts",
+    "src/routes/dataset/index.ts",
+    "src/services/dataset/index.ts"
+   ]
+  },
+  {
+   "route": "PATCH /rows  (src/routes/dataset/index.ts)",
+   "judge": "vulnerable",
+   "refuter": "upheld",
+   "files": [
+    "src/controllers/dataset/index.ts",
+    "src/routes/dataset/index.ts",
+    "src/services/dataset/index.ts"
+   ]
+  },
+  {
+   "route": "GET /shared  (src/enterprise/routes/workspace.route.ts)",
+   "judge": "vulnerable",
+   "refuter": "upheld",
+   "files": [
+    "src/enterprise/controllers/workspace.controller.ts",
+    "src/enterprise/routes/workspace.route.ts",
+    "src/enterprise/services/workspace.service.ts"
+   ]
+  },
+  {
+   "route": "POST /shared  (src/enterprise/routes/workspace.route.ts)",
+   "judge": "vulnerable",
+   "refuter": "upheld",
+   "files": [
+    "src/enterprise/controllers/workspace.controller.ts",
+    "src/enterprise/routes/workspace.route.ts",
+    "src/enterprise/services/workspace.service.ts"
+   ]
+  },
+  {
+   "route": "GET /store-configs/:id/:loaderId  (src/routes/documentstore/index.ts)",
+   "judge": "vulnerable",
+   "refuter": "upheld",
+   "files": []
+  },
+  {
+   "route": "GET /:id/stream/:listenerId  (src/routes/webhook-listener/index.ts)",
+   "judge": "vulnerable",
+   "refuter": "upheld",
+   "files": []
+  },
+  {
+   "route": "POST /test  (src/enterprise/routes/login-method.route.ts)",
+   "judge": "vulnerable",
+   "refuter": "upheld",
+   "files": [
+    "src/enterprise/controllers/login-method.controller.ts",
+    "src/enterprise/routes/login-method.route.ts",
+    "src/enterprise/services/login-method.service.ts"
+   ]
+  },
+  {
+   "route": "POST /upload/  (src/routes/openai-assistants-files/index.ts)",
+   "judge": "vulnerable",
+   "refuter": "upheld",
+   "files": [
+    "src/controllers/openai-assistants/index.ts",
+    "src/routes/openai-assistants-files/index.ts",
+    "src/services/openai-assistants/index.ts"
+   ]
+  },
+  {
+   "route": "POST /vectorstore/query  (src/routes/documentstore/index.ts)",
+   "judge": "vulnerable",
+   "refuter": "upheld",
+   "files": [
+    "src/controllers/documentstore/index.ts",
+    "src/routes/documentstore/index.ts",
+    "src/services/documentstore/index.ts"
+   ]
+  },
+  {
+   "route": "GET /versions/:id  (src/routes/evaluations/index.ts)",
+   "judge": "vulnerable",
+   "refuter": "upheld",
+   "files": [
+    "src/controllers/evaluations/index.ts",
+    "src/routes/evaluations/index.ts",
+    "src/services/evaluations/index.ts"
+   ]
+  },
+  {
+   "route": "DELETE <path not extracted>  (src/enterprise/services/organization-user.service.ts:331)  (src/enterprise/controllers/organization-user.controller.ts)",
+   "judge": "vulnerable",
+   "refuter": "upheld",
+   "files": [
+    "src/enterprise/controllers/organization-user.controller.ts",
+    "src/enterprise/services/organization-user.service.ts"
+   ]
+  },
+  {
+   "route": "DELETE <path not extracted>  (src/enterprise/services/organization-user.service.ts:332 workspaceUserToDelete)  (src/enterprise/services/organization-user.service.ts)",
+   "judge": "vulnerable",
+   "refuter": "upheld",
+   "files": [
+    "src/enterprise/controllers/organization-user.controller.ts",
+    "src/enterprise/services/organization-user.service.ts"
+   ]
+  },
+  {
+   "route": "DELETE <path not extracted>  (src/enterprise/services/role.service.ts:156)  (src/enterprise/controllers/role.controller.ts)",
+   "judge": "vulnerable",
+   "refuter": "upheld",
+   "files": [
+    "src/enterprise/controllers/role.controller.ts",
+    "src/enterprise/services/role.service.ts"
+   ]
+  },
+  {
+   "route": "DELETE <path not extracted>  (src/enterprise/services/role.service.ts:157)  (src/enterprise/services/role.service.ts)",
+   "judge": "vulnerable",
+   "refuter": "upheld",
+   "files": [
+    "src/enterprise/controllers/role.controller.ts",
+    "src/enterprise/services/role.service.ts"
+   ]
+  },
+  {
+   "route": "DELETE <path not extracted>  (src/enterprise/services/workspace-user.service.ts:375)  (src/enterprise/controllers/workspace-user.controller.ts)",
+   "judge": "vulnerable",
+   "refuter": "upheld",
+   "files": [
+    "src/enterprise/controllers/workspace-user.controller.ts",
+    "src/enterprise/services/workspace-user.service.ts"
+   ]
+  },
+  {
+   "route": "DELETE <path not extracted>  (src/enterprise/services/workspace.service.ts:181)  (src/enterprise/controllers/workspace.controller.ts)",
+   "judge": "vulnerable",
+   "refuter": "upheld",
+   "files": [
+    "src/enterprise/controllers/workspace.controller.ts",
+    "src/enterprise/services/workspace.service.ts"
+   ]
+  },
+  {
+   "route": "DELETE <path not extracted>  (src/enterprise/services/workspace.service.ts:182)  (src/enterprise/controllers/workspace.controller.ts)",
+   "judge": "vulnerable",
+   "refuter": "upheld",
+   "files": [
+    "src/enterprise/controllers/workspace.controller.ts",
+    "src/enterprise/services/workspace.service.ts"
+   ]
+  },
+  {
+   "route": "DELETE <path not extracted>  (src/enterprise/services/workspace.service.ts:183)  (src/enterprise/controllers/workspace.controller.ts)",
+   "judge": "vulnerable",
+   "refuter": "upheld",
+   "files": [
+    "src/enterprise/controllers/workspace.controller.ts",
+    "src/enterprise/services/workspace.service.ts"
+   ]
+  },
+  {
+   "route": "DELETE <path not extracted>  (src/enterprise/services/workspace.service.ts:184)  (src/enterprise/controllers/workspace.controller.ts)",
+   "judge": "vulnerable",
+   "refuter": "upheld",
+   "files": [
+    "src/enterprise/controllers/workspace.controller.ts",
+    "src/enterprise/services/workspace.service.ts"
+   ]
+  },
+  {
+   "route": "DELETE <path not extracted>  (src/enterprise/services/workspace.service.ts:188)  (src/enterprise/controllers/workspace.controller.ts)",
+   "judge": "vulnerable",
+   "refuter": "upheld",
+   "files": [
+    "src/enterprise/controllers/workspace.controller.ts",
+    "src/enterprise/services/workspace.service.ts"
+   ]
+  },
+  {
+   "route": "DELETE <path not extracted>  (src/enterprise/services/workspace.service.ts:189)  (src/enterprise/controllers/workspace.controller.ts)",
+   "judge": "vulnerable",
+   "refuter": "upheld",
+   "files": [
+    "src/enterprise/controllers/workspace.controller.ts",
+    "src/enterprise/services/workspace.service.ts"
+   ]
+  },
+  {
+   "route": "DELETE <path not extracted>  (src/enterprise/services/workspace.service.ts:190)  (src/enterprise/controllers/workspace.controller.ts)",
+   "judge": "vulnerable",
+   "refuter": "upheld",
+   "files": [
+    "src/enterprise/controllers/workspace.controller.ts",
+    "src/enterprise/services/workspace.service.ts"
+   ]
+  },
+  {
+   "route": "DELETE <path not extracted>  (src/enterprise/services/workspace.service.ts:191)  (src/enterprise/controllers/workspace.controller.ts)",
+   "judge": "vulnerable",
+   "refuter": "upheld",
+   "files": [
+    "src/enterprise/controllers/workspace.controller.ts",
+    "src/enterprise/services/workspace.service.ts"
+   ]
+  },
+  {
+   "route": "DELETE <path not extracted>  (src/enterprise/services/workspace.service.ts:194)  (src/enterprise/controllers/workspace.controller.ts)",
+   "judge": "vulnerable",
+   "refuter": "upheld",
+   "files": [
+    "src/enterprise/controllers/workspace.controller.ts",
+    "src/enterprise/services/workspace.service.ts"
+   ]
+  },
+  {
+   "route": "DELETE <path not extracted>  (src/enterprise/services/workspace.service.ts:195)  (src/enterprise/controllers/workspace.controller.ts)",
+   "judge": "vulnerable",
+   "refuter": "upheld",
+   "files": [
+    "src/enterprise/controllers/workspace.controller.ts",
+    "src/enterprise/services/workspace.service.ts"
+   ]
+  },
+  {
+   "route": "DELETE <path not extracted>  (src/enterprise/services/workspace.service.ts:199)  (src/enterprise/controllers/workspace.controller.ts)",
+   "judge": "vulnerable",
+   "refuter": "upheld",
+   "files": [
+    "src/enterprise/controllers/workspace.controller.ts",
+    "src/enterprise/services/workspace.service.ts"
+   ]
+  },
+  {
+   "route": "DELETE <path not extracted>  (src/enterprise/services/workspace.service.ts:200)  (src/enterprise/controllers/workspace.controller.ts)",
+   "judge": "vulnerable",
+   "refuter": "upheld",
+   "files": [
+    "src/enterprise/controllers/workspace.controller.ts",
+    "src/enterprise/services/workspace.service.ts"
+   ]
+  },
+  {
+   "route": "DELETE <path not extracted>  (src/enterprise/services/workspace.service.ts:205)  (src/enterprise/controllers/workspace.controller.ts)",
+   "judge": "vulnerable",
+   "refuter": "upheld",
+   "files": [
+    "src/enterprise/controllers/workspace.controller.ts",
+    "src/enterprise/services/workspace.service.ts"
+   ]
+  },
+  {
+   "route": "DELETE <path not extracted>  (src/enterprise/services/workspace.service.ts:206)  (src/enterprise/controllers/workspace.controller.ts)",
+   "judge": "vulnerable",
+   "refuter": "upheld",
+   "files": [
+    "src/enterprise/controllers/workspace.controller.ts",
+    "src/enterprise/services/workspace.service.ts"
+   ]
+  },
+  {
+   "route": "DELETE <path not extracted>  (src/enterprise/services/workspace.service.ts:211)  (src/enterprise/controllers/workspace.controller.ts)",
+   "judge": "vulnerable",
+   "refuter": "upheld",
+   "files": [
+    "src/enterprise/controllers/workspace.controller.ts",
+    "src/enterprise/services/workspace.service.ts"
+   ]
+  },
+  {
+   "route": "DELETE <path not extracted>  (src/enterprise/services/workspace.service.ts:212)  (src/enterprise/controllers/workspace.controller.ts)",
+   "judge": "vulnerable",
+   "refuter": "upheld",
+   "files": [
+    "src/enterprise/controllers/workspace.controller.ts",
+    "src/enterprise/services/workspace.service.ts"
+   ]
+  },
+  {
+   "route": "DELETE <path not extracted>  (src/enterprise/services/workspace.service.ts:215)  (src/enterprise/controllers/workspace.controller.ts)",
+   "judge": "vulnerable",
+   "refuter": "upheld",
+   "files": [
+    "src/enterprise/controllers/workspace.controller.ts",
+    "src/enterprise/services/workspace.service.ts"
+   ]
+  },
+  {
+   "route": "DELETE <path not extracted>  (src/enterprise/services/workspace.service.ts:216)  (src/enterprise/controllers/workspace.controller.ts)",
+   "judge": "vulnerable",
+   "refuter": "upheld",
+   "files": [
+    "src/enterprise/controllers/workspace.controller.ts",
+    "src/enterprise/services/workspace.service.ts"
+   ]
+  },
+  {
+   "route": "DELETE <path not extracted>  (src/enterprise/services/workspace.service.ts:217)  (src/enterprise/controllers/workspace.controller.ts)",
+   "judge": "vulnerable",
+   "refuter": "upheld",
+   "files": [
+    "src/enterprise/controllers/workspace.controller.ts",
+    "src/enterprise/services/workspace.service.ts"
+   ]
+  },
+  {
+   "route": "DELETE <path not extracted>  (src/enterprise/services/workspace.service.ts:218)  (src/enterprise/controllers/workspace.controller.ts)",
+   "judge": "vulnerable",
+   "refuter": "upheld",
+   "files": [
+    "src/enterprise/controllers/workspace.controller.ts",
+    "src/enterprise/services/workspace.service.ts"
+   ]
+  },
+  {
+   "route": "DELETE <path not extracted>  (src/enterprise/services/workspace.service.ts:221)  (src/enterprise/controllers/workspace.controller.ts)",
+   "judge": "vulnerable",
+   "refuter": "upheld",
+   "files": [
+    "src/enterprise/controllers/workspace.controller.ts",
+    "src/enterprise/services/workspace.service.ts"
+   ]
+  }
+ ],
+ "judge_vulnerable": [
+  "PUT /abort/  (src/routes/chat-messages/index.ts)",
+  "POST /abort  (src/routes/text-to-speech/index.ts)",
+  "GET /callback  (src/routes/oauth2/index.ts)",
+  "DELETE /chunks/:storeId/:loaderId/:chunkId  (src/routes/documentstore/index.ts)",
+  "PUT /chunks/:storeId/:loaderId/:chunkId  (src/routes/documentstore/index.ts)",
+  "POST /download/  (src/routes/openai-assistants-files/index.ts)",
+  "POST /  (src/enterprise/routes/organization-user.route.ts)",
+  "PUT /  (src/enterprise/routes/organization-user.route.ts)",
+  "GET /  (src/routes/openai-assistants/index.ts)",
+  "DELETE /  (src/enterprise/routes/organization-user.route.ts)",
+  "GET /  (src/enterprise/routes/organization.route.ts)",
+  "PUT /  (src/enterprise/routes/organization.route.ts)",
+  "PUT /  (src/enterprise/routes/role.route.ts)",
+  "DELETE /  (src/enterprise/routes/role.route.ts)",
+  "POST /  (src/enterprise/routes/workspace-user.route.ts)",
+  "PUT /  (src/enterprise/routes/workspace-user.route.ts)",
+  "DELETE /  (src/enterprise/routes/workspace-user.route.ts)",
+  "POST /  (src/enterprise/routes/workspace.route.ts)",
+  "PUT /  (src/enterprise/routes/workspace.route.ts)",
+  "DELETE /  (src/enterprise/routes/workspace.route.ts)",
+  "DELETE /  (src/routes/chat-messages/index.ts)",
+  "POST /  (src/routes/credentials/index.ts:7 credentialsController.createCredential)  (src/routes/credentials/index.ts)",
+  "POST /  (src/routes/evaluations/index.ts)",
+  "PATCH /  (src/routes/evaluations/index.ts)",
+  "DELETE /:id  (src/routes/executions/index.ts)",
+  "DELETE /  (src/routes/executions/index.ts)",
+  "POST /  (src/routes/feedback/index.ts)",
+  "GET /  (src/routes/feedback/index.ts)",
+  "PUT /  (src/routes/feedback/index.ts)",
+  "GET /  (src/routes/get-upload-file/index.ts)",
+  "GET /  (src/controllers/openai-assistants/index.ts)",
+  "GET /  (src/controllers/openai-realtime/index.ts)",
+  "POST /  (src/controllers/openai-realtime/index.ts)",
+  "POST /  (src/routes/predictions/index.ts)",
+  "POST /generate  (src/routes/text-to-speech/index.ts)",
+  "POST /generate-tool-desc/:id  (src/controllers/documentstore/index.ts)",
+  "POST /invite  (src/enterprise/controllers/account.controller.ts)",
+  "DELETE /:id/listener/:listenerId  (src/controllers/webhook-listener/index.ts)",
+  "POST /refresh/:credentialId  (src/routes/oauth2/index.ts)",
+  "POST /reorder  (src/routes/dataset/index.ts)",
+  "PATCH /rows  (src/routes/dataset/index.ts)",
+  "GET /shared  (src/enterprise/routes/workspace.route.ts)",
+  "POST /shared  (src/enterprise/routes/workspace.route.ts)",
+  "GET /store-configs/:id/:loaderId  (src/routes/documentstore/index.ts)",
+  "GET /:id/stream/:listenerId  (src/routes/webhook-listener/index.ts)",
+  "POST /test  (src/enterprise/routes/login-method.route.ts)",
+  "POST /upload/  (src/routes/openai-assistants-files/index.ts)",
+  "POST /vectorstore/query  (src/routes/documentstore/index.ts)",
+  "GET /versions/:id  (src/routes/evaluations/index.ts)",
+  "GET /voices  (src/routes/text-to-speech/index.ts)",
+  "DELETE <path not extracted>  (src/enterprise/services/organization-user.service.ts:331)  (src/enterprise/controllers/organization-user.controller.ts)",
+  "DELETE <path not extracted>  (src/enterprise/services/organization-user.service.ts:332 workspaceUserToDelete)  (src/enterprise/services/organization-user.service.ts)",
+  "DELETE <path not extracted>  (src/enterprise/services/role.service.ts:156)  (src/enterprise/controllers/role.controller.ts)",
+  "DELETE <path not extracted>  (src/enterprise/services/role.service.ts:157)  (src/enterprise/services/role.service.ts)",
+  "DELETE <path not extracted>  (src/enterprise/services/workspace-user.service.ts:375)  (src/enterprise/controllers/workspace-user.controller.ts)",
+  "DELETE <path not extracted>  (src/enterprise/services/workspace.service.ts:181)  (src/enterprise/controllers/workspace.controller.ts)",
+  "DELETE <path not extracted>  (src/enterprise/services/workspace.service.ts:182)  (src/enterprise/controllers/workspace.controller.ts)",
+  "DELETE <path not extracted>  (src/enterprise/services/workspace.service.ts:183)  (src/enterprise/controllers/workspace.controller.ts)",
+  "DELETE <path not extracted>  (src/enterprise/services/workspace.service.ts:184)  (src/enterprise/controllers/workspace.controller.ts)",
+  "DELETE <path not extracted>  (src/enterprise/services/workspace.service.ts:188)  (src/enterprise/controllers/workspace.controller.ts)",
+  "DELETE <path not extracted>  (src/enterprise/services/workspace.service.ts:189)  (src/enterprise/controllers/workspace.controller.ts)",
+  "DELETE <path not extracted>  (src/enterprise/services/workspace.service.ts:190)  (src/enterprise/controllers/workspace.controller.ts)",
+  "DELETE <path not extracted>  (src/enterprise/services/workspace.service.ts:191)  (src/enterprise/controllers/workspace.controller.ts)",
+  "DELETE <path not extracted>  (src/enterprise/services/workspace.service.ts:194)  (src/enterprise/controllers/workspace.controller.ts)",
+  "DELETE <path not extracted>  (src/enterprise/services/workspace.service.ts:195)  (src/enterprise/controllers/workspace.controller.ts)",
+  "DELETE <path not extracted>  (src/enterprise/services/workspace.service.ts:199)  (src/enterprise/controllers/workspace.controller.ts)",
+  "DELETE <path not extracted>  (src/enterprise/services/workspace.service.ts:200)  (src/enterprise/controllers/workspace.controller.ts)",
+  "DELETE <path not extracted>  (src/enterprise/services/workspace.service.ts:205)  (src/enterprise/controllers/workspace.controller.ts)",
+  "DELETE <path not extracted>  (src/enterprise/services/workspace.service.ts:206)  (src/enterprise/controllers/workspace.controller.ts)",
+  "DELETE <path not extracted>  (src/enterprise/services/workspace.service.ts:211)  (src/enterprise/controllers/workspace.controller.ts)",
+  "DELETE <path not extracted>  (src/enterprise/services/workspace.service.ts:212)  (src/enterprise/controllers/workspace.controller.ts)",
+  "DELETE <path not extracted>  (src/enterprise/services/workspace.service.ts:215)  (src/enterprise/controllers/workspace.controller.ts)",
+  "DELETE <path not extracted>  (src/enterprise/services/workspace.service.ts:216)  (src/enterprise/controllers/workspace.controller.ts)",
+  "DELETE <path not extracted>  (src/enterprise/services/workspace.service.ts:217)  (src/enterprise/controllers/workspace.controller.ts)",
+  "DELETE <path not extracted>  (src/enterprise/services/workspace.service.ts:218)  (src/enterprise/controllers/workspace.controller.ts)",
+  "DELETE <path not extracted>  (src/enterprise/services/workspace.service.ts:221)  (src/enterprise/controllers/workspace.controller.ts)"
+ ],
+ "refuted": [
+  "POST /  (src/routes/predictions/index.ts)"
+ ],
+ "investigator_vulnerable": [
+  "PUT /abort/  (src/routes/chat-messages/index.ts)",
+  "POST /abort  (src/routes/text-to-speech/index.ts)",
+  "GET /callback  (src/routes/oauth2/index.ts)",
+  "DELETE /chunks/:storeId/:loaderId/:chunkId  (src/routes/documentstore/index.ts)",
+  "PUT /chunks/:storeId/:loaderId/:chunkId  (src/routes/documentstore/index.ts)",
+  "POST /download/  (src/routes/openai-assistants-files/index.ts)",
+  "POST /  (src/enterprise/routes/login-method.route.ts)",
+  "GET /  (src/enterprise/routes/organization-user.route.ts)",
+  "POST /  (src/enterprise/routes/organization-user.route.ts)",
+  "PUT /  (src/enterprise/routes/organization-user.route.ts)",
+  "DELETE /  (src/enterprise/routes/organization-user.route.ts)",
+  "GET /  (src/enterprise/routes/organization.route.ts)",
+  "POST /  (src/enterprise/routes/organization.route.ts)",
+  "PUT /  (src/enterprise/routes/organization.route.ts)",
+  "POST /  (src/enterprise/routes/role.route.ts)",
+  "PUT /  (src/enterprise/routes/role.route.ts)",
+  "DELETE /  (src/enterprise/routes/role.route.ts)",
+  "POST /  (src/enterprise/routes/workspace-user.route.ts)",
+  "PUT /  (src/enterprise/routes/workspace-user.route.ts)",
+  "DELETE /  (src/enterprise/routes/workspace-user.route.ts)",
+  "POST /  (src/enterprise/routes/workspace.route.ts)",
+  "PUT /  (src/enterprise/routes/workspace.route.ts)",
+  "DELETE /  (src/enterprise/routes/workspace.route.ts)",
+  "POST /  (src/routes/assistants/index.ts)",
+  "PUT /  (src/routes/assistants/index.ts)",
+  "DELETE /  (src/routes/assistants/index.ts)",
+  "DELETE /  (src/routes/chat-messages/index.ts)",
+  "POST /  (src/routes/credentials/index.ts:7 credentialsController.createCredential)  (src/routes/credentials/index.ts)",
+  "POST /  (src/routes/evaluations/index.ts)",
+  "PATCH /  (src/routes/evaluations/index.ts)",
+  "PUT /  (src/routes/executions/index.ts)",
+  "DELETE /:id  (src/routes/executions/index.ts)",
+  "DELETE /  (src/routes/executions/index.ts)",
+  "POST /  (src/routes/feedback/index.ts)",
+  "GET /  (src/routes/feedback/index.ts)",
+  "PUT /  (src/routes/feedback/index.ts)",
+  "GET /  (src/routes/internal-chat-messages/index.ts)",
+  "GET /  (src/controllers/openai-assistants/index.ts)",
+  "GET /  (src/controllers/openai-realtime/index.ts)",
+  "POST /  (src/controllers/openai-realtime/index.ts)",
+  "POST /  (src/routes/predictions/index.ts)",
+  "POST /generate  (src/routes/text-to-speech/index.ts)",
+  "POST /generate-tool-desc/:id  (src/controllers/documentstore/index.ts)",
+  "POST /import  (src/controllers/export-import/index.ts)",
+  "POST /invite  (src/enterprise/controllers/account.controller.ts)",
+  "DELETE /:id/listener/:listenerId  (src/controllers/webhook-listener/index.ts)",
+  "POST /refresh/:credentialId  (src/routes/oauth2/index.ts)",
+  "POST /reorder  (src/routes/dataset/index.ts)",
+  "PATCH /rows  (src/routes/dataset/index.ts)",
+  "GET /shared  (src/enterprise/routes/workspace.route.ts)",
+  "POST /shared  (src/enterprise/routes/workspace.route.ts)",
+  "POST /test  (src/enterprise/routes/login-method.route.ts)",
+  "POST /upload/  (src/routes/openai-assistants-files/index.ts)",
+  "POST /vectorstore/query  (src/routes/documentstore/index.ts)",
+  "GET /versions/:id  (src/routes/evaluations/index.ts)",
+  "DELETE <path not extracted>  (src/enterprise/services/organization-user.service.ts:331)  (src/enterprise/controllers/organization-user.controller.ts)",
+  "DELETE <path not extracted>  (src/enterprise/services/organization-user.service.ts:332 workspaceUserToDelete)  (src/enterprise/services/organization-user.service.ts)",
+  "DELETE <path not extracted>  (src/enterprise/services/role.service.ts:156)  (src/enterprise/controllers/role.controller.ts)",
+  "DELETE <path not extracted>  (src/enterprise/services/role.service.ts:157)  (src/enterprise/services/role.service.ts)",
+  "DELETE <path not extracted>  (src/enterprise/services/workspace-user.service.ts:375)  (src/enterprise/controllers/workspace-user.controller.ts)",
+  "DELETE <path not extracted>  (src/enterprise/services/workspace.service.ts:181)  (src/enterprise/controllers/workspace.controller.ts)",
+  "DELETE <path not extracted>  (src/enterprise/services/workspace.service.ts:182)  (src/enterprise/controllers/workspace.controller.ts)",
+  "DELETE <path not extracted>  (src/enterprise/services/workspace.service.ts:183)  (src/enterprise/controllers/workspace.controller.ts)",
+  "DELETE <path not extracted>  (src/enterprise/services/workspace.service.ts:184)  (src/enterprise/controllers/workspace.controller.ts)",
+  "DELETE <path not extracted>  (src/enterprise/services/workspace.service.ts:188)  (src/enterprise/controllers/workspace.controller.ts)",
+  "DELETE <path not extracted>  (src/enterprise/services/workspace.service.ts:189)  (src/enterprise/controllers/workspace.controller.ts)",
+  "DELETE <path not extracted>  (src/enterprise/services/workspace.service.ts:190)  (src/enterprise/controllers/workspace.controller.ts)",
+  "DELETE <path not extracted>  (src/enterprise/services/workspace.service.ts:191)  (src/enterprise/controllers/workspace.controller.ts)",
+  "DELETE <path not extracted>  (src/enterprise/services/workspace.service.ts:194)  (src/enterprise/controllers/workspace.controller.ts)",
+  "DELETE <path not extracted>  (src/enterprise/services/workspace.service.ts:195)  (src/enterprise/controllers/workspace.controller.ts)",
+  "DELETE <path not extracted>  (src/enterprise/services/workspace.service.ts:199)  (src/enterprise/controllers/workspace.controller.ts)",
+  "DELETE <path not extracted>  (src/enterprise/services/workspace.service.ts:200)  (src/enterprise/controllers/workspace.controller.ts)",
+  "DELETE <path not extracted>  (src/enterprise/services/workspace.service.ts:205)  (src/enterprise/controllers/workspace.controller.ts)",
+  "DELETE <path not extracted>  (src/enterprise/services/workspace.service.ts:206)  (src/enterprise/controllers/workspace.controller.ts)",
+  "DELETE <path not extracted>  (src/enterprise/services/workspace.service.ts:211)  (src/enterprise/controllers/workspace.controller.ts)",
+  "DELETE <path not extracted>  (src/enterprise/services/workspace.service.ts:212)  (src/enterprise/controllers/workspace.controller.ts)",
+  "DELETE <path not extracted>  (src/enterprise/services/workspace.service.ts:215)  (src/enterprise/controllers/workspace.controller.ts)",
+  "DELETE <path not extracted>  (src/enterprise/services/workspace.service.ts:216)  (src/enterprise/controllers/workspace.controller.ts)",
+  "DELETE <path not extracted>  (src/enterprise/services/workspace.service.ts:217)  (src/enterprise/controllers/workspace.controller.ts)",
+  "DELETE <path not extracted>  (src/enterprise/services/workspace.service.ts:218)  (src/enterprise/controllers/workspace.controller.ts)",
+  "DELETE <path not extracted>  (src/enterprise/services/workspace.service.ts:221)  (src/enterprise/controllers/workspace.controller.ts)",
+  "GET /  (src/routes/openai-assistants/index.ts)"
+ ],
+ "routes_investigated": 288
+}

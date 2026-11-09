@@ -1,0 +1,113 @@
+{
+ "target": "t19",
+ "method": "v2",
+ "idor_found": true,
+ "confirmed": [
+  {
+   "route": "PATCH /v1/hardware/{asset}  (app/Http/Controllers/Api/AssetsController.php)",
+   "judge": "vulnerable",
+   "refuter": "upheld",
+   "files": [
+    "app/Http/Controllers/Api/AssetsController.php",
+    "app/Models/Asset.php",
+    "app/Providers/ValidationServiceProvider.php"
+   ]
+  },
+  {
+   "route": "POST /v1/imports/process/{import}  (routes/api.php)",
+   "judge": "vulnerable",
+   "refuter": "upheld",
+   "files": [
+    "app/Http/Controllers/Api/ImportController.php",
+    "app/Http/Requests/ItemImportRequest.php",
+    "routes/api.php"
+   ]
+  },
+  {
+   "route": "PUT,PATCH /v1/maintenances/{maintenance}  (app/Http/Controllers/Api/MaintenancesController.php)",
+   "judge": "vulnerable",
+   "refuter": "upheld",
+   "files": [
+    "app/Http/Controllers/Api/MaintenancesController.php",
+    "app/Models/Maintenance.php",
+    "app/Observers/MaintenanceObserver.php"
+   ]
+  },
+  {
+   "route": "DELETE /reports/unaccepted_assets/{acceptanceId}/delete  (routes/web.php)",
+   "judge": "vulnerable",
+   "refuter": "upheld",
+   "files": [
+    "app/Http/Controllers/ReportsController.php",
+    "app/Models/CheckoutAcceptance.php",
+    "routes/web.php"
+   ]
+  },
+  {
+   "route": "POST /users/bulksave  (app/Http/Controllers/Users/BulkUsersController.php)",
+   "judge": "vulnerable",
+   "refuter": "upheld",
+   "files": [
+    "app/Http/Controllers/Users/BulkUsersController.php",
+    "app/Models/ConsumableAssignment.php"
+   ]
+  }
+ ],
+ "judge_vulnerable": [
+  "PATCH /v1/hardware/{asset}  (app/Http/Controllers/Api/AssetsController.php)",
+  "POST /v1/imports/process/{import}  (routes/api.php)",
+  "PUT,PATCH /v1/maintenances/{maintenance}  (app/Http/Controllers/Api/MaintenancesController.php)",
+  "DELETE /reports/unaccepted_assets/{acceptanceId}/delete  (routes/web.php)",
+  "POST /users/bulksave  (app/Http/Controllers/Users/BulkUsersController.php)",
+  "POST /users/merge  (app/Http/Controllers/Users/BulkUsersController.php)",
+  "POST /v1/users/two_factor_reset  (routes/api.php)",
+  "POST <path not extracted>  (app/Providers/LivewireServiceProvider.php)"
+ ],
+ "refuted": [
+  "POST /users/merge  (app/Http/Controllers/Users/BulkUsersController.php)",
+  "POST /v1/users/two_factor_reset  (routes/api.php)",
+  "POST <path not extracted>  (app/Providers/LivewireServiceProvider.php)"
+ ],
+ "investigator_vulnerable": [
+  "POST /v1/accessories  (app/Http/Controllers/Api/AccessoriesController.php)",
+  "PUT,PATCH /v1/accessories/{accessory}  (app/Http/Controllers/Api/AccessoriesController.php)",
+  "POST /accessories  (app/Http/Controllers/Accessories/AccessoriesController.php)",
+  "PUT,PATCH /accessories/{accessory}  (app/Http/Controllers/Accessories/AccessoriesController.php)",
+  "POST /account/request/{itemType}/{itemId}/{cancel_by_admin?}/{requestingUser?}  (routes/web.php)",
+  "POST /{asset}/audit  (routes/web/hardware.php)",
+  "POST /bulksave  (app/Http/Controllers/Assets/BulkAssetsController.php)",
+  "POST /{assetId}/checkin/{backto?}  (routes/web/hardware.php)",
+  "GET /{asset}/clone  (routes/web/hardware.php)",
+  "GET /display-sig/{filename}  (app/Http/Controllers/ActionlogController.php)",
+  "PATCH /v1/hardware/{asset}  (app/Http/Controllers/Api/AssetsController.php)",
+  "PUT /v1/hardware/{asset}  (routes/api.php)",
+  "POST /v1/hardware  (app/Http/Controllers/Api/AssetsController.php)",
+  "POST /history  (routes/web/hardware.php)",
+  "POST /v1/imports/process/{import}  (routes/api.php)",
+  "POST /v1/kits/{kit_id}/accessories  (app/Http/Controllers/Api/PredefinedKitsController.php)",
+  "PUT /v1/kits/{kit_id}/accessories/{accessory_id}  (app/Http/Controllers/Api/PredefinedKitsController.php)",
+  "PUT /kits/{kit}/accessories/{accessory_id}  (app/Http/Controllers/Kits/PredefinedKitsController.php)",
+  "POST /v1/kits/{kit_id}/consumables  (app/Http/Controllers/Api/PredefinedKitsController.php)",
+  "PUT /v1/kits/{kit_id}/consumables/{consumable_id}  (app/Http/Controllers/Api/PredefinedKitsController.php)",
+  "PUT /kits/{kit}/consumables/{consumable_id}  (app/Http/Controllers/Kits/PredefinedKitsController.php)",
+  "POST /v1/kits/{kit_id}/licenses  (app/Http/Controllers/Api/PredefinedKitsController.php)",
+  "PUT /v1/kits/{kit_id}/licenses/{license_id}  (app/Http/Controllers/Api/PredefinedKitsController.php)",
+  "DELETE /v1/kits/{kit_id}/licenses/{license_id}  (app/Http/Controllers/Api/PredefinedKitsController.php)",
+  "PUT /kits/{kit}/licenses/{license_id}  (app/Http/Controllers/Kits/PredefinedKitsController.php)",
+  "DELETE /kits/{kit}/licenses/{license_id}  (app/Http/Controllers/Kits/PredefinedKitsController.php)",
+  "POST /v1/licenses/{license_id}/checkout  (app/Http/Controllers/Api/LicensesController.php)",
+  "GET /v1/licenses/{licens}/seats/{seat}  (app/Http/Controllers/Api/LicenseSeatsController.php)",
+  "POST /v1/locations  (app/Http/Controllers/Api/LocationsController.php)",
+  "PUT,PATCH /v1/locations/{location}  (app/Http/Controllers/Api/LocationsController.php)",
+  "POST /locations  (app/Http/Controllers/LocationsController.php)",
+  "PUT,PATCH /locations/{location}  (app/Http/Controllers/LocationsController.php)",
+  "PUT,PATCH /v1/maintenances/{maintenance}  (app/Http/Controllers/Api/MaintenancesController.php)",
+  "DELETE /v1/models/{model}  (app/Http/Controllers/Api/AssetModelsController.php)",
+  "GET /{asset}/qr_code  (routes/web/hardware.php)",
+  "DELETE /reports/unaccepted_assets/{acceptanceId}/delete  (routes/web.php)",
+  "POST /users/bulksave  (app/Http/Controllers/Users/BulkUsersController.php)",
+  "POST /users/merge  (app/Http/Controllers/Users/BulkUsersController.php)",
+  "POST /v1/users/two_factor_reset  (routes/api.php)"
+ ],
+ "routes_investigated": 676
+}

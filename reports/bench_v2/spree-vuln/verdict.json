@@ -1,0 +1,498 @@
+{
+ "target": "t30",
+ "method": "v2",
+ "idor_found": true,
+ "confirmed": [
+  {
+   "route": "GET /admin/users/:user_id/store_credits  (admin/app/controllers/spree/admin/store_credits_controller.rb)",
+   "judge": "vulnerable",
+   "refuter": "upheld",
+   "files": [
+    "admin/app/controllers/spree/admin/resource_controller.rb",
+    "admin/app/controllers/spree/admin/store_credits_controller.rb"
+   ]
+  },
+  {
+   "route": "GET /admin/users/:user_id/store_credits/:id  (admin/app/controllers/spree/admin/store_credits_controller.rb)",
+   "judge": "vulnerable",
+   "refuter": "upheld",
+   "files": [
+    "admin/app/controllers/spree/admin/resource_controller.rb",
+    "admin/app/controllers/spree/admin/store_credits_controller.rb"
+   ]
+  },
+  {
+   "route": "GET /admin/users/:user_id/store_credits/:id/edit  (admin/app/controllers/spree/admin/resource_controller.rb)",
+   "judge": "vulnerable",
+   "refuter": "upheld",
+   "files": [
+    "admin/app/controllers/spree/admin/resource_controller.rb",
+    "admin/app/controllers/spree/admin/store_credits_controller.rb"
+   ]
+  },
+  {
+   "route": "PATCH,PUT /admin/users/:user_id/store_credits/:id  (admin/app/controllers/spree/admin/store_credits_controller.rb)",
+   "judge": "vulnerable",
+   "refuter": "upheld",
+   "files": [
+    "admin/app/controllers/spree/admin/resource_controller.rb",
+    "admin/app/controllers/spree/admin/store_credits_controller.rb",
+    "core/lib/spree/permitted_attributes.rb"
+   ]
+  },
+  {
+   "route": "DELETE /admin/users/:user_id/store_credits/:id  (admin/app/controllers/spree/admin/store_credits_controller.rb)",
+   "judge": "vulnerable",
+   "refuter": "upheld",
+   "files": [
+    "admin/app/controllers/spree/admin/resource_controller.rb",
+    "admin/app/controllers/spree/admin/store_credits_controller.rb"
+   ]
+  },
+  {
+   "route": "POST /admin/assets  (admin/app/controllers/spree/admin/assets_controller.rb)",
+   "judge": "vulnerable",
+   "refuter": "upheld",
+   "files": [
+    "admin/app/controllers/spree/admin/assets_controller.rb",
+    "admin/app/controllers/spree/admin/base_controller.rb",
+    "core/lib/spree/permitted_attributes.rb"
+   ]
+  },
+  {
+   "route": "GET /admin/assets/:id/edit  (admin/app/controllers/spree/admin/resource_controller.rb)",
+   "judge": "vulnerable",
+   "refuter": "upheld",
+   "files": [
+    "admin/app/controllers/spree/admin/resource_controller.rb"
+   ]
+  },
+  {
+   "route": "PATCH,PUT /admin/assets/:id  (admin/app/controllers/spree/admin/assets_controller.rb)",
+   "judge": "vulnerable",
+   "refuter": "upheld",
+   "files": [
+    "admin/app/controllers/spree/admin/assets_controller.rb",
+    "admin/app/controllers/spree/admin/base_controller.rb",
+    "admin/app/controllers/spree/admin/resource_controller.rb",
+    "core/lib/spree/permitted_attributes.rb"
+   ]
+  },
+  {
+   "route": "DELETE /admin/assets/:id  (admin/app/controllers/spree/admin/resource_controller.rb)",
+   "judge": "vulnerable",
+   "refuter": "upheld",
+   "files": [
+    "admin/app/controllers/spree/admin/resource_controller.rb"
+   ]
+  },
+  {
+   "route": "DELETE /admin/assets/bulk_destroy  (admin/app/controllers/spree/admin/assets_controller.rb)",
+   "judge": "vulnerable",
+   "refuter": "upheld",
+   "files": [
+    "admin/app/controllers/spree/admin/assets_controller.rb",
+    "admin/config/routes.rb"
+   ]
+  },
+  {
+   "route": "GET /admin/metafields/:resource_type/:id/edit  (admin/app/controllers/spree/admin/metafields_controller.rb)",
+   "judge": "vulnerable",
+   "refuter": "upheld",
+   "files": [
+    "admin/app/controllers/spree/admin/metafields_controller.rb",
+    "admin/app/controllers/spree/admin/resource_controller.rb"
+   ]
+  },
+  {
+   "route": "PATCH,PUT /admin/metafields/:resource_type/:id  (admin/app/controllers/spree/admin/metafields_controller.rb)",
+   "judge": "vulnerable",
+   "refuter": "upheld",
+   "files": [
+    "admin/app/controllers/spree/admin/metafields_controller.rb",
+    "core/app/models/concerns/spree/metafields.rb"
+   ]
+  },
+  {
+   "route": "POST /admin/orders/:order_id/customer_returns  (admin/app/controllers/spree/admin/orders/customer_returns_controller.rb)",
+   "judge": "vulnerable",
+   "refuter": "upheld",
+   "files": [
+    "admin/app/controllers/spree/admin/orders/customer_returns_controller.rb",
+    "core/lib/spree/permitted_attributes.rb"
+   ]
+  },
+  {
+   "route": "PATCH,PUT /admin/orders/:order_id/customer_returns/:id  (admin/app/controllers/spree/admin/orders/customer_returns_controller.rb)",
+   "judge": "vulnerable",
+   "refuter": "upheld",
+   "files": []
+  },
+  {
+   "route": "POST /admin/orders/:order_id/return_authorizations  (admin/app/controllers/spree/admin/orders/return_authorizations_controller.rb)",
+   "judge": "vulnerable",
+   "refuter": "upheld",
+   "files": [
+    "admin/app/controllers/spree/admin/orders/return_authorizations_controller.rb",
+    "core/app/models/spree/return_authorization.rb",
+    "core/app/models/spree/return_item.rb",
+    "core/lib/spree/permitted_attributes.rb"
+   ]
+  },
+  {
+   "route": "PATCH,PUT /admin/orders/:order_id/return_authorizations/:id  (admin/app/controllers/spree/admin/orders/return_authorizations_controller.rb)",
+   "judge": "vulnerable",
+   "refuter": "upheld",
+   "files": [
+    "admin/app/controllers/spree/admin/orders/return_authorizations_controller.rb",
+    "admin/app/controllers/spree/admin/resource_controller.rb",
+    "core/app/models/spree/return_authorization.rb",
+    "core/app/models/spree/return_item.rb"
+   ]
+  },
+  {
+   "route": "GET /admin/policies/:id/edit  (admin/app/controllers/spree/admin/resource_controller.rb)",
+   "judge": "vulnerable",
+   "refuter": "upheld",
+   "files": []
+  },
+  {
+   "route": "PATCH,PUT /admin/policies/:id  (admin/app/controllers/spree/admin/policies_controller.rb)",
+   "judge": "vulnerable",
+   "refuter": "upheld",
+   "files": []
+  },
+  {
+   "route": "DELETE /admin/policies/:id  (admin/app/controllers/spree/admin/resource_controller.rb)",
+   "judge": "vulnerable",
+   "refuter": "upheld",
+   "files": []
+  },
+  {
+   "route": "PATCH,PUT /admin/price_lists/:id  (admin/app/controllers/spree/admin/resource_controller.rb)",
+   "judge": "vulnerable",
+   "refuter": "upheld",
+   "files": [
+    "admin/app/controllers/spree/admin/price_lists_controller.rb",
+    "admin/app/controllers/spree/admin/resource_controller.rb",
+    "core/app/models/spree/price_list.rb"
+   ]
+  },
+  {
+   "route": "PUT /admin/products/bulk_status_update  (admin/app/controllers/spree/admin/products_controller.rb)",
+   "judge": "vulnerable",
+   "refuter": "upheld",
+   "files": [
+    "admin/app/controllers/concerns/spree/admin/bulk_operations_concern.rb",
+    "admin/app/controllers/spree/admin/products_controller.rb",
+    "admin/app/controllers/spree/admin/resource_controller.rb"
+   ]
+  },
+  {
+   "route": "PUT /admin/products/bulk_add_to_taxons  (admin/app/controllers/spree/admin/products_controller.rb)",
+   "judge": "vulnerable",
+   "refuter": "upheld",
+   "files": [
+    "admin/app/controllers/concerns/spree/admin/bulk_operations_concern.rb",
+    "admin/app/controllers/spree/admin/products_controller.rb"
+   ]
+  },
+  {
+   "route": "PUT /admin/products/bulk_remove_from_taxons  (admin/app/controllers/spree/admin/products_controller.rb)",
+   "judge": "vulnerable",
+   "refuter": "upheld",
+   "files": [
+    "admin/app/controllers/concerns/spree/admin/bulk_operations_concern.rb",
+    "admin/app/controllers/spree/admin/products_controller.rb"
+   ]
+  },
+  {
+   "route": "PUT /admin/products/bulk_add_tags  (admin/app/controllers/concerns/spree/admin/bulk_operations_concern.rb)",
+   "judge": "vulnerable",
+   "refuter": "upheld",
+   "files": [
+    "admin/app/controllers/concerns/spree/admin/bulk_operations_concern.rb",
+    "admin/app/controllers/spree/admin/products_controller.rb"
+   ]
+  },
+  {
+   "route": "PUT /admin/products/bulk_remove_tags  (admin/app/controllers/concerns/spree/admin/bulk_operations_concern.rb)",
+   "judge": "vulnerable",
+   "refuter": "upheld",
+   "files": [
+    "admin/app/controllers/concerns/spree/admin/bulk_operations_concern.rb"
+   ]
+  },
+  {
+   "route": "POST /admin/products/:product_id/digital_assets  (admin/app/controllers/spree/admin/digital_assets_controller.rb)",
+   "judge": "vulnerable",
+   "refuter": "upheld",
+   "files": [
+    "admin/app/controllers/spree/admin/digital_assets_controller.rb",
+    "core/app/models/spree/digital.rb",
+    "core/lib/spree/permitted_attributes.rb"
+   ]
+  },
+  {
+   "route": "PATCH,PUT /admin/products/:product_id/digital_assets/:id  (admin/app/controllers/spree/admin/resource_controller.rb)",
+   "judge": "vulnerable",
+   "refuter": "upheld",
+   "files": [
+    "admin/app/controllers/spree/admin/digital_assets_controller.rb",
+    "admin/app/controllers/spree/admin/resource_controller.rb",
+    "core/lib/spree/permitted_attributes.rb"
+   ]
+  },
+  {
+   "route": "POST /admin/promotions  (admin/app/controllers/spree/admin/resource_controller.rb)",
+   "judge": "vulnerable",
+   "refuter": "upheld",
+   "files": [
+    "admin/app/controllers/spree/admin/promotions_controller.rb",
+    "admin/app/controllers/spree/admin/resource_controller.rb",
+    "core/lib/spree/permitted_attributes.rb"
+   ]
+  },
+  {
+   "route": "PATCH,PUT /admin/promotions/:id  (admin/app/controllers/spree/admin/resource_controller.rb)",
+   "judge": "vulnerable",
+   "refuter": "upheld",
+   "files": [
+    "admin/app/controllers/spree/admin/promotions_controller.rb",
+    "admin/app/controllers/spree/admin/resource_controller.rb",
+    "core/lib/spree/permitted_attributes.rb"
+   ]
+  },
+  {
+   "route": "POST /admin/promotions/:promotion_id/promotion_actions  (admin/app/controllers/spree/admin/promotion_actions_controller.rb)",
+   "judge": "vulnerable",
+   "refuter": "upheld",
+   "files": [
+    "admin/app/controllers/spree/admin/promotion_actions_controller.rb",
+    "admin/app/controllers/spree/admin/resource_controller.rb",
+    "core/app/models/spree/promotion/actions/create_line_items.rb",
+    "core/app/models/spree/promotion_action_line_item.rb"
+   ]
+  },
+  {
+   "route": "PATCH,PUT /admin/promotions/:promotion_id/promotion_actions/:id  (admin/app/controllers/spree/admin/promotion_actions_controller.rb)",
+   "judge": "vulnerable",
+   "refuter": "upheld",
+   "files": [
+    "admin/app/controllers/spree/admin/promotion_actions_controller.rb",
+    "core/app/models/spree/promotion/actions/create_line_items.rb"
+   ]
+  },
+  {
+   "route": "POST /admin/promotions/:promotion_id/actions  (admin/config/routes.rb)",
+   "judge": "vulnerable",
+   "refuter": "upheld",
+   "files": [
+    "admin/app/controllers/spree/admin/promotion_actions_controller.rb",
+    "admin/config/routes.rb",
+    "core/app/models/spree/promotion/actions/create_line_items.rb"
+   ]
+  },
+  {
+   "route": "PATCH,PUT /admin/promotions/:promotion_id/actions/:id  (admin/config/routes.rb)",
+   "judge": "vulnerable",
+   "refuter": "upheld",
+   "files": [
+    "admin/config/routes.rb",
+    "core/app/models/spree/promotion/actions/create_line_items.rb"
+   ]
+  },
+  {
+   "route": "POST /admin/promotions/:promotion_id/promotion_rules  (admin/app/controllers/spree/admin/promotion_rules_controller.rb)",
+   "judge": "vulnerable",
+   "refuter": "upheld",
+   "files": [
+    "admin/app/controllers/spree/admin/promotion_rules_controller.rb",
+    "admin/app/views/spree/admin/promotion_rules/_promotion_rule.html.erb",
+    "core/app/models/spree/promotion/rules/product.rb",
+    "core/app/models/spree/promotion/rules/taxon.rb",
+    "core/app/models/spree/promotion/rules/user.rb",
+    "core/lib/spree/permitted_attributes.rb"
+   ]
+  },
+  {
+   "route": "PATCH,PUT /admin/promotions/:promotion_id/promotion_rules/:id  (admin/app/controllers/spree/admin/promotion_rules_controller.rb)",
+   "judge": "vulnerable",
+   "refuter": "upheld",
+   "files": []
+  },
+  {
+   "route": "POST /admin/promotions/:promotion_id/rules  (admin/config/routes.rb)",
+   "judge": "vulnerable",
+   "refuter": "upheld",
+   "files": []
+  },
+  {
+   "route": "PATCH,PUT /admin/promotions/:promotion_id/rules/:id  (admin/config/routes.rb)",
+   "judge": "vulnerable",
+   "refuter": "upheld",
+   "files": []
+  },
+  {
+   "route": "PATCH,PUT /admin/return_items/:id  (admin/app/controllers/spree/admin/return_items_controller.rb)",
+   "judge": "vulnerable",
+   "refuter": "upheld",
+   "files": [
+    "admin/app/controllers/spree/admin/resource_controller.rb",
+    "admin/app/controllers/spree/admin/return_items_controller.rb",
+    "core/app/models/spree/base.rb",
+    "core/lib/spree/permitted_attributes.rb"
+   ]
+  },
+  {
+   "route": "POST /admin/stock_transfers  (admin/app/controllers/spree/admin/stock_transfers_controller.rb)",
+   "judge": "vulnerable",
+   "refuter": "upheld",
+   "files": [
+    "admin/app/controllers/spree/admin/stock_transfers_controller.rb",
+    "core/app/models/spree/stock_transfer.rb"
+   ]
+  },
+  {
+   "route": "POST /admin/taxonomies/:taxonomy_id/taxons  (admin/app/controllers/spree/admin/resource_controller.rb)",
+   "judge": "vulnerable",
+   "refuter": "upheld",
+   "files": [
+    "admin/app/controllers/spree/admin/resource_controller.rb",
+    "admin/app/controllers/spree/admin/taxons_controller.rb",
+    "core/lib/spree/core/controller_helpers/store.rb",
+    "core/lib/spree/core/controller_helpers/strong_parameters.rb",
+    "core/lib/spree/permitted_attributes.rb"
+   ]
+  },
+  {
+   "route": "PATCH,PUT /admin/taxonomies/:taxonomy_id/taxons/:id  (admin/app/controllers/spree/admin/taxons_controller.rb)",
+   "judge": "vulnerable",
+   "refuter": "upheld",
+   "files": [
+    "admin/app/controllers/spree/admin/resource_controller.rb",
+    "admin/app/controllers/spree/admin/taxons_controller.rb",
+    "core/lib/spree/permitted_attributes.rb"
+   ]
+  }
+ ],
+ "judge_vulnerable": [
+  "POST /admin/addresses  (admin/app/controllers/spree/admin/addresses_controller.rb)",
+  "GET /admin/users/:user_id/store_credits  (admin/app/controllers/spree/admin/store_credits_controller.rb)",
+  "GET /admin/users/:user_id/store_credits/:id  (admin/app/controllers/spree/admin/store_credits_controller.rb)",
+  "GET /admin/users/:user_id/store_credits/:id/edit  (admin/app/controllers/spree/admin/resource_controller.rb)",
+  "PATCH,PUT /admin/users/:user_id/store_credits/:id  (admin/app/controllers/spree/admin/store_credits_controller.rb)",
+  "DELETE /admin/users/:user_id/store_credits/:id  (admin/app/controllers/spree/admin/store_credits_controller.rb)",
+  "POST /admin/assets  (admin/app/controllers/spree/admin/assets_controller.rb)",
+  "GET /admin/assets/:id/edit  (admin/app/controllers/spree/admin/resource_controller.rb)",
+  "PATCH,PUT /admin/assets/:id  (admin/app/controllers/spree/admin/assets_controller.rb)",
+  "DELETE /admin/assets/:id  (admin/app/controllers/spree/admin/resource_controller.rb)",
+  "DELETE /admin/assets/bulk_destroy  (admin/app/controllers/spree/admin/assets_controller.rb)",
+  "GET /admin/metafields/:resource_type/:id/edit  (admin/app/controllers/spree/admin/metafields_controller.rb)",
+  "PATCH,PUT /admin/metafields/:resource_type/:id  (admin/app/controllers/spree/admin/metafields_controller.rb)",
+  "POST /admin/orders/:order_id/user  (admin/app/controllers/spree/admin/orders/user_controller.rb)",
+  "POST /admin/orders/:order_id/customer_returns  (admin/app/controllers/spree/admin/orders/customer_returns_controller.rb)",
+  "PATCH,PUT /admin/orders/:order_id/customer_returns/:id  (admin/app/controllers/spree/admin/orders/customer_returns_controller.rb)",
+  "POST /admin/orders/:order_id/return_authorizations  (admin/app/controllers/spree/admin/orders/return_authorizations_controller.rb)",
+  "PATCH,PUT /admin/orders/:order_id/return_authorizations/:id  (admin/app/controllers/spree/admin/orders/return_authorizations_controller.rb)",
+  "GET /admin/policies/:id/edit  (admin/app/controllers/spree/admin/resource_controller.rb)",
+  "PATCH,PUT /admin/policies/:id  (admin/app/controllers/spree/admin/policies_controller.rb)",
+  "DELETE /admin/policies/:id  (admin/app/controllers/spree/admin/resource_controller.rb)",
+  "PATCH,PUT /admin/price_lists/:id  (admin/app/controllers/spree/admin/resource_controller.rb)",
+  "PUT /admin/products/bulk_status_update  (admin/app/controllers/spree/admin/products_controller.rb)",
+  "PUT /admin/products/bulk_add_to_taxons  (admin/app/controllers/spree/admin/products_controller.rb)",
+  "PUT /admin/products/bulk_remove_from_taxons  (admin/app/controllers/spree/admin/products_controller.rb)",
+  "PUT /admin/products/bulk_add_tags  (admin/app/controllers/concerns/spree/admin/bulk_operations_concern.rb)",
+  "PUT /admin/products/bulk_remove_tags  (admin/app/controllers/concerns/spree/admin/bulk_operations_concern.rb)",
+  "POST /admin/products/:product_id/digital_assets  (admin/app/controllers/spree/admin/digital_assets_controller.rb)",
+  "PATCH,PUT /admin/products/:product_id/digital_assets/:id  (admin/app/controllers/spree/admin/resource_controller.rb)",
+  "POST /admin/promotions  (admin/app/controllers/spree/admin/resource_controller.rb)",
+  "PATCH,PUT /admin/promotions/:id  (admin/app/controllers/spree/admin/resource_controller.rb)",
+  "POST /admin/promotions/:promotion_id/promotion_actions  (admin/app/controllers/spree/admin/promotion_actions_controller.rb)",
+  "PATCH,PUT /admin/promotions/:promotion_id/promotion_actions/:id  (admin/app/controllers/spree/admin/promotion_actions_controller.rb)",
+  "POST /admin/promotions/:promotion_id/actions  (admin/config/routes.rb)",
+  "PATCH,PUT /admin/promotions/:promotion_id/actions/:id  (admin/config/routes.rb)",
+  "POST /admin/promotions/:promotion_id/promotion_rules  (admin/app/controllers/spree/admin/promotion_rules_controller.rb)",
+  "PATCH,PUT /admin/promotions/:promotion_id/promotion_rules/:id  (admin/app/controllers/spree/admin/promotion_rules_controller.rb)",
+  "POST /admin/promotions/:promotion_id/rules  (admin/config/routes.rb)",
+  "PATCH,PUT /admin/promotions/:promotion_id/rules/:id  (admin/config/routes.rb)",
+  "PATCH,PUT /admin/return_items/:id  (admin/app/controllers/spree/admin/return_items_controller.rb)",
+  "PATCH,PUT /admin/stock_items/:id  (admin/app/controllers/spree/admin/stock_items_controller.rb)",
+  "POST /admin/stock_transfers  (admin/app/controllers/spree/admin/stock_transfers_controller.rb)",
+  "POST /admin/taxonomies/:taxonomy_id/taxons  (admin/app/controllers/spree/admin/resource_controller.rb)",
+  "PATCH,PUT /admin/taxonomies/:taxonomy_id/taxons/:id  (admin/app/controllers/spree/admin/taxons_controller.rb)"
+ ],
+ "refuted": [
+  "POST /admin/addresses  (admin/app/controllers/spree/admin/addresses_controller.rb)",
+  "POST /admin/orders/:order_id/user  (admin/app/controllers/spree/admin/orders/user_controller.rb)"
+ ],
+ "investigator_vulnerable": [
+  "POST /admin/addresses  (admin/app/controllers/spree/admin/addresses_controller.rb)",
+  "PATCH,PUT /admin/admin_users/:id  (admin/app/controllers/spree/admin/admin_users_controller.rb)",
+  "POST /admin/assets  (admin/app/controllers/spree/admin/assets_controller.rb)",
+  "GET /admin/assets/:id/edit  (admin/app/controllers/spree/admin/resource_controller.rb)",
+  "PATCH,PUT /admin/assets/:id  (admin/app/controllers/spree/admin/assets_controller.rb)",
+  "DELETE /admin/assets/:id  (admin/app/controllers/spree/admin/resource_controller.rb)",
+  "DELETE /admin/assets/bulk_destroy  (admin/app/controllers/spree/admin/assets_controller.rb)",
+  "GET /admin/imports/:id  (admin/app/controllers/spree/admin/imports_controller.rb)",
+  "GET /admin/imports/:import_id/mappings/:id/edit  (admin/app/controllers/spree/admin/import_mappings_controller.rb)",
+  "PATCH,PUT /admin/imports/:import_id/mappings/:id  (admin/app/controllers/spree/admin/resource_controller.rb)",
+  "GET /admin/imports/:import_id/rows/:id  (admin/app/controllers/spree/admin/import_rows_controller.rb)",
+  "PUT /admin/imports/:id/complete_mapping  (admin/app/controllers/spree/admin/imports_controller.rb)",
+  "GET /admin/json_preview/:resource_type/:id  (admin/app/controllers/spree/admin/json_previews_controller.rb)",
+  "GET /admin/metafields/:resource_type/:id/edit  (admin/app/controllers/spree/admin/metafields_controller.rb)",
+  "PATCH,PUT /admin/metafields/:resource_type/:id  (admin/app/controllers/spree/admin/metafields_controller.rb)",
+  "PATCH,PUT /admin/orders/:order_id/line_items/:id  (admin/app/controllers/spree/admin/line_items_controller.rb)",
+  "POST /admin/orders/:order_id/customer_returns  (admin/app/controllers/spree/admin/orders/customer_returns_controller.rb)",
+  "POST /admin/orders/:order_id/return_authorizations  (admin/app/controllers/spree/admin/orders/return_authorizations_controller.rb)",
+  "PATCH,PUT /admin/orders/:order_id/return_authorizations/:id  (admin/app/controllers/spree/admin/orders/return_authorizations_controller.rb)",
+  "PATCH,PUT /admin/orders/:order_id/payments/:id  (admin/app/controllers/spree/admin/resource_controller.rb)",
+  "PATCH,PUT /admin/price_lists/:id  (admin/app/controllers/spree/admin/resource_controller.rb)",
+  "POST /admin/price_lists/:price_list_id/products/bulk_create  (admin/app/controllers/spree/admin/price_list_products_controller.rb)",
+  "DELETE /admin/price_lists/:price_list_id/products/bulk_destroy  (admin/app/controllers/spree/admin/price_list_products_controller.rb)",
+  "POST /admin/products  (admin/app/controllers/spree/admin/products_controller.rb)",
+  "PATCH,PUT /admin/products/:id  (admin/app/controllers/spree/admin/products_controller.rb)",
+  "PUT /admin/products/bulk_status_update  (admin/app/controllers/spree/admin/products_controller.rb)",
+  "PUT /admin/products/bulk_add_to_taxons  (admin/app/controllers/spree/admin/products_controller.rb)",
+  "PUT /admin/products/bulk_remove_from_taxons  (admin/app/controllers/spree/admin/products_controller.rb)",
+  "PUT /admin/products/bulk_add_tags  (admin/app/controllers/concerns/spree/admin/bulk_operations_concern.rb)",
+  "PUT /admin/products/bulk_remove_tags  (admin/app/controllers/concerns/spree/admin/bulk_operations_concern.rb)",
+  "PATCH,PUT /admin/products/:product_id/variants/:id  (admin/app/controllers/spree/admin/variants_controller.rb)",
+  "POST /admin/products/:product_id/digital_assets  (admin/app/controllers/spree/admin/digital_assets_controller.rb)",
+  "PATCH,PUT /admin/products/:product_id/digital_assets/:id  (admin/app/controllers/spree/admin/resource_controller.rb)",
+  "POST /admin/promotions  (admin/app/controllers/spree/admin/resource_controller.rb)",
+  "PATCH,PUT /admin/promotions/:id  (admin/app/controllers/spree/admin/resource_controller.rb)",
+  "POST /admin/promotions/:promotion_id/promotion_actions  (admin/app/controllers/spree/admin/promotion_actions_controller.rb)",
+  "PATCH,PUT /admin/promotions/:promotion_id/promotion_actions/:id  (admin/app/controllers/spree/admin/promotion_actions_controller.rb)",
+  "POST /admin/promotions/:promotion_id/actions  (admin/config/routes.rb)",
+  "PATCH,PUT /admin/promotions/:promotion_id/actions/:id  (admin/config/routes.rb)",
+  "POST /admin/promotions/:promotion_id/promotion_rules  (admin/app/controllers/spree/admin/promotion_rules_controller.rb)",
+  "PATCH,PUT /admin/return_items/:id  (admin/app/controllers/spree/admin/return_items_controller.rb)",
+  "POST /admin/stock_transfers  (admin/app/controllers/spree/admin/stock_transfers_controller.rb)",
+  "GET /admin/store/edit  (admin/app/controllers/spree/admin/stores_controller.rb)",
+  "PATCH,PUT /admin/store  (admin/app/controllers/spree/admin/stores_controller.rb)",
+  "GET /admin/store/:id/edit_emails  (admin/app/controllers/spree/admin/stores_controller.rb)",
+  "DELETE /admin/store/role_users/:id  (admin/app/controllers/spree/admin/role_users_controller.rb)",
+  "POST /admin/taxonomies/:taxonomy_id/taxons  (admin/app/controllers/spree/admin/resource_controller.rb)",
+  "GET /admin/taxonomies/:taxonomy_id/taxons/new  (admin/app/controllers/spree/admin/taxons_controller.rb)",
+  "PATCH,PUT /admin/taxonomies/:taxonomy_id/taxons/:id  (admin/app/controllers/spree/admin/taxons_controller.rb)",
+  "POST /admin/taxons  (admin/app/controllers/spree/admin/taxons_controller.rb)",
+  "GET /admin/taxons/new  (admin/app/controllers/spree/admin/taxons_controller.rb)",
+  "PATCH,PUT /admin/taxons/:id  (admin/app/controllers/spree/admin/taxons_controller.rb)",
+  "PATCH,PUT /admin/taxons/:taxon_id/classifications/:id  (admin/app/controllers/spree/admin/classifications_controller.rb)",
+  "GET /admin/translations/:resource_type/:id/edit  (admin/app/controllers/spree/admin/translations_controller.rb)",
+  "PATCH,PUT /admin/translations/:resource_type/:id  (admin/app/controllers/spree/admin/translations_controller.rb)",
+  "GET /admin/users/:user_id/store_credits  (admin/app/controllers/spree/admin/store_credits_controller.rb)",
+  "GET /admin/users/:user_id/store_credits/:id  (admin/app/controllers/spree/admin/store_credits_controller.rb)",
+  "GET /admin/users/:user_id/store_credits/:id/edit  (admin/app/controllers/spree/admin/resource_controller.rb)",
+  "PATCH,PUT /admin/users/:user_id/store_credits/:id  (admin/app/controllers/spree/admin/store_credits_controller.rb)",
+  "DELETE /admin/users/:user_id/store_credits/:id  (admin/app/controllers/spree/admin/store_credits_controller.rb)",
+  "GET /admin/users/:user_id/gift_cards/:id  (admin/app/controllers/spree/admin/gift_cards_controller.rb)",
+  "GET /admin/users/:user_id/gift_cards/:id/edit  (admin/app/controllers/spree/admin/gift_cards_controller.rb)",
+  "PATCH /api/v3/store/carts/:id/associate  (api/app/controllers/spree/api/v3/store/carts_controller.rb)",
+  "POST /api/v3/store/wishlists/:wishlist_id/items  (api/app/controllers/spree/api/v3/resource_controller.rb)",
+  "PATCH,PUT /api/v3/store/wishlists/:wishlist_id/items/:id  (api/app/controllers/spree/api/v3/resource_controller.rb)",
+  "DELETE /api/v3/store/wishlists/:wishlist_id/items/:id  (api/app/controllers/spree/api/v3/resource_controller.rb)"
+ ],
+ "routes_investigated": 544
+}

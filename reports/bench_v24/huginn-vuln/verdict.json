@@ -1,0 +1,74 @@
+{
+ "target": "t44",
+ "method": "v2",
+ "idor_found": true,
+ "confirmed": [
+  {
+   "route": "ANY /agents/create  (controllers/agents_controller.rb)",
+   "judge": "vulnerable",
+   "refuter": "upheld",
+   "files": [
+    "concerns/google_oauth2_concern.rb",
+    "concerns/oauthable.rb",
+    "controllers/agents_controller.rb",
+    "controllers/application_controller.rb",
+    "models/agent.rb",
+    "models/agents/imap_folder_agent.rb"
+   ]
+  },
+  {
+   "route": "ANY /agents/dryruns/create  (controllers/agents/dry_runs_controller.rb)",
+   "judge": "vulnerable",
+   "refuter": "upheld",
+   "files": [
+    "concerns/dry_runnable.rb",
+    "concerns/google_oauth2_concern.rb",
+    "concerns/oauthable.rb",
+    "controllers/agents/dry_runs_controller.rb",
+    "controllers/application_controller.rb",
+    "models/agents/imap_folder_agent.rb"
+   ]
+  },
+  {
+   "route": "ANY /agents/update  (controllers/agents_controller.rb)",
+   "judge": "vulnerable",
+   "refuter": "upheld",
+   "files": [
+    "concerns/google_oauth2_concern.rb",
+    "concerns/twitter_concern.rb",
+    "controllers/agents_controller.rb",
+    "controllers/application_controller.rb",
+    "models/agent.rb"
+   ]
+  },
+  {
+   "route": "ANY /scenarioimports/create  (controllers/scenario_imports_controller.rb)",
+   "judge": "vulnerable",
+   "refuter": "upheld",
+   "files": [
+    "concerns/oauthable.rb",
+    "concerns/twitter_concern.rb",
+    "controllers/scenario_imports_controller.rb",
+    "importers/scenario_import.rb",
+    "views/scenario_imports/_step_two.html.erb"
+   ]
+  }
+ ],
+ "judge_vulnerable": [
+  "ANY /agents/create  (controllers/agents_controller.rb)",
+  "ANY /agents/dryruns/create  (controllers/agents/dry_runs_controller.rb)",
+  "ANY /agents/update  (controllers/agents_controller.rb)",
+  "ANY /agents/validate  (controllers/agents_controller.rb)",
+  "ANY /scenarioimports/create  (controllers/scenario_imports_controller.rb)"
+ ],
+ "refuted": [
+  "ANY /agents/validate  (controllers/agents_controller.rb)"
+ ],
+ "investigator_vulnerable": [
+  "ANY /agents/create  (controllers/agents_controller.rb)",
+  "ANY /agents/dryruns/create  (controllers/agents/dry_runs_controller.rb)",
+  "ANY /agents/update  (controllers/agents_controller.rb)",
+  "ANY /scenarioimports/create  (controllers/scenario_imports_controller.rb)"
+ ],
+ "routes_investigated": 74
+}

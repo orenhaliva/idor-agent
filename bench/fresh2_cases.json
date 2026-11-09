@@ -1,0 +1,132 @@
+[
+ {
+  "slug": "convoy",
+  "repo_url": "https://github.com/frain-dev/convoy",
+  "advisory_id": "GHSA-p5vg-v7mj-f6q4",
+  "cve": "CVE-2026-81505",
+  "language": "Go",
+  "framework": "chi",
+  "fix_commit": "1cc67cd16fb1f8890cc83a3998d3f92dceb7fd06",
+  "vuln_commit": "8c38a84fb8e649a5ca500349ef6bc4e8b3bf6be6",
+  "vulnerable_routes": [
+   "GET /api/v1/projects/{projectID}/sources/{sourceID}",
+   "GET /ui/organisations/{orgID}/projects/{projectID}/sources/{sourceID}"
+  ],
+  "vulnerable_files": [
+   "internal/sources/impl.go",
+   "internal/sources/repo/queries.sql",
+   "api/handlers/source.go"
+  ],
+  "summary": "Source fetched by ID only; project in URL authorizes the caller but the source's project_id is never compared, so a user of one project reads another project's source including plaintext broker credentials. Fix scopes FindSourceByID by project.",
+  "analysis_root": "."
+ },
+ {
+  "slug": "identrail",
+  "repo_url": "https://github.com/identrail/identrail",
+  "advisory_id": "GHSA-cp3j-m783-3ph5",
+  "cve": "CVE-2026-59185",
+  "language": "Go",
+  "framework": "gin",
+  "fix_commit": "835e40517509d6ef5405c27fbf14f579bedff0e7",
+  "vuln_commit": "e788c1986e52507f8d576ee51446a30a266e723d",
+  "vulnerable_routes": [
+   "POST /v1/workspaces/:workspace_id/projects/:project_id/github/connect/complete",
+   "POST /v1/connectors/github/complete"
+  ],
+  "vulnerable_files": [
+   "internal/api/github_connect.go",
+   "internal/api/router.go",
+   "internal/connectors/github/app.go",
+   "internal/connectors/github/repositories.go"
+  ],
+  "summary": "Client-supplied GitHub App installation_id (body or header) is bound to the caller's workspace without verifying the installation belongs to the caller; app JWT then mints a token for another customer's installation (cross-tenant read). Connector-complete path also does not re-bind the pending connector to the caller's tenant. Fix adds ownership verification and tenant re-binding.",
+  "analysis_root": "internal"
+ },
+ {
+  "slug": "openremote",
+  "repo_url": "https://github.com/openremote/openremote",
+  "advisory_id": "GHSA-h3m5-97jq-qjrf",
+  "cve": "CVE-2026-56120",
+  "language": "Java",
+  "framework": "JAX-RS (RESTEasy/Undertow)",
+  "fix_commit": "9fad55e5a448c82772d241d395826e5d6fe1ce2d",
+  "vuln_commit": "7d689c2cc0d2ba093e08d27e6022e2504c5b4073",
+  "vulnerable_routes": [
+   "DELETE /api/{realm}/alarm"
+  ],
+  "vulnerable_files": [
+   "manager/src/main/java/org/openremote/manager/alarm/AlarmResourceImpl.java",
+   "manager/src/main/java/org/openremote/manager/alarm/AlarmService.java"
+  ],
+  "summary": "Bulk alarm delete checks only that the caller's own realm is accessible, never that each targeted alarm id belongs to an accessible realm, so a user in one realm deletes other realms' alarms (singular removeAlarm does check). Fix checks the realm of every alarm.",
+  "analysis_root": ".",
+  "analysis_root_collector": "manager/src/main/java"
+ },
+ {
+  "slug": "mollie-plugin",
+  "repo_url": "https://github.com/Sylius/MolliePlugin",
+  "advisory_id": "GHSA-x83g-979r-f5fh",
+  "cve": "CVE-2026-68501",
+  "language": "PHP",
+  "framework": "Symfony / Sylius plugin",
+  "fix_commit": "01316b3ad3cf82e3c5ad160115d0a2cf89174e49",
+  "vuln_commit": "7400f1489a4b699df97ced9499acde4faaa476d5",
+  "vulnerable_routes": [
+   "GET /{_locale}/thank-you",
+   "GET /{_locale}/get-code"
+  ],
+  "vulnerable_files": [
+   "src/Controller/Shop/PageRedirectController.php",
+   "src/Controller/Shop/QrCodeAction.php",
+   "config/routes/shop/pageRedirect.yaml",
+   "config/routes/shop/qrCode.yaml"
+  ],
+  "summary": "Unauthenticated shop endpoints look up orders by sequential integer orderId with no ownership/session check; one leaks the order token via redirect, the other returns the order's QR code and id, enabling customer PII exposure. Fix switches to unguessable order token and checks it against the session cart. (Fix commit is a merge; vuln_commit is its first parent.)",
+  "analysis_root": ".",
+  "analysis_root_collector": "src"
+ },
+ {
+  "slug": "lemur",
+  "repo_url": "https://github.com/Netflix/lemur",
+  "advisory_id": "GHSA-cfh6-pv5c-38jv",
+  "cve": "CVE-2026-71308",
+  "language": "Python",
+  "framework": "Flask (Flask-RESTful)",
+  "fix_commit": "286874535160952143b0afe2d356642669f9d4c6",
+  "vuln_commit": "e9ade7dad5c9bc1369a831554ed6df3277c9cbae",
+  "vulnerable_routes": [
+   "POST /api/1/certificates",
+   "POST /api/1/certificates/upload",
+   "PUT /api/1/certificates/<int:certificate_id>"
+  ],
+  "vulnerable_files": [
+   "lemur/certificates/views.py",
+   "lemur/certificates/service.py",
+   "lemur/certificates/schemas.py",
+   "lemur/schemas.py"
+  ],
+  "summary": "replaces/replacements array resolves arbitrary certificates by id with no ownership or CertificatePermission check; marking a victim certificate as replaced silences its notifications and retargets rotation. Fix enforces CertificatePermission on each referenced certificate.",
+  "analysis_root": "lemur"
+ },
+ {
+  "slug": "huginn",
+  "repo_url": "https://github.com/huginn/huginn",
+  "advisory_id": "GHSA-73v6-mq4f-33gw",
+  "cve": "",
+  "language": "Ruby",
+  "framework": "Rails",
+  "fix_commit": "03e3fb03a793e443d4045aad7353b3eba250895c",
+  "vuln_commit": "0cd4ef7e34ab20dd87737802ec55c87867731d9b",
+  "vulnerable_routes": [
+   "POST /agents",
+   "PATCH /agents/:id",
+   "PUT /agents/:id"
+  ],
+  "vulnerable_files": [
+   "app/models/agent.rb",
+   "app/controllers/agents_controller.rb"
+  ],
+  "summary": "Agent create/update accepts service_id without checking the Service belongs to the Agent's user or is global, so a user binds another user's private OAuth Service to their Agent and acts with the victim's credentials. Fix adds a service-ownership validation on Agent.",
+  "analysis_root": "app"
+ }
+]

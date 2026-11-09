@@ -1,0 +1,25 @@
+{
+ "target": "t11",
+ "method": "v2",
+ "idor_found": true,
+ "confirmed": [
+  {
+   "route": "GET /auth/callback",
+   "judge": "vulnerable",
+   "refuter": "upheld",
+   "files": [
+    "routers/notion.py"
+   ]
+  }
+ ],
+ "judge_vulnerable": [
+  "GET /auth/callback"
+ ],
+ "refuted": [],
+ "investigator_vulnerable": [
+  "GET /auth/callback  (routers/notion.py)",
+  "POST /share/fork  (routers/api_chat.py)",
+  "POST /  (routers/api_phone.py)"
+ ],
+ "routes_investigated": 83
+}

@@ -1,0 +1,159 @@
+{
+ "target": "t13",
+ "method": "v2",
+ "idor_found": true,
+ "confirmed": [
+  {
+   "route": "ANY /booking/register",
+   "judge": "vulnerable",
+   "refuter": "upheld",
+   "files": [
+    "controllers/Booking.php",
+    "models/Appointments_model.php",
+    "models/Customers_model.php"
+   ]
+  },
+  {
+   "route": "ANY /caldav/sync/{provider_id}",
+   "judge": "vulnerable",
+   "refuter": "upheld",
+   "files": [
+    "controllers/Caldav.php"
+   ]
+  },
+  {
+   "route": "ANY /calendar/save_appointment",
+   "judge": "vulnerable",
+   "refuter": "upheld",
+   "files": [
+    "controllers/Calendar.php",
+    "models/Appointments_model.php"
+   ]
+  },
+  {
+   "route": "ANY /calendar/save_unavailability",
+   "judge": "vulnerable",
+   "refuter": "upheld",
+   "files": [
+    "controllers/Calendar.php",
+    "models/Unavailabilities_model.php"
+   ]
+  },
+  {
+   "route": "ANY /consents/save",
+   "judge": "vulnerable",
+   "refuter": "upheld",
+   "files": [
+    "controllers/Consents.php",
+    "migrations/067_add_id_users_to_consents_table.php",
+    "models/Consents_model.php"
+   ]
+  },
+  {
+   "route": "ANY /customers/destroy",
+   "judge": "vulnerable",
+   "refuter": "upheld",
+   "files": [
+    "controllers/Customers.php",
+    "models/Customers_model.php"
+   ]
+  },
+  {
+   "route": "ANY /customers/find",
+   "judge": "vulnerable",
+   "refuter": "upheld",
+   "files": [
+    "controllers/Customers.php",
+    "models/Customers_model.php"
+   ]
+  },
+  {
+   "route": "ANY /customers/store",
+   "judge": "vulnerable",
+   "refuter": "upheld",
+   "files": [
+    "controllers/Customers.php",
+    "models/Customers_model.php"
+   ]
+  },
+  {
+   "route": "ANY /customers/update",
+   "judge": "vulnerable",
+   "refuter": "upheld",
+   "files": [
+    "controllers/Customers.php",
+    "models/Customers_model.php"
+   ]
+  },
+  {
+   "route": "ANY /google/get_google_calendars",
+   "judge": "vulnerable",
+   "refuter": "upheld",
+   "files": [
+    "controllers/Google.php"
+   ]
+  },
+  {
+   "route": "ANY /google/sync/{provider_id}",
+   "judge": "vulnerable",
+   "refuter": "upheld",
+   "files": [
+    "controllers/Google.php"
+   ]
+  },
+  {
+   "route": "ANY /unavailabilities/store",
+   "judge": "vulnerable",
+   "refuter": "upheld",
+   "files": [
+    "controllers/Unavailabilities.php",
+    "models/Unavailabilities_model.php"
+   ]
+  }
+ ],
+ "judge_vulnerable": [
+  "ANY /booking/register",
+  "ANY /caldav/sync/{provider_id}",
+  "ANY /calendar/save_appointment",
+  "ANY /calendar/save_unavailability",
+  "ANY /consents/save",
+  "ANY /customers/destroy",
+  "ANY /customers/find",
+  "ANY /customers/store",
+  "ANY /customers/update",
+  "ANY /google/get_google_calendars",
+  "ANY /google/sync/{provider_id}",
+  "ANY /unavailabilities/store"
+ ],
+ "refuted": [],
+ "investigator_vulnerable": [
+  "ANY /account/validate_username  (controllers/Account.php)",
+  "ANY /appointments/store  (controllers/Appointments.php)",
+  "ANY /appointments/update  (controllers/Appointments.php)",
+  "ANY /booking/get_available_hours  (controllers/Booking.php)",
+  "ANY /booking/get_unavailable_dates  (controllers/Booking.php)",
+  "ANY /booking/register  (controllers/Booking.php)",
+  "ANY /caldav/sync/{provider_id}  (controllers/Caldav.php)",
+  "ANY /calendar/index/{appointment_hash}  (controllers/Calendar.php)",
+  "ANY /calendar/reschedule/{appointment_hash}  (controllers/Calendar.php)",
+  "ANY /calendar/save_appointment  (controllers/Calendar.php)",
+  "ANY /calendar/save_unavailability  (controllers/Calendar.php)",
+  "ANY /consents/save  (controllers/Consents.php)",
+  "ANY /customers/destroy  (controllers/Customers.php)",
+  "ANY /customers/find  (controllers/Customers.php)",
+  "ANY /customers/store  (controllers/Customers.php)",
+  "ANY /customers/update  (controllers/Customers.php)",
+  "ANY /google/get_google_calendars  (controllers/Google.php)",
+  "ANY /google/sync/{provider_id}  (controllers/Google.php)",
+  "ANY /providers/destroy  (controllers/Providers.php)",
+  "ANY /providers/find  (controllers/Providers.php)",
+  "ANY /providers/store  (controllers/Providers.php)",
+  "ANY /providers/update  (controllers/Providers.php)",
+  "ANY /secretaries/destroy  (controllers/Secretaries.php)",
+  "ANY /secretaries/find  (controllers/Secretaries.php)",
+  "ANY /unavailabilities/store  (controllers/Unavailabilities.php)",
+  "ANY /unavailabilities/update  (controllers/Unavailabilities.php)",
+  "ANY /webhooks/store  (controllers/Webhooks.php)"
+ ],
+ "routes_investigated": 210
+}

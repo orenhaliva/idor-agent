@@ -1,0 +1,53 @@
+{
+ "target": "t21",
+ "method": "v2",
+ "idor_found": true,
+ "confirmed": [
+  {
+   "route": "POST /api/v1/projects/:project/views/:view/buckets/:bucket  (routes/routes.go)",
+   "judge": "vulnerable",
+   "refuter": "upheld",
+   "files": [
+    "models/kanban.go",
+    "routes/routes.go",
+    "web/handler/update.go"
+   ]
+  },
+  {
+   "route": "POST /api/v1/projects/:project/views/:view/buckets/:bucket/tasks  (routes/routes.go)",
+   "judge": "vulnerable",
+   "refuter": "upheld",
+   "files": [
+    "models/kanban_task_bucket.go",
+    "models/tasks.go",
+    "routes/routes.go"
+   ]
+  }
+ ],
+ "judge_vulnerable": [
+  "POST /api/v1/projects/:project/views/:view/buckets/:bucket  (routes/routes.go)",
+  "POST /api/v1/projects/:project/views/:view/buckets/:bucket/tasks  (routes/routes.go)"
+ ],
+ "refuted": [],
+ "investigator_vulnerable": [
+  "POST /api/v1/projects/:project  (web/handler/update.go)",
+  "ANY /projects/:project/:task  (routes/routes.go)",
+  "DELETE /api/v1/projects/:project/shares/:share  (web/handler/core.go)",
+  "PUT /api/v1/projects/:project/tasks  (models/tasks_permissions.go)",
+  "PUT /api/v1/projects/:project/teams  (models/project_team_permissions.go)",
+  "POST /api/v1/projects/:project/views/:view/buckets/:bucket  (routes/routes.go)",
+  "POST /api/v1/projects/:project/views/:view  (routes/routes.go)",
+  "POST /api/v1/projects/:project/views/:view/buckets/:bucket/tasks  (routes/routes.go)",
+  "POST /api/v1/tasks/:task/position  (models/task_position.go)",
+  "GET /api/v1/teams/:team  (models/teams_permissions.go)",
+  "DELETE /api/v1/teams/:team/members/:user  (routes/routes.go)",
+  "GET /api/v1/tokens  (routes/routes.go)",
+  "PUT /api/v1/tokens  (routes/routes.go)",
+  "DELETE /api/v1/tokens/:token  (routes/routes.go)",
+  "GET /api/v1/user/bots  (routes/routes.go)",
+  "GET /api/v1/user/bots/:bot  (routes/routes.go)",
+  "POST /api/v1/user/bots/:bot  (routes/routes.go)",
+  "DELETE /api/v1/user/bots/:bot  (routes/routes.go)"
+ ],
+ "routes_investigated": 206
+}

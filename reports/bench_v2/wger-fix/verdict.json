@@ -1,0 +1,12 @@
+{
+ "target": "t24",
+ "method": "v2",
+ "idor_found": false,
+ "confirmed": [],
+ "judge_vulnerable": [],
+ "refuted": [],
+ "investigator_vulnerable": [
+  "ANY /<int:user_pk>/delete  (core/urls.py)"
+ ],
+ "routes_investigated": 53
+}

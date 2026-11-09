@@ -1,0 +1,192 @@
+{
+ "t01": {
+  "slug": "netmaker",
+  "kind": "vuln"
+ },
+ "t02": {
+  "slug": "fat_free_crm",
+  "kind": "fix"
+ },
+ "t03": {
+  "slug": "netmaker",
+  "kind": "fix"
+ },
+ "t04": {
+  "slug": "publify",
+  "kind": "fix"
+ },
+ "t05": {
+  "slug": "publify",
+  "kind": "vuln"
+ },
+ "t06": {
+  "slug": "filebrowser",
+  "kind": "vuln"
+ },
+ "t07": {
+  "slug": "fat_free_crm",
+  "kind": "vuln"
+ },
+ "t08": {
+  "slug": "aegra",
+  "kind": "vuln"
+ },
+ "t09": {
+  "slug": "filebrowser",
+  "kind": "fix"
+ },
+ "t10": {
+  "slug": "xxl-job",
+  "kind": "vuln"
+ },
+ "t11": {
+  "slug": "khoj",
+  "kind": "fix"
+ },
+ "t12": {
+  "slug": "xxl-job",
+  "kind": "fix"
+ },
+ "t13": {
+  "slug": "easyappointments",
+  "kind": "fix"
+ },
+ "t14": {
+  "slug": "khoj",
+  "kind": "vuln"
+ },
+ "t15": {
+  "slug": "aegra",
+  "kind": "fix"
+ },
+ "t16": {
+  "slug": "easyappointments",
+  "kind": "vuln"
+ },
+ "t17": {
+  "slug": "flowise",
+  "kind": "fix"
+ },
+ "t18": {
+  "slug": "flowise",
+  "kind": "vuln"
+ },
+ "t19": {
+  "slug": "snipe-it",
+  "kind": "vuln"
+ },
+ "t20": {
+  "slug": "snipe-it",
+  "kind": "fix"
+ },
+ "t21": {
+  "slug": "vikunja",
+  "kind": "vuln"
+ },
+ "t22": {
+  "slug": "vikunja",
+  "kind": "fix"
+ },
+ "t23": {
+  "slug": "wger",
+  "kind": "vuln"
+ },
+ "t24": {
+  "slug": "wger",
+  "kind": "fix"
+ },
+ "t25": {
+  "slug": "snipe-it",
+  "kind": "vuln",
+  "variant": "v23"
+ },
+ "t26": {
+  "slug": "nl-portal",
+  "kind": "fix"
+ },
+ "t27": {
+  "slug": "spree",
+  "kind": "fix"
+ },
+ "t28": {
+  "slug": "nl-portal",
+  "kind": "vuln"
+ },
+ "t29": {
+  "slug": "oqtane",
+  "kind": "vuln"
+ },
+ "t30": {
+  "slug": "spree",
+  "kind": "vuln"
+ },
+ "t31": {
+  "slug": "oqtane",
+  "kind": "fix"
+ },
+ "t32": {
+  "slug": "snipe-it",
+  "kind": "fix",
+  "variant": "v23"
+ },
+ "t35": {
+  "slug": "identrail",
+  "kind": "vuln",
+  "variant": "v24"
+ },
+ "t36": {
+  "slug": "lemur",
+  "kind": "vuln",
+  "variant": "v24"
+ },
+ "t37": {
+  "slug": "lemur",
+  "kind": "fix",
+  "variant": "v24"
+ },
+ "t39": {
+  "slug": "huginn",
+  "kind": "fix",
+  "variant": "v24"
+ },
+ "t40": {
+  "slug": "identrail",
+  "kind": "fix",
+  "variant": "v24"
+ },
+ "t43": {
+  "slug": "convoy",
+  "kind": "fix",
+  "variant": "v24"
+ },
+ "t44": {
+  "slug": "huginn",
+  "kind": "vuln",
+  "variant": "v24"
+ },
+ "t45": {
+  "slug": "openremote",
+  "kind": "vuln",
+  "variant": "v24"
+ },
+ "t46": {
+  "slug": "openremote",
+  "kind": "fix",
+  "variant": "v24"
+ },
+ "t47": {
+  "slug": "convoy",
+  "kind": "vuln",
+  "variant": "v24"
+ },
+ "t48": {
+  "slug": "mollie-plugin",
+  "kind": "fix",
+  "variant": "v24"
+ },
+ "t49": {
+  "slug": "mollie-plugin",
+  "kind": "vuln",
+  "variant": "v24"
+ }
+}

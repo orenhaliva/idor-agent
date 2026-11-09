@@ -1,0 +1,16 @@
+.env
+.venv/
+__pycache__/
+.cache/
+reports/
+bench/repos/
+*.faiss
+*.log
+bench/work/
+!reports/
+reports/*
+!reports/bench_v2/
+!reports/bench_v23/
+!reports/bench_v24/
+reports/**/stdout.log
+.DS_Store

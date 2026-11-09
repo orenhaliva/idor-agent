@@ -1,0 +1,55 @@
+{
+ "target": "t09",
+ "method": "v2",
+ "idor_found": true,
+ "confirmed": [
+  {
+   "route": "ANY /api/resources",
+   "judge": "vulnerable",
+   "refuter": "upheld",
+   "files": [
+    "http/resource.go",
+    "http/share.go",
+    "share/share.go",
+    "share/storage.go",
+    "storage/bolt/share.go"
+   ]
+  },
+  {
+   "route": "DELETE <path not extracted>",
+   "judge": "vulnerable",
+   "refuter": "upheld",
+   "files": [
+    "http/resource.go",
+    "share/storage.go",
+    "storage/bolt/share.go"
+   ]
+  },
+  {
+   "route": "ANY /api/resources",
+   "judge": "vulnerable",
+   "refuter": "upheld",
+   "files": [
+    "http/resource.go",
+    "http/share.go",
+    "share/share.go",
+    "share/storage.go",
+    "storage/bolt/share.go"
+   ]
+  }
+ ],
+ "judge_vulnerable": [
+  "ANY /api/resources",
+  "DELETE <path not extracted>",
+  "ANY /api/resources"
+ ],
+ "refuted": [],
+ "investigator_vulnerable": [
+  "ANY /api/command  (http/commands.go)",
+  "ANY /api/resources  (http/resource.go)",
+  "ANY /api/signup  (http/auth.go)",
+  "DELETE <path not extracted>  (http/resource.go)",
+  "ANY /api/resources  (http/resource.go)"
+ ],
+ "routes_investigated": 38
+}

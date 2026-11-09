@@ -1,0 +1,67 @@
+{
+ "target": "t12",
+ "method": "v2",
+ "idor_found": true,
+ "confirmed": [
+  {
+   "route": "ANY /jobinfo/update",
+   "judge": "vulnerable",
+   "refuter": "upheld",
+   "files": [
+    "src/main/java/com/xxl/job/admin/controller/biz/JobInfoController.java",
+    "src/main/java/com/xxl/job/admin/service/impl/XxlJobServiceImpl.java"
+   ]
+  },
+  {
+   "route": "ANY /joblog/getJobsByGroup",
+   "judge": "vulnerable",
+   "refuter": "upheld",
+   "files": [
+    "src/main/java/com/xxl/job/admin/controller/biz/JobLogController.java",
+    "src/main/resources/mapper/XxlJobInfoMapper.xml"
+   ]
+  },
+  {
+   "route": "ANY /joblog/logDetailCat",
+   "judge": "vulnerable",
+   "refuter": "upheld",
+   "files": [
+    "src/main/java/com/xxl/job/admin/controller/biz/JobLogController.java"
+   ]
+  },
+  {
+   "route": "ANY /joblog/logKill",
+   "judge": "vulnerable",
+   "refuter": "upheld",
+   "files": [
+    "src/main/java/com/xxl/job/admin/controller/biz/JobLogController.java"
+   ]
+  },
+  {
+   "route": "ANY /joblog/pageList",
+   "judge": "vulnerable",
+   "refuter": "upheld",
+   "files": [
+    "src/main/java/com/xxl/job/admin/controller/biz/JobLogController.java",
+    "src/main/resources/mapper/XxlJobLogMapper.xml"
+   ]
+  }
+ ],
+ "judge_vulnerable": [
+  "ANY /jobinfo/update",
+  "ANY /joblog/getJobsByGroup",
+  "ANY /joblog/logDetailCat",
+  "ANY /joblog/logKill",
+  "ANY /joblog/pageList"
+ ],
+ "refuted": [],
+ "investigator_vulnerable": [
+  "ANY /jobinfo/trigger  (src/main/java/com/xxl/job/admin/controller/biz/JobInfoController.java)",
+  "ANY /jobinfo/update  (src/main/java/com/xxl/job/admin/controller/biz/JobInfoController.java)",
+  "ANY /joblog/getJobsByGroup  (src/main/java/com/xxl/job/admin/controller/biz/JobLogController.java)",
+  "ANY /joblog/logDetailCat  (src/main/java/com/xxl/job/admin/controller/biz/JobLogController.java)",
+  "ANY /joblog/logKill  (src/main/java/com/xxl/job/admin/controller/biz/JobLogController.java)",
+  "ANY /joblog/pageList  (src/main/java/com/xxl/job/admin/controller/biz/JobLogController.java)"
+ ],
+ "routes_investigated": 47
+}

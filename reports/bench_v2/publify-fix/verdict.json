@@ -1,0 +1,129 @@
+{
+ "target": "t04",
+ "method": "v2",
+ "idor_found": true,
+ "confirmed": [
+  {
+   "route": "POST /admin/autosave",
+   "judge": "vulnerable",
+   "refuter": "upheld",
+   "files": [
+    "app/controllers/admin/content_controller.rb",
+    "app/models/article/factory.rb",
+    "app/models/content.rb"
+   ]
+  },
+  {
+   "route": "PUT /admin/autosave",
+   "judge": "vulnerable",
+   "refuter": "upheld",
+   "files": [
+    "app/controllers/admin/content_controller.rb",
+    "app/models/article/factory.rb",
+    "config/routes.rb"
+   ]
+  },
+  {
+   "route": "POST /admin/content",
+   "judge": "vulnerable",
+   "refuter": "upheld",
+   "files": [
+    "app/controllers/admin/content_controller.rb",
+    "app/models/article/factory.rb"
+   ]
+  },
+  {
+   "route": "PATCH,PUT /admin/content/:id",
+   "judge": "vulnerable",
+   "refuter": "upheld",
+   "files": [
+    "app/controllers/admin/content_controller.rb"
+   ]
+  },
+  {
+   "route": "GET /admin/notes/:id/edit",
+   "judge": "vulnerable",
+   "refuter": "upheld",
+   "files": [
+    "app/controllers/admin/notes_controller.rb",
+    "app/views/admin/notes/edit.html.erb"
+   ]
+  },
+  {
+   "route": "PATCH,PUT /admin/notes/:id",
+   "judge": "vulnerable",
+   "refuter": "upheld",
+   "files": [
+    "app/controllers/admin/notes_controller.rb"
+   ]
+  },
+  {
+   "route": "DELETE /admin/notes/:id",
+   "judge": "vulnerable",
+   "refuter": "upheld",
+   "files": [
+    "app/controllers/admin/notes_controller.rb"
+   ]
+  },
+  {
+   "route": "POST /check_password",
+   "judge": "vulnerable",
+   "refuter": "upheld",
+   "files": [
+    "app/controllers/articles_controller.rb",
+    "app/views/articles/_full_article_content.html.erb"
+   ]
+  },
+  {
+   "route": "GET /previews(/:id)",
+   "judge": "vulnerable",
+   "refuter": "upheld",
+   "files": [
+    "app/controllers/admin/content_controller.rb",
+    "app/controllers/articles_controller.rb",
+    "app/models/article.rb"
+   ]
+  }
+ ],
+ "judge_vulnerable": [
+  "POST /admin/autosave",
+  "PUT /admin/autosave",
+  "POST /admin/content",
+  "PATCH,PUT /admin/content/:id",
+  "POST /admin/feedback/bulkops",
+  "POST /admin/feedback/:id/change_state",
+  "GET /admin/notes/:id/edit",
+  "PATCH,PUT /admin/notes/:id",
+  "DELETE /admin/notes/:id",
+  "GET /admin/tags/:id/edit",
+  "PATCH,PUT /admin/tags/:id",
+  "DELETE /admin/tags/:id",
+  "POST /check_password",
+  "GET /previews(/:id)"
+ ],
+ "refuted": [
+  "POST /admin/feedback/bulkops",
+  "POST /admin/feedback/:id/change_state",
+  "GET /admin/tags/:id/edit",
+  "PATCH,PUT /admin/tags/:id",
+  "DELETE /admin/tags/:id"
+ ],
+ "investigator_vulnerable": [
+  "POST /admin/autosave  (app/controllers/admin/content_controller.rb)",
+  "PUT /admin/autosave  (config/routes.rb)",
+  "POST /admin/content  (app/controllers/admin/content_controller.rb)",
+  "PATCH,PUT /admin/content/:id  (app/controllers/admin/content_controller.rb)",
+  "POST /admin/feedback/bulkops  (app/controllers/admin/feedback_controller.rb)",
+  "POST /admin/feedback/:id/change_state  (app/controllers/admin/feedback_controller.rb)",
+  "POST /admin/notes  (app/controllers/admin/notes_controller.rb)",
+  "GET /admin/notes/:id/edit  (app/controllers/admin/notes_controller.rb)",
+  "PATCH,PUT /admin/notes/:id  (app/controllers/admin/notes_controller.rb)",
+  "DELETE /admin/notes/:id  (app/controllers/admin/notes_controller.rb)",
+  "GET /admin/pages/:id/edit  (app/controllers/admin/pages_controller.rb)",
+  "PATCH,PUT /admin/pages/:id  (app/controllers/admin/pages_controller.rb)",
+  "DELETE /admin/pages/:id  (app/controllers/admin/pages_controller.rb)",
+  "POST /check_password  (app/controllers/articles_controller.rb)",
+  "GET /previews(/:id)  (app/controllers/articles_controller.rb)"
+ ],
+ "routes_investigated": 119
+}

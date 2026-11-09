@@ -1,0 +1,147 @@
+{
+ "target": "t22",
+ "method": "v2",
+ "idor_found": true,
+ "confirmed": [
+  {
+   "route": "POST /api/v1/projects/:project/views/:view/buckets/:bucket  (routes/routes.go)",
+   "judge": "vulnerable",
+   "refuter": "upheld",
+   "files": [
+    "models/kanban.go",
+    "routes/routes.go"
+   ]
+  },
+  {
+   "route": "POST /api/v1/tasks/:task/position  (routes/routes.go)",
+   "judge": "vulnerable",
+   "refuter": "upheld",
+   "files": [
+    "models/task_position.go",
+    "routes/routes.go"
+   ]
+  },
+  {
+   "route": "DELETE /api/v1/tasks/:task/relations/:relationKind/:otherTask  (routes/routes.go)",
+   "judge": "vulnerable",
+   "refuter": "upheld",
+   "files": [
+    "models/task_relation.go",
+    "models/task_relation_permissions.go",
+    "routes/routes.go"
+   ]
+  },
+  {
+   "route": "DELETE /api/v1/teams/:team/members/:user  (routes/routes.go)",
+   "judge": "vulnerable",
+   "refuter": "upheld",
+   "files": [
+    "models/team_members.go",
+    "models/team_members_permissions.go",
+    "models/teams.go",
+    "routes/routes.go"
+   ]
+  },
+  {
+   "route": "GET /api/v1/tokens  (routes/routes.go)",
+   "judge": "vulnerable",
+   "refuter": "upheld",
+   "files": [
+    "models/api_tokens.go",
+    "routes/routes.go"
+   ]
+  },
+  {
+   "route": "PUT /api/v1/tokens  (routes/routes.go)",
+   "judge": "vulnerable",
+   "refuter": "upheld",
+   "files": [
+    "models/api_tokens.go",
+    "routes/routes.go"
+   ]
+  },
+  {
+   "route": "DELETE /api/v1/tokens/:token  (routes/routes.go)",
+   "judge": "vulnerable",
+   "refuter": "upheld",
+   "files": [
+    "models/api_tokens.go",
+    "models/api_tokens_permissions.go",
+    "routes/routes.go"
+   ]
+  },
+  {
+   "route": "GET /api/v1/user/bots  (routes/routes.go)",
+   "judge": "vulnerable",
+   "refuter": "upheld",
+   "files": [
+    "models/bot_users.go",
+    "routes/routes.go"
+   ]
+  },
+  {
+   "route": "GET /api/v1/user/bots/:bot  (routes/routes.go)",
+   "judge": "vulnerable",
+   "refuter": "upheld",
+   "files": [
+    "models/bot_users.go",
+    "models/bot_users_permissions.go",
+    "routes/routes.go"
+   ]
+  },
+  {
+   "route": "POST /api/v1/user/bots/:bot  (routes/routes.go)",
+   "judge": "vulnerable",
+   "refuter": "upheld",
+   "files": [
+    "models/bot_users.go",
+    "models/bot_users_permissions.go",
+    "routes/routes.go"
+   ]
+  },
+  {
+   "route": "DELETE /api/v1/user/bots/:bot  (routes/routes.go)",
+   "judge": "vulnerable",
+   "refuter": "upheld",
+   "files": [
+    "models/bot_users.go",
+    "models/bot_users_permissions.go",
+    "routes/routes.go"
+   ]
+  }
+ ],
+ "judge_vulnerable": [
+  "POST /api/v1/projects/:project/views/:view/buckets/:bucket  (routes/routes.go)",
+  "POST /api/v1/tasks/:task/position  (routes/routes.go)",
+  "DELETE /api/v1/tasks/:task/relations/:relationKind/:otherTask  (routes/routes.go)",
+  "DELETE /api/v1/teams/:team/members/:user  (routes/routes.go)",
+  "GET /api/v1/tokens  (routes/routes.go)",
+  "PUT /api/v1/tokens  (routes/routes.go)",
+  "DELETE /api/v1/tokens/:token  (routes/routes.go)",
+  "GET /api/v1/user/bots  (routes/routes.go)",
+  "GET /api/v1/user/bots/:bot  (routes/routes.go)",
+  "POST /api/v1/user/bots/:bot  (routes/routes.go)",
+  "DELETE /api/v1/user/bots/:bot  (routes/routes.go)"
+ ],
+ "refuted": [],
+ "investigator_vulnerable": [
+  "POST /api/v1/projects/:project  (web/handler/update.go)",
+  "ANY /projects/:project  (routes/caldav/handler.go)",
+  "ANY /projects/:project/  (routes/caldav/handler.go)",
+  "ANY /projects/:project/:task  (routes/caldav/handler.go)",
+  "DELETE /api/v1/projects/:project/shares/:share  (web/handler/delete.go)",
+  "GET /api/v1/projects/:project/views/:view/tasks  (routes/routes.go)",
+  "POST /api/v1/projects/:project/views/:view/buckets/:bucket  (routes/routes.go)",
+  "POST /api/v1/tasks/:task/position  (routes/routes.go)",
+  "DELETE /api/v1/tasks/:task/relations/:relationKind/:otherTask  (routes/routes.go)",
+  "DELETE /api/v1/teams/:team/members/:user  (routes/routes.go)",
+  "GET /api/v1/tokens  (routes/routes.go)",
+  "PUT /api/v1/tokens  (routes/routes.go)",
+  "DELETE /api/v1/tokens/:token  (routes/routes.go)",
+  "GET /api/v1/user/bots  (routes/routes.go)",
+  "GET /api/v1/user/bots/:bot  (routes/routes.go)",
+  "POST /api/v1/user/bots/:bot  (routes/routes.go)",
+  "DELETE /api/v1/user/bots/:bot  (routes/routes.go)"
+ ],
+ "routes_investigated": 202
+}

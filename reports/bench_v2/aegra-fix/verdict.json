@@ -1,0 +1,111 @@
+{
+ "target": "t15",
+ "method": "v2",
+ "idor_found": true,
+ "confirmed": [
+  {
+   "route": "POST /runs",
+   "judge": "vulnerable",
+   "refuter": "upheld",
+   "files": [
+    "libs/aegra-api/src/aegra_api/api/runs.py",
+    "libs/aegra-api/src/aegra_api/api/stateless_runs.py",
+    "libs/aegra-api/src/aegra_api/services/run_preparation.py"
+   ]
+  },
+  {
+   "route": "POST /runs/stream",
+   "judge": "vulnerable",
+   "refuter": "upheld",
+   "files": [
+    "libs/aegra-api/src/aegra_api/api/stateless_runs.py",
+    "libs/aegra-api/src/aegra_api/services/langgraph_service.py",
+    "libs/aegra-api/src/aegra_api/services/run_executor.py",
+    "libs/aegra-api/src/aegra_api/services/run_preparation.py"
+   ]
+  },
+  {
+   "route": "POST /runs/wait",
+   "judge": "vulnerable",
+   "refuter": "upheld",
+   "files": [
+    "libs/aegra-api/src/aegra_api/api/stateless_runs.py",
+    "libs/aegra-api/src/aegra_api/services/langgraph_service.py",
+    "libs/aegra-api/src/aegra_api/services/run_preparation.py"
+   ]
+  },
+  {
+   "route": "POST /threads/{thread_id}/history",
+   "judge": "vulnerable",
+   "refuter": "upheld",
+   "files": [
+    "libs/aegra-api/src/aegra_api/api/threads.py"
+   ]
+  },
+  {
+   "route": "POST /threads/{thread_id}/runs",
+   "judge": "vulnerable",
+   "refuter": "upheld",
+   "files": [
+    "libs/aegra-api/src/aegra_api/api/runs.py",
+    "libs/aegra-api/src/aegra_api/services/langgraph_service.py",
+    "libs/aegra-api/src/aegra_api/services/run_executor.py",
+    "libs/aegra-api/src/aegra_api/services/run_preparation.py",
+    "libs/aegra-api/src/aegra_api/utils/run_utils.py"
+   ]
+  },
+  {
+   "route": "POST /threads/{thread_id}/runs/stream",
+   "judge": "vulnerable",
+   "refuter": "upheld",
+   "files": [
+    "libs/aegra-api/src/aegra_api/api/runs.py",
+    "libs/aegra-api/src/aegra_api/services/langgraph_service.py",
+    "libs/aegra-api/src/aegra_api/services/run_executor.py",
+    "libs/aegra-api/src/aegra_api/services/run_preparation.py"
+   ]
+  },
+  {
+   "route": "POST /threads/{thread_id}/runs/wait",
+   "judge": "vulnerable",
+   "refuter": "upheld",
+   "files": [
+    "libs/aegra-api/src/aegra_api/api/runs.py",
+    "libs/aegra-api/src/aegra_api/services/langgraph_service.py",
+    "libs/aegra-api/src/aegra_api/services/run_preparation.py"
+   ]
+  },
+  {
+   "route": "POST /threads/{thread_id}/state",
+   "judge": "vulnerable",
+   "refuter": "upheld",
+   "files": [
+    "libs/aegra-api/src/aegra_api/api/threads.py",
+    "libs/aegra-api/src/aegra_api/models/threads.py",
+    "libs/aegra-api/src/aegra_api/services/langgraph_service.py"
+   ]
+  }
+ ],
+ "judge_vulnerable": [
+  "POST /runs",
+  "POST /runs/stream",
+  "POST /runs/wait",
+  "POST /threads/{thread_id}/history",
+  "POST /threads/{thread_id}/runs",
+  "POST /threads/{thread_id}/runs/stream",
+  "POST /threads/{thread_id}/runs/wait",
+  "POST /threads/{thread_id}/state"
+ ],
+ "refuted": [],
+ "investigator_vulnerable": [
+  "POST /runs  (libs/aegra-api/src/aegra_api/api/stateless_runs.py)",
+  "POST /runs/stream  (libs/aegra-api/src/aegra_api/api/stateless_runs.py)",
+  "POST /runs/wait  (libs/aegra-api/src/aegra_api/api/stateless_runs.py)",
+  "POST /threads/{thread_id}/history  (libs/aegra-api/src/aegra_api/api/threads.py)",
+  "POST /threads/{thread_id}/runs  (libs/aegra-api/src/aegra_api/api/runs.py)",
+  "POST /threads/{thread_id}/runs/stream  (libs/aegra-api/src/aegra_api/api/runs.py)",
+  "POST /threads/{thread_id}/runs/wait  (libs/aegra-api/src/aegra_api/api/runs.py)",
+  "POST /threads/{thread_id}/state  (libs/aegra-api/src/aegra_api/api/threads.py)"
+ ],
+ "routes_investigated": 49
+}

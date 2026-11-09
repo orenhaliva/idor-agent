@@ -1,0 +1,10 @@
+{
+ "target": "t39",
+ "method": "v2",
+ "idor_found": false,
+ "confirmed": [],
+ "judge_vulnerable": [],
+ "refuted": [],
+ "investigator_vulnerable": [],
+ "routes_investigated": 74
+}

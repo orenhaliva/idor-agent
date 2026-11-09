@@ -1,0 +1,129 @@
+{
+ "target": "t37",
+ "method": "v2",
+ "idor_found": true,
+ "confirmed": [
+  {
+   "route": "ANY /authorities/<int:authority_id>  (authorities/views.py)",
+   "judge": "vulnerable",
+   "refuter": "upheld",
+   "files": [
+    "authorities/schemas.py",
+    "authorities/service.py",
+    "authorities/views.py"
+   ]
+  },
+  {
+   "route": "ANY /authorities/<int:authority_id>/visualize  (authorities/views.py)",
+   "judge": "vulnerable",
+   "refuter": "upheld",
+   "files": []
+  },
+  {
+   "route": "ANY /certificates/<int:certificate_id>/authority  (authorities/views.py)",
+   "judge": "vulnerable",
+   "refuter": "upheld",
+   "files": [
+    "authorities/schemas.py",
+    "authorities/views.py"
+   ]
+  },
+  {
+   "route": "ANY /certificates/upload  (certificates/views.py)",
+   "judge": "vulnerable",
+   "refuter": "upheld",
+   "files": [
+    "certificates/models.py",
+    "certificates/schemas.py",
+    "certificates/service.py",
+    "certificates/views.py",
+    "schemas.py"
+   ]
+  },
+  {
+   "route": "ANY /pending_certificates/<int:pending_certificate_id>  (pending_certificates/views.py)",
+   "judge": "vulnerable",
+   "refuter": "upheld",
+   "files": [
+    "pending_certificates/service.py",
+    "pending_certificates/views.py"
+   ]
+  },
+  {
+   "route": "ANY /pending_certificates/<int:pending_certificate_id>/upload  (pending_certificates/views.py)",
+   "judge": "vulnerable",
+   "refuter": "upheld",
+   "files": [
+    "pending_certificates/service.py",
+    "pending_certificates/views.py"
+   ]
+  },
+  {
+   "route": "ANY /roles/<int:role_id>/users  (users/views.py)",
+   "judge": "vulnerable",
+   "refuter": "upheld",
+   "files": [
+    "users/views.py"
+   ]
+  }
+ ],
+ "judge_vulnerable": [
+  "ANY /authorities/<int:authority_id>  (authorities/views.py)",
+  "ANY /authorities/<int:authority_id>/roles  (roles/views.py)",
+  "ANY /authorities/<int:authority_id>/visualize  (authorities/views.py)",
+  "ANY /certificates/<int:certificate_id>/authority  (authorities/views.py)",
+  "ANY /certificates/<int:certificate_id>/creator  (users/views.py)",
+  "ANY /certificates/<int:certificate_id>/destinations  (destinations/views.py)",
+  "ANY /certificates/<int:certificate_id>/domains  (domains/views.py)",
+  "ANY /certificates/<int:certificate_id>  (certificates/views.py)",
+  "ANY /certificates/name/<string:certificate_name>  (certificates/views.py)",
+  "ANY /certificates/<int:certificate_id>/notifications  (notifications/views.py)",
+  "ANY /certificates/<int:certificate_id>/replacements  (certificates/views.py)",
+  "ANY /certificates/<int:certificate_id>/sources  (sources/views.py)",
+  "ANY /certificates/upload  (certificates/views.py)",
+  "ANY /endpoints/<int:endpoint_id>  (endpoints/views.py)",
+  "ANY /notifications/<int:notification_id>/certificates  (certificates/views.py)",
+  "ANY /pending_certificates/<int:pending_certificate_id>  (pending_certificates/views.py)",
+  "ANY /pending_certificates/<int:pending_certificate_id>/upload  (pending_certificates/views.py)",
+  "ANY /roles/<int:role_id>/users  (users/views.py)",
+  "ANY /users/<int:user_id>  (users/views.py)",
+  "ANY /users/<int:user_id>/roles  (roles/views.py)"
+ ],
+ "refuted": [
+  "ANY /authorities/<int:authority_id>/roles  (roles/views.py)",
+  "ANY /certificates/<int:certificate_id>/creator  (users/views.py)",
+  "ANY /certificates/<int:certificate_id>/destinations  (destinations/views.py)",
+  "ANY /certificates/<int:certificate_id>/domains  (domains/views.py)",
+  "ANY /certificates/<int:certificate_id>  (certificates/views.py)",
+  "ANY /certificates/name/<string:certificate_name>  (certificates/views.py)",
+  "ANY /certificates/<int:certificate_id>/notifications  (notifications/views.py)",
+  "ANY /certificates/<int:certificate_id>/replacements  (certificates/views.py)",
+  "ANY /certificates/<int:certificate_id>/sources  (sources/views.py)",
+  "ANY /endpoints/<int:endpoint_id>  (endpoints/views.py)",
+  "ANY /notifications/<int:notification_id>/certificates  (certificates/views.py)",
+  "ANY /pending_certificates  (pending_certificates/views.py)",
+  "ANY /users/<int:user_id>  (users/views.py)",
+  "ANY /users/<int:user_id>/roles  (roles/views.py)"
+ ],
+ "investigator_vulnerable": [
+  "ANY /authorities/<int:authority_id>  (authorities/views.py)",
+  "ANY /authorities/<int:authority_id>/roles  (roles/views.py)",
+  "ANY /certificates/<int:certificate_id>/authority  (authorities/views.py)",
+  "ANY /certificates/<int:certificate_id>/update/switches  (certificates/views.py)",
+  "ANY /certificates/<int:certificate_id>/update/owner  (certificates/views.py)",
+  "ANY /certificates/upload  (certificates/views.py)",
+  "ANY /logs  (logs/views.py)",
+  "ANY /notifications  (notifications/views.py)",
+  "ANY /notifications/<int:notification_id>  (notifications/views.py)",
+  "ANY /notifications/<int:notification_id>/certificates  (certificates/views.py)",
+  "ANY /pending_certificates  (pending_certificates/views.py)",
+  "ANY /pending_certificates/<int:pending_certificate_id>  (pending_certificates/views.py)",
+  "ANY /pending_certificates/<int:pending_certificate_id>/upload  (pending_certificates/views.py)",
+  "ANY /roles  (roles/views.py)",
+  "ANY /roles/<int:role_id>/users  (users/views.py)",
+  "ANY /users  (users/views.py)",
+  "ANY /users/<int:user_id>  (users/views.py)",
+  "ANY /users/<int:user_id>/roles  (roles/views.py)"
+ ],
+ "routes_investigated": 66
+}

@@ -1,0 +1,39 @@
+{
+ "target": "t28",
+ "method": "v2",
+ "idor_found": true,
+ "confirmed": [
+  {
+   "route": "GET /api/documentapi/{documentapi}/document/{documentId}/content  (zgw/documenten-api/src/main/kotlin/nl/nlportal/documentenapi/web/rest/DocumentContentResource.kt)",
+   "judge": "vulnerable",
+   "refuter": "upheld",
+   "files": [
+    "zgw/documenten-api/src/main/kotlin/nl/nlportal/documentenapi/client/DocumentenApiClient.kt",
+    "zgw/documenten-api/src/main/kotlin/nl/nlportal/documentenapi/service/DocumentenApiService.kt",
+    "zgw/documenten-api/src/main/kotlin/nl/nlportal/documentenapi/web/rest/DocumentContentResource.kt"
+   ]
+  },
+  {
+   "route": "PUT <path not extracted>  (product/src/main/kotlin/nl/nlportal/product/graphql/ProductQuery.kt)",
+   "judge": "vulnerable",
+   "refuter": "upheld",
+   "files": [
+    "product/src/main/kotlin/nl/nlportal/product/graphql/ProductQuery.kt",
+    "product/src/main/kotlin/nl/nlportal/product/service/DmnService.kt",
+    "product/src/main/kotlin/nl/nlportal/product/service/ProductService.kt"
+   ]
+  }
+ ],
+ "judge_vulnerable": [
+  "GET /api/documentapi/{documentapi}/document/{documentId}/content  (zgw/documenten-api/src/main/kotlin/nl/nlportal/documentenapi/web/rest/DocumentContentResource.kt)",
+  "PUT <path not extracted>  (product/src/main/kotlin/nl/nlportal/product/graphql/ProductQuery.kt)"
+ ],
+ "refuted": [],
+ "investigator_vulnerable": [
+  "GET /api/documentapi/{documentapi}/document/{documentId}/content  (zgw/documenten-api/src/main/kotlin/nl/nlportal/documentenapi/web/rest/DocumentContentResource.kt)",
+  "PUT <path not extracted>  (product/src/main/kotlin/nl/nlportal/product/service/DmnService.kt)",
+  "PUT <path not extracted>  (product/src/main/kotlin/nl/nlportal/product/graphql/ProductQuery.kt)",
+  "PUT <path not extracted>  (product/src/main/kotlin/nl/nlportal/product/service/PrefillService.kt)"
+ ],
+ "routes_investigated": 12
+}

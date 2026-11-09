@@ -1,0 +1,95 @@
+{
+ "dev": [
+  "aegra",
+  "filebrowser",
+  "netmaker",
+  "publify",
+  "fat_free_crm",
+  "khoj",
+  "flowise"
+ ],
+ "held_out": [
+  "easyappointments",
+  "xxl-job"
+ ],
+ "history": [
+  {
+   "date": "2026-11-08",
+   "method": "v1 (single Haiku investigator per repo + excerpt-only Haiku judge)",
+   "note": "dev results seen; v2 changes justified by coverage 15-57% and judge confirm rate 74-100% (no answer key)"
+  },
+  {
+   "date": "2026-11-08",
+   "contamination": "the orchestrator saw the held-out cases' route names in the collector's summary table. Mitigation: prompts keep the generic IDOR definition only (no object-type lists); an object checklist was drafted and removed because it echoed held-out routes. Final headline numbers should come from fresh cases collected by an agent that reports only slugs, never routes."
+  },
+  {
+   "date": "2026-11-08",
+   "method": "v2 FROZEN: route partitions (<=20/batch, every route gets a verdict) + blind excerpt judge + refuter with code access; convention-routing fallback when <15 declared routes",
+   "frozen_hashes": {
+    "bench/haiku_flow.py": "4b926d4c29f8989f",
+    "prompts/investigator.md": "30fd0939a2165f91",
+    "prompts/judge.md": "7938b3fe2afa9d1e",
+    "prompts/refuter.md": "6d3b8e5ab4da36dc",
+    "tools/codetools.py": "5e7ead8ee477cfc3",
+    "tools/convention_routes.py": "88ca6cfb1d37e183",
+    "tools/find_routes.py": "eb2009d962f4ff97",
+    "tools/gemini_pool.py": "2275d489234691f6",
+    "tools/rag.py": "fb19e9a39cff5198"
+   },
+   "note": "held-out cases (easyappointments, xxl-job, khoj, flowise) and fresh cases run with exactly these files"
+  },
+  {
+   "date": "2026-11-09",
+   "method": "v2.1 FROZEN: v2 + partition dedup keyed by (method, path, file) and findings merged per batch",
+   "reason": "pipeline bug, not prompt tuning: identical relative route strings from different routers were deduplicated, dropping 13 routes in khoj and 3 in filebrowser before any LLM saw them (measured: unique lines vs lines in batches)",
+   "consequence": "khoj moved from held_out to dev (its result exposed the bug). Fresh cases are the clean test for v2.1.",
+   "frozen_hashes": {
+    "bench/haiku_flow.py": "f247e21d145ceeae",
+    "prompts/investigator.md": "30fd0939a2165f91",
+    "prompts/judge.md": "7938b3fe2afa9d1e",
+    "prompts/refuter.md": "6d3b8e5ab4da36dc",
+    "tools/codetools.py": "5e7ead8ee477cfc3",
+    "tools/convention_routes.py": "88ca6cfb1d37e183",
+    "tools/find_routes.py": "eb2009d962f4ff97",
+    "tools/gemini_pool.py": "2275d489234691f6",
+    "tools/rag.py": "fb19e9a39cff5198"
+   }
+  },
+  {
+   "date": "2026-11-09",
+   "method": "v2.2 FROZEN: v2.1 + findings merged per (batch, route, handler file); pack index/claims carry the handler file",
+   "reason": "pipeline bug, not prompt tuning: with router-relative route strings ('GET /') findings for different handlers in one batch were merged into one, measured as coverage 207/306 findings kept on a TypeScript repo (no answer key used). After the fix 279/306.",
+   "consequence": "flowise moved from held_out to dev (its coverage stats drove the change). t01-t16 judged with v2.1 packs (v2.1 merge lost 4-19 findings there); flowise and the fresh cases use v2.2. Held-out headline: easyappointments, xxl-job; fresh cases are the clean test.",
+   "frozen_hashes": {
+    "bench/haiku_flow.py": "e3f34a1fc94bf754",
+    "prompts/investigator.md": "30fd0939a2165f91",
+    "prompts/judge.md": "7938b3fe2afa9d1e",
+    "prompts/refuter.md": "6d3b8e5ab4da36dc",
+    "tools/codetools.py": "5e7ead8ee477cfc3",
+    "tools/convention_routes.py": "88ca6cfb1d37e183",
+    "tools/find_routes.py": "eb2009d962f4ff97",
+    "tools/gemini_pool.py": "2275d489234691f6",
+    "tools/rag.py": "fb19e9a39cff5198"
+   },
+   "note": "haiku_flow.prepare also accepts a case file (fresh_cases.json); no effect on the analysis"
+  },
+  {
+   "date": "2026-11-09",
+   "method": "v2.3 FROZEN: v2.2 + mandatory rag.sh per referenced object type (logged, verified by checkrag; batches under 80% compliance are rerun) + ownership_model evidence role + budget 50 tool calls",
+   "reason": "measured without the answer key: only 20 of 174 v2.2 investigators called rag.sh (45 calls total), so the RAG component was untested. Requested by the user.",
+   "also_seen": "the snipe-it fresh miss (judge 'unclear' for lack of ownership context) was diagnosed after scoring; the ownership_model role addresses that category. Snipe-it is therefore NOT a clean test for v2.3; its rerun (t25, reports/bench_v23) is an A/B diagnostic only.",
+   "clean_test": "fresh cases not yet run under any version: spree, nl-portal, oqtane",
+   "frozen_hashes": {
+    "bench/haiku_flow.py": "25aa6b1f6df34f3b",
+    "prompts/investigator.md": "623fa15da3f97326",
+    "prompts/judge.md": "7938b3fe2afa9d1e",
+    "prompts/refuter.md": "6d3b8e5ab4da36dc",
+    "tools/codetools.py": "5e7ead8ee477cfc3",
+    "tools/convention_routes.py": "88ca6cfb1d37e183",
+    "tools/find_routes.py": "eb2009d962f4ff97",
+    "tools/gemini_pool.py": "2275d489234691f6",
+    "tools/rag.py": "fb19e9a39cff5198"
+   }
+  }
+ ]
+}

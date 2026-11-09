@@ -1,0 +1,64 @@
+{
+ "target": "t06",
+ "method": "v2",
+ "idor_found": true,
+ "confirmed": [
+  {
+   "route": "ANY /api/resources",
+   "judge": "vulnerable",
+   "refuter": "upheld",
+   "files": [
+    "http/resource.go",
+    "storage/bolt/share.go"
+   ]
+  },
+  {
+   "route": "ANY /api/share",
+   "judge": "vulnerable",
+   "refuter": "upheld",
+   "files": [
+    "http/share.go",
+    "storage/bolt/share.go"
+   ]
+  },
+  {
+   "route": "DELETE <path not extracted>",
+   "judge": "vulnerable",
+   "refuter": "upheld",
+   "files": [
+    "http/resource.go",
+    "share/storage.go",
+    "storage/bolt/share.go"
+   ]
+  },
+  {
+   "route": "ANY /api/share",
+   "judge": "vulnerable",
+   "refuter": "upheld",
+   "files": [
+    "http/share.go",
+    "storage/bolt/share.go"
+   ]
+  }
+ ],
+ "judge_vulnerable": [
+  "ANY /api/resources",
+  "ANY /api/share",
+  "GET <path not extracted>",
+  "DELETE <path not extracted>",
+  "ANY /api/tus",
+  "ANY /api/share"
+ ],
+ "refuted": [
+  "GET <path not extracted>",
+  "ANY /api/tus"
+ ],
+ "investigator_vulnerable": [
+  "ANY /api/resources  (http/resource.go)",
+  "ANY /api/share  (http/share.go)",
+  "DELETE <path not extracted>  (http/resource.go)",
+  "ANY /api/resources  (http/resource.go)",
+  "ANY /api/share  (http/share.go)"
+ ],
+ "routes_investigated": 38
+}

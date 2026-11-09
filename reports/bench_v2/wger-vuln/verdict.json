@@ -1,0 +1,32 @@
+{
+ "target": "t23",
+ "method": "v2",
+ "idor_found": true,
+ "confirmed": [
+  {
+   "route": "ANY /workoutlog  (manager/api/views.py)",
+   "judge": "vulnerable",
+   "refuter": "upheld",
+   "files": [
+    "manager/api/serializers.py",
+    "manager/api/views.py",
+    "manager/models/log.py",
+    "manager/models/routine.py",
+    "manager/models/slot.py",
+    "manager/models/slot_entry.py",
+    "utils/viewsets.py"
+   ]
+  }
+ ],
+ "judge_vulnerable": [
+  "ANY /workoutlog  (manager/api/views.py)"
+ ],
+ "refuted": [],
+ "investigator_vulnerable": [
+  "ANY /<int:user_pk>/delete  (core/views/user.py)",
+  "ANY /edit  (config/views/gym_config.py)",
+  "ANY /<int:pk>/edit  (core/views/user.py)",
+  "ANY /workoutlog  (manager/api/views.py)"
+ ],
+ "routes_investigated": 53
+}

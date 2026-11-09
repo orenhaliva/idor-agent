@@ -1,0 +1,215 @@
+{
+ "target": "t29",
+ "method": "v2",
+ "idor_found": true,
+ "confirmed": [
+  {
+   "route": "GET /export  (Controllers/ModuleController.cs)",
+   "judge": "vulnerable",
+   "refuter": "upheld",
+   "files": [
+    "Controllers/ModuleController.cs",
+    "Repository/ModuleRepository.cs"
+   ]
+  },
+  {
+   "route": "PUT /{id}  (Controllers/FolderController.cs)",
+   "judge": "vulnerable",
+   "refuter": "upheld",
+   "files": [
+    "Controllers/FolderController.cs",
+    "Repository/FolderRepository.cs"
+   ]
+  },
+  {
+   "route": "PUT /  (Controllers/FolderController.cs)",
+   "judge": "vulnerable",
+   "refuter": "upheld",
+   "files": [
+    "Controllers/FolderController.cs",
+    "Repository/FolderRepository.cs"
+   ]
+  },
+  {
+   "route": "GET /{id}  (Controllers/NotificationController.cs)",
+   "judge": "vulnerable",
+   "refuter": "upheld",
+   "files": [
+    "Controllers/NotificationController.cs"
+   ]
+  },
+  {
+   "route": "PUT /{id}  (Controllers/NotificationController.cs)",
+   "judge": "vulnerable",
+   "refuter": "upheld",
+   "files": [
+    "Controllers/NotificationController.cs",
+    "Repository/NotificationRepository.cs"
+   ]
+  },
+  {
+   "route": "DELETE /{id}  (Controllers/NotificationController.cs)",
+   "judge": "vulnerable",
+   "refuter": "upheld",
+   "files": [
+    "Controllers/NotificationController.cs"
+   ]
+  },
+  {
+   "route": "PUT /  (Controllers/PageController.cs)",
+   "judge": "vulnerable",
+   "refuter": "upheld",
+   "files": [
+    "Controllers/PageController.cs"
+   ]
+  },
+  {
+   "route": "PUT /{id}  (Controllers/PageModuleController.cs)",
+   "judge": "vulnerable",
+   "refuter": "upheld",
+   "files": [
+    "Controllers/PageModuleController.cs",
+    "Repository/PageModuleRepository.cs"
+   ]
+  },
+  {
+   "route": "GET /{id}/{entityName}  (Controllers/SettingController.cs)",
+   "judge": "vulnerable",
+   "refuter": "upheld",
+   "files": [
+    "Controllers/SettingController.cs",
+    "Repository/SettingRepository.cs"
+   ]
+  },
+  {
+   "route": "PUT /{id}  (Controllers/SettingController.cs)",
+   "judge": "vulnerable",
+   "refuter": "upheld",
+   "files": [
+    "Controllers/SettingController.cs",
+    "Repository/SettingRepository.cs"
+   ]
+  },
+  {
+   "route": "PUT /{id}  (Controllers/UrlMappingController.cs)",
+   "judge": "vulnerable",
+   "refuter": "upheld",
+   "files": [
+    "Controllers/UrlMappingController.cs",
+    "Repository/UrlMappingRepository.cs"
+   ]
+  },
+  {
+   "route": "PUT /{id}  (Controllers/UserRoleController.cs)",
+   "judge": "vulnerable",
+   "refuter": "upheld",
+   "files": [
+    "Controllers/UserRoleController.cs",
+    "Repository/UserRoleRepository.cs"
+   ]
+  },
+  {
+   "route": "DELETE /{id}/{moduleId}  (Modules/HtmlText/Controllers/HtmlTextController.cs)",
+   "judge": "vulnerable",
+   "refuter": "upheld",
+   "files": [
+    "Modules/HtmlText/Controllers/HtmlTextController.cs",
+    "Modules/HtmlText/Repository/HtmlTextRepository.cs",
+    "Modules/HtmlText/Services/HtmlTextService.cs"
+   ]
+  },
+  {
+   "route": "PUT /{id}  (wwwroot/Modules/Templates/External/Server/Controllers/[Module]Controller.cs)",
+   "judge": "vulnerable",
+   "refuter": "upheld",
+   "files": []
+  },
+  {
+   "route": "POST /import  (Controllers/ModuleController.cs)",
+   "judge": "vulnerable",
+   "refuter": "upheld",
+   "files": [
+    "Controllers/ModuleController.cs",
+    "Repository/ModuleRepository.cs"
+   ]
+  },
+  {
+   "route": "POST /logouteverywhere  (Controllers/UserController.cs)",
+   "judge": "vulnerable",
+   "refuter": "upheld",
+   "files": [
+    "Controllers/UserController.cs",
+    "Managers/UserManager.cs"
+   ]
+  },
+  {
+   "route": "GET /url/{siteid}  (Repository/UrlMappingRepository.cs)",
+   "judge": "vulnerable",
+   "refuter": "upheld",
+   "files": [
+    "Repository/UrlMappingRepository.cs"
+   ]
+  }
+ ],
+ "judge_vulnerable": [
+  "GET /export  (Controllers/ModuleController.cs)",
+  "PUT /{id}  (Controllers/FolderController.cs)",
+  "PUT /  (Controllers/FolderController.cs)",
+  "GET /{id}  (Controllers/NotificationController.cs)",
+  "PUT /{id}  (Controllers/NotificationController.cs)",
+  "DELETE /{id}  (Controllers/NotificationController.cs)",
+  "PUT /  (Controllers/PageController.cs)",
+  "PUT /{id}  (Controllers/PageModuleController.cs)",
+  "GET /{id}/{entityName}  (Controllers/SettingController.cs)",
+  "PUT /{id}  (Controllers/SettingController.cs)",
+  "PUT /{id}  (Controllers/UrlMappingController.cs)",
+  "PUT /{id}  (Controllers/UserController.cs)",
+  "PUT /{id}  (Controllers/UserRoleController.cs)",
+  "DELETE /{id}/{moduleId}  (Modules/HtmlText/Controllers/HtmlTextController.cs)",
+  "PUT /{id}  (wwwroot/Modules/Templates/External/Server/Controllers/[Module]Controller.cs)",
+  "POST /import  (Controllers/ModuleController.cs)",
+  "POST /logouteverywhere  (Controllers/UserController.cs)",
+  "GET /url/{siteid}  (Repository/UrlMappingRepository.cs)"
+ ],
+ "refuted": [
+  "PUT /{id}  (Controllers/UserController.cs)"
+ ],
+ "investigator_vulnerable": [
+  "GET /export  (Controllers/ModuleController.cs)",
+  "POST /  (Controllers/FileController.cs)",
+  "PUT /{id}  (Controllers/FileController.cs)",
+  "PUT /{id}  (Controllers/FolderController.cs)",
+  "PUT /  (Controllers/FolderController.cs)",
+  "PUT /  (Controllers/LanguageController.cs)",
+  "PUT /{id}  (Controllers/ModuleController.cs)",
+  "GET /{id}  (Controllers/NotificationController.cs)",
+  "POST /  (Controllers/NotificationController.cs)",
+  "PUT /{id}  (Controllers/NotificationController.cs)",
+  "DELETE /{id}  (Controllers/NotificationController.cs)",
+  "POST /{id}  (Controllers/PageController.cs)",
+  "PUT /{id}  (Controllers/PageController.cs)",
+  "PUT /  (Controllers/PageController.cs)",
+  "POST /  (Controllers/PageModuleController.cs)",
+  "PUT /{id}  (Controllers/PageModuleController.cs)",
+  "PUT /{id}  (Controllers/ProfileController.cs)",
+  "PUT /{id}  (Controllers/RoleController.cs)",
+  "GET /{id}/{entityName}  (Controllers/SettingController.cs)",
+  "POST /  (Controllers/SettingController.cs)",
+  "PUT /{id}  (Controllers/SettingController.cs)",
+  "PUT /{entityName}/{entityId}/{settingName}/{settingValue}/{isPrivate}  (Controllers/SettingController.cs)",
+  "DELETE /{entityName}/{entityId}/{settingName}  (Controllers/SettingController.cs)",
+  "PUT /{id}  (Controllers/UrlMappingController.cs)",
+  "PUT /{id}  (Controllers/UserController.cs)",
+  "DELETE /{id}  (Controllers/UserController.cs)",
+  "PUT /{id}  (Controllers/UserRoleController.cs)",
+  "GET /{id}  (Controllers/VisitorController.cs)",
+  "GET /  (Modules/HtmlText/Controllers/HtmlTextController.cs)",
+  "DELETE /{id}/{moduleId}  (Modules/HtmlText/Controllers/HtmlTextController.cs)",
+  "POST /import  (Controllers/ModuleController.cs)",
+  "POST /import  (Controllers/UserController.cs)",
+  "POST /logouteverywhere  (Controllers/UserController.cs)",
+  "GET /modules/{siteId}/{pageId}  (Controllers/SiteController.cs)",
+  "GET /url/{siteid}  (Repository/UrlMappingRepository.cs)"
+ ],
+ "routes_investigated": 175
+}
