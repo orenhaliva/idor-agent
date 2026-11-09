@@ -1,0 +1,152 @@
+{
+ "target": "t43",
+ "method": "v2",
+ "idor_found": true,
+ "confirmed": [
+  {
+   "route": "POST /{inviteID}/cancel  (api/api.go)",
+   "judge": "vulnerable",
+   "refuter": "upheld",
+   "files": [
+    "api/api.go",
+    "api/handlers/organisation_invite.go",
+    "internal/organisation_invites/impl.go",
+    "internal/organisation_invites/repo/queries.sql.go",
+    "services/cancel_invite.go"
+   ]
+  },
+  {
+   "route": "PUT /{subscriptionID}  (api/api.go)",
+   "judge": "vulnerable",
+   "refuter": "upheld",
+   "files": [
+    "api/api.go",
+    "api/handlers/subscription.go",
+    "services/update_subscription.go"
+   ]
+  },
+  {
+   "route": "PUT /{portalLinkID}  (api/api.go)",
+   "judge": "vulnerable",
+   "refuter": "upheld",
+   "files": [
+    "api/api.go",
+    "api/handlers/portal_link.go",
+    "internal/portal_links/impl.go"
+   ]
+  },
+  {
+   "route": "ANY /monitoring/*  (api/api.go)",
+   "judge": "vulnerable",
+   "refuter": "upheld",
+   "files": [
+    "api/api.go",
+    "api/handlers/queue_monitoring.go",
+    "queue/redis/client.go"
+   ]
+  },
+  {
+   "route": "GET /portal-api/events/{eventID}  (api/handlers/event.go)",
+   "judge": "vulnerable",
+   "refuter": "upheld",
+   "files": []
+  },
+  {
+   "route": "PUT /portal-api/subscriptions/{subscriptionID}  (api/handlers/subscription.go)",
+   "judge": "vulnerable",
+   "refuter": "upheld",
+   "files": [
+    "api/handlers/subscription.go",
+    "services/update_subscription.go"
+   ]
+  },
+  {
+   "route": "GET /api/v1/projects  (api/handlers/project.go)",
+   "judge": "vulnerable",
+   "refuter": "upheld",
+   "files": [
+    "api/handlers/handlers.go",
+    "api/handlers/project.go",
+    "api/models/project.go",
+    "datastore/models.go",
+    "internal/pkg/middleware/middleware.go",
+    "internal/projects/impl.go"
+   ]
+  },
+  {
+   "route": "GET /api/v1/projects/{projectID}/events/{eventID}  (api/handlers/event.go)",
+   "judge": "vulnerable",
+   "refuter": "upheld",
+   "files": []
+  },
+  {
+   "route": "GET /api/v1/projects/{projectID}/meta-events/{metaEventID}  (api/handlers/meta_event.go)",
+   "judge": "vulnerable",
+   "refuter": "upheld",
+   "files": [
+    "api/handlers/meta_event.go",
+    "database/listener/endpoint_listener.go",
+    "services/create_meta_event.go"
+   ]
+  },
+  {
+   "route": "POST /{inviteID}/resend  (api/handlers/organisation_invite.go)",
+   "judge": "vulnerable",
+   "refuter": "upheld",
+   "files": [
+    "api/handlers/organisation_invite.go",
+    "internal/organisation_invites/impl.go",
+    "internal/organisation_invites/repo/queries.sql.go",
+    "services/invite_user.go",
+    "services/resend_invite.go"
+   ]
+  },
+  {
+   "route": "PUT /{portalLinkID}/revoke  (api/handlers/portal_link.go)",
+   "judge": "vulnerable",
+   "refuter": "upheld",
+   "files": [
+    "api/handlers/handlers.go",
+    "api/handlers/portal_link.go",
+    "internal/portal_links/impl.go"
+   ]
+  },
+  {
+   "route": "GET /ui/admin/organisations/{orgID}/projects  (api/handlers/project.go)",
+   "judge": "escalated",
+   "refuter": "upheld",
+   "files": [
+    "api/api.go",
+    "api/handlers/handlers.go",
+    "api/handlers/project.go"
+   ]
+  }
+ ],
+ "judge_vulnerable": [
+  "POST /{inviteID}/cancel  (api/api.go)",
+  "PUT /{subscriptionID}  (api/api.go)",
+  "PUT /{portalLinkID}  (api/api.go)",
+  "ANY /monitoring/*  (api/api.go)",
+  "GET /portal-api/events/{eventID}  (api/handlers/event.go)",
+  "PUT /portal-api/subscriptions/{subscriptionID}  (api/handlers/subscription.go)",
+  "GET /api/v1/projects  (api/handlers/project.go)",
+  "GET /api/v1/projects/{projectID}/events/{eventID}  (api/handlers/event.go)",
+  "GET /api/v1/projects/{projectID}/meta-events/{metaEventID}  (api/handlers/meta_event.go)",
+  "POST /{inviteID}/resend  (api/handlers/organisation_invite.go)",
+  "PUT /{portalLinkID}/revoke  (api/handlers/portal_link.go)"
+ ],
+ "refuted": [],
+ "investigator_vulnerable": [
+  "POST /{inviteID}/cancel  (api/api.go)",
+  "PUT /{subscriptionID}  (api/api.go)",
+  "PUT /{portalLinkID}  (api/api.go)",
+  "ANY /monitoring/*  (api/api.go)",
+  "PUT /portal-api/subscriptions/{subscriptionID}  (api/handlers/subscription.go)",
+  "GET /api/v1/projects  (api/handlers/project.go)",
+  "GET /api/v1/projects/{projectID}/meta-events/{metaEventID}  (api/handlers/meta_event.go)",
+  "POST /{inviteID}/resend  (api/handlers/organisation_invite.go)",
+  "PUT /{portalLinkID}/revoke  (api/handlers/portal_link.go)",
+  "GET /ui/admin/organisations/{orgID}/projects  (api/handlers/project.go)"
+ ],
+ "routes_investigated": 248
+}

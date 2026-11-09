@@ -114,7 +114,7 @@ snipe-it, vikunja and wger ran on frozen v2.2. nl-portal, oqtane and spree are t
 - **Route-finder fix (generic):** Rails `resources ..., controller: 'x'` and `param: :slug` were ignored in the route label, so it read `items#create` instead of `wishlist_items#create`, and `:id` instead of `:slug`. Both are now honoured. Route counts are unchanged on every other Rails target (publify, fat_free_crm). On Spree the investigators had found the right controllers anyway from the route snippet, so no verdict changed.
 - The Spree miss is therefore not coverage. The investigator flagged the route; the judge dropped it.
 
-## v2.4 (implemented, not yet measured)
+## v2.4 (measured on fresh set #2 below)
 Each change targets a failure category seen in the judge misses (snipe-it v2.2 "unclear", spree v2.3 "safe"), not a route:
 1. **Disagreement escalation** (`bench/haiku_flow.py`, `ESCALATE = 0.7`): when the investigator, who had the whole repo, says vulnerable with confidence ≥ 0.7 but the blind judge says safe or unclear, the claim still goes to the refuter, which must uphold it. It runs only for targets mapped to variant `v24`, so all scored runs above are unchanged.
    - Cost, measured without the answer key on existing runs: 0–11 extra refuter claims per target (spree 11, oqtane 7, flowise 6, snipe-it v2.3 5).
@@ -123,8 +123,32 @@ Each change targets a failure category seen in the judge misses (snipe-it v2.2 "
 
 Snipe-IT and Spree are dev cases for v2.4. Its headline number must come from **fresh** cases.
 
+## Fresh set #2: v2.4, frozen (headline)
+Six new repos collected by an agent that reported only slugs (`bench/fresh2_cases.json`). The method was frozen before the run
+(`bench/freeze_v24/SHA256SUMS`). Both commits of every repo ran the full pipeline: 12 targets, about 160 investigator batches,
+all compliant with the RAG rule after reruns.
+
+| case | lang | confirmed on vuln | fix commit | other confirmed (vuln / fix) | result |
+|---|---|---|---|---|---|
+| convoy | Go/chi | 2/2 | clean | 12 / 12 | **PASS** |
+| identrail | Go/gin | 1/2 | clean | 1 / 0 | **PASS** |
+| openremote | Java/JAX-RS | 1/1 (`DELETE /alarm`; the `/api/{realm}` mount prefix lives elsewhere) | clean | 16 / 16 | **PASS** |
+| mollie-plugin | PHP/Symfony | 2/2 | clean | 3 / 2 | **PASS** |
+| lemur | Python/Flask | 1/3 (`/certificates/upload`) | still flagged | 8 / 7 | fail |
+| huginn | Ruby/Rails | 0/3 by route; the exact bug confirmed by handler (agents create/update accept another user's service) | clean | 4 / 0 | fail (label) |
+
+**Fresh set #2: 4 of 6 pass** (fresh set #1 on v2.2/v2.3: 2 of 6).
+- **lemur:** on the fix commit `/certificates/upload` is still confirmed, but for a different reason (roles attached without a membership check), not the replaced-certificate IDs the fix addressed. Strict scoring counts it as a fail.
+- **huginn:** the collector's analysis folder was `app/`, which excludes `config/routes.rb`, so routes were labelled by controller action (`ANY /agents/create`) and do not match `POST /agents`. The confirmed handlers and the clean fix commit show the bug was found; strict scoring counts a fail.
+- **v2.4 escalation:** sent 0–8 extra claims per target to the refuter (openremote fix 8). None of the 4 passes depended on it: every known route was called vulnerable by the blind judge itself. Escalated confirmations: 13 of 88 confirmed routes.
+- **Method/setup changes made during this run (disclosed):**
+  1. Two analysis folders chosen by the collector were too narrow (mollie `src`, openremote `manager/src/main/java`): route files lived outside them. Widened to the repo root, as for earlier cases (`analysis_root_collector` records the original).
+  2. Route finder: added declarative YAML/XML route files (Symfony-style `path:` + `controller:`). Mollie went from 9 to 27 routes; counts unchanged on 6 other targets. This was made after seeing the repo's route count, before any result.
+  3. Bookkeeping bug: `haiku_flow.py prepare` numbered targets by `len(map)`, which reused an id after entries were removed and overwrote the convoy vuln target mid-run. Fixed (next id = max + 1); convoy vuln was re-run from scratch.
+- **Route-finder precision problem (new):** on openremote 504 of 663 extracted "routes" were Java `.put()`/`.get()` calls, which cost about 25 wasted batches per commit. Recall was unaffected.
+
 ## Next changes (each needs fresh cases to measure)
-1. Collect a new fresh set (collector reports slugs only) and run v2.4 on it, both commits.
+1. Done: fresh set #2 on v2.4, 4 of 6 pass (above). The next fresh set must follow the next method change.
 2. Route finder: follow secondary routers and API-version groups (vikunja v2), and treat GraphQL mutations and queries as routes (nl-portal).
 3. Drop ORM-call false routes (flowise `.delete()`).
 4. Measure precision: sample the "other confirmed" routes and verify them by hand or against later upstream fixes, as with snipe-it's `also_real`.

@@ -1,0 +1,203 @@
+{
+ "target": "t46",
+ "method": "v2",
+ "idor_found": true,
+ "confirmed": [
+  {
+   "route": "POST /alarm  (model/src/main/java/org/openremote/model/alarm/AlarmResource.java)",
+   "judge": "escalated",
+   "refuter": "upheld",
+   "files": [
+    "manager/src/main/java/org/openremote/manager/alarm/AlarmResourceImpl.java",
+    "manager/src/main/java/org/openremote/manager/alarm/AlarmService.java",
+    "model/src/main/java/org/openremote/model/alarm/AlarmResource.java"
+   ]
+  },
+  {
+   "route": "PUT /alarm/{alarmId}  (model/src/main/java/org/openremote/model/alarm/AlarmResource.java)",
+   "judge": "escalated",
+   "refuter": "upheld",
+   "files": [
+    "manager/src/main/java/org/openremote/manager/alarm/AlarmResourceImpl.java",
+    "manager/src/main/java/org/openremote/manager/alarm/AlarmService.java",
+    "model/src/main/java/org/openremote/model/alarm/AlarmResource.java",
+    "model/src/main/java/org/openremote/model/alarm/SentAlarm.java"
+   ]
+  },
+  {
+   "route": "PUT /alarm/assets  (model/src/main/java/org/openremote/model/alarm/AlarmResource.java)",
+   "judge": "vulnerable",
+   "refuter": "upheld",
+   "files": [
+    "manager/src/main/java/org/openremote/manager/alarm/AlarmResourceImpl.java",
+    "manager/src/main/java/org/openremote/manager/alarm/AlarmService.java",
+    "model/src/main/java/org/openremote/model/alarm/AlarmAssetLink.java"
+   ]
+  },
+  {
+   "route": "GET /asset/user/link  (manager/src/main/java/org/openremote/manager/asset/AssetResourceImpl.java)",
+   "judge": "escalated",
+   "refuter": "upheld",
+   "files": [
+    "manager/src/main/java/org/openremote/manager/asset/AssetResourceImpl.java",
+    "manager/src/main/java/org/openremote/manager/asset/AssetStorageService.java"
+   ]
+  },
+  {
+   "route": "POST /console/register  (model/src/main/java/org/openremote/model/console/ConsoleResource.java)",
+   "judge": "vulnerable",
+   "refuter": "upheld",
+   "files": [
+    "manager/src/main/java/org/openremote/manager/asset/AssetStorageService.java",
+    "manager/src/main/java/org/openremote/manager/asset/console/ConsoleResourceImpl.java",
+    "model/src/main/java/org/openremote/model/console/ConsoleResource.java"
+   ]
+  },
+  {
+   "route": "GET /gateway/tunnel/{realm}/{id}  (manager/src/main/java/org/openremote/manager/gateway/GatewayServiceResourceImpl.java)",
+   "judge": "vulnerable",
+   "refuter": "upheld",
+   "files": [
+    "manager/src/main/java/org/openremote/manager/gateway/GatewayService.java",
+    "manager/src/main/java/org/openremote/manager/gateway/GatewayServiceResourceImpl.java",
+    "model/src/main/java/org/openremote/model/gateway/GatewayTunnelInfo.java"
+   ]
+  },
+  {
+   "route": "PUT /notification/{notificationId}/acknowledged  (model/src/main/java/org/openremote/model/notification/NotificationResource.java)",
+   "judge": "vulnerable",
+   "refuter": "upheld",
+   "files": [
+    "manager/src/main/java/org/openremote/manager/notification/NotificationResourceImpl.java",
+    "model/src/main/java/org/openremote/model/notification/NotificationResource.java"
+   ]
+  },
+  {
+   "route": "PUT /notification/{notificationId}/delivered  (model/src/main/java/org/openremote/model/notification/NotificationResource.java)",
+   "judge": "vulnerable",
+   "refuter": "upheld",
+   "files": [
+    "manager/src/main/java/org/openremote/manager/notification/NotificationResourceImpl.java",
+    "model/src/main/java/org/openremote/model/notification/NotificationResource.java"
+   ]
+  },
+  {
+   "route": "GET /realm/{name}  (model/src/main/java/org/openremote/model/security/RealmResource.java)",
+   "judge": "escalated",
+   "refuter": "upheld",
+   "files": [
+    "manager/src/main/java/org/openremote/manager/security/ManagerKeycloakIdentityProvider.java",
+    "manager/src/main/java/org/openremote/manager/security/RealmResourceImpl.java",
+    "model/src/main/java/org/openremote/model/security/RealmResource.java"
+   ]
+  },
+  {
+   "route": "POST /rules/asset  (manager/src/main/java/org/openremote/manager/rules/RulesResourceImpl.java)",
+   "judge": "vulnerable",
+   "refuter": "upheld",
+   "files": [
+    "manager/src/main/java/org/openremote/manager/rules/RulesResourceImpl.java",
+    "manager/src/main/java/org/openremote/manager/rules/RulesetStorageService.java",
+    "model/src/main/java/org/openremote/model/rules/AssetRuleset.java",
+    "model/src/main/java/org/openremote/model/rules/Ruleset.java"
+   ]
+  },
+  {
+   "route": "GET /rules/geofences/{assetId}  (manager/src/main/java/org/openremote/manager/rules/RulesResourceImpl.java)",
+   "judge": "vulnerable",
+   "refuter": "upheld",
+   "files": [
+    "manager/src/main/java/org/openremote/manager/rules/RulesResourceImpl.java",
+    "manager/src/main/java/org/openremote/manager/rules/RulesService.java"
+   ]
+  },
+  {
+   "route": "POST /rules/realm  (manager/src/main/java/org/openremote/manager/rules/RulesResourceImpl.java)",
+   "judge": "vulnerable",
+   "refuter": "upheld",
+   "files": [
+    "manager/src/main/java/org/openremote/manager/rules/RulesResourceImpl.java",
+    "manager/src/main/java/org/openremote/manager/rules/RulesetStorageService.java"
+   ]
+  },
+  {
+   "route": "GET /user/{realm}/disconnect/{sessionID}  (manager/src/main/java/org/openremote/manager/security/UserResourceImpl.java)",
+   "judge": "vulnerable",
+   "refuter": "upheld",
+   "files": [
+    "manager/src/main/java/org/openremote/manager/mqtt/MQTTBrokerService.java",
+    "manager/src/main/java/org/openremote/manager/security/UserResourceImpl.java",
+    "model/src/main/java/org/openremote/model/security/UserResource.java"
+   ]
+  },
+  {
+   "route": "DELETE /user/{realm}/users/{userId}  (model/src/main/java/org/openremote/model/security/UserResource.java)",
+   "judge": "escalated",
+   "refuter": "upheld",
+   "files": [
+    "manager/src/main/java/org/openremote/manager/security/ManagerKeycloakIdentityProvider.java",
+    "manager/src/main/java/org/openremote/manager/security/UserResourceImpl.java",
+    "model/src/main/java/org/openremote/model/security/UserResource.java"
+   ]
+  },
+  {
+   "route": "PUT <path not extracted>  (manager/src/main/java/org/openremote/manager/asset/console/ConsoleResourceImpl.java:160 id)  (manager/src/main/java/org/openremote/manager/asset/console/ConsoleResourceImpl.java)",
+   "judge": "vulnerable",
+   "refuter": "upheld",
+   "files": [
+    "manager/src/main/java/org/openremote/manager/asset/console/ConsoleResourceImpl.java"
+   ]
+  },
+  {
+   "route": "PUT <path not extracted>  (manager/src/main/java/org/openremote/manager/mqtt/UserAssetProvisioningMQTTHandler.java:226 connection)  (manager/src/main/java/org/openremote/manager/mqtt/UserAssetProvisioningMQTTHandler.java)",
+   "judge": "escalated",
+   "refuter": "upheld",
+   "files": [
+    "manager/src/main/java/org/openremote/manager/mqtt/UserAssetProvisioningMQTTHandler.java",
+    "model/src/main/java/org/openremote/model/provisioning/SuccessResponseMessage.java"
+   ]
+  }
+ ],
+ "judge_vulnerable": [
+  "PUT /alarm/assets  (model/src/main/java/org/openremote/model/alarm/AlarmResource.java)",
+  "POST /console/register  (model/src/main/java/org/openremote/model/console/ConsoleResource.java)",
+  "GET /gateway/tunnel/{realm}/{id}  (manager/src/main/java/org/openremote/manager/gateway/GatewayServiceResourceImpl.java)",
+  "PUT /notification/{notificationId}/acknowledged  (model/src/main/java/org/openremote/model/notification/NotificationResource.java)",
+  "PUT /notification/{notificationId}/delivered  (model/src/main/java/org/openremote/model/notification/NotificationResource.java)",
+  "POST /rules/asset  (manager/src/main/java/org/openremote/manager/rules/RulesResourceImpl.java)",
+  "GET /rules/geofences/{assetId}  (manager/src/main/java/org/openremote/manager/rules/RulesResourceImpl.java)",
+  "POST /rules/realm  (manager/src/main/java/org/openremote/manager/rules/RulesResourceImpl.java)",
+  "GET /user/{realm}/disconnect/{sessionID}  (manager/src/main/java/org/openremote/manager/security/UserResourceImpl.java)",
+  "PUT <path not extracted>  (manager/src/main/java/org/openremote/manager/asset/console/ConsoleResourceImpl.java:160 id)  (manager/src/main/java/org/openremote/manager/asset/console/ConsoleResourceImpl.java)",
+  "DELETE <path not extracted>  (ui/app/manager/src/pages/page-users.ts:453 user.id)  (ui/app/manager/src/pages/page-users.ts)"
+ ],
+ "refuted": [
+  "DELETE <path not extracted>  (ui/component/or-dashboard-builder/src/or-dashboard-tree.ts:203 this.realm)  (ui/component/or-dashboard-builder/src/or-dashboard-tree.ts)",
+  "DELETE <path not extracted>  (ui/component/or-dashboard-builder/src/service/dashboard-service.ts:59 id)  (ui/component/or-dashboard-builder/src/service/dashboard-service.ts)"
+ ],
+ "investigator_vulnerable": [
+  "POST /alarm  (model/src/main/java/org/openremote/model/alarm/AlarmResource.java)",
+  "PUT /alarm/{alarmId}  (model/src/main/java/org/openremote/model/alarm/AlarmResource.java)",
+  "GET /alarm/{alarmId}/assets  (model/src/main/java/org/openremote/model/alarm/AlarmResource.java)",
+  "PUT /alarm/assets  (model/src/main/java/org/openremote/model/alarm/AlarmResource.java)",
+  "GET /asset/user/link  (manager/src/main/java/org/openremote/manager/asset/AssetResourceImpl.java)",
+  "POST /console/register  (model/src/main/java/org/openremote/model/console/ConsoleResource.java)",
+  "PUT /dashboard  (manager/src/main/java/org/openremote/manager/dashboard/DashboardResourceImpl.java)",
+  "POST /dashboard/query  (manager/src/main/java/org/openremote/manager/dashboard/DashboardResourceImpl.java)",
+  "GET /gateway/tunnel/{realm}/{id}  (manager/src/main/java/org/openremote/manager/gateway/GatewayServiceResourceImpl.java)",
+  "PUT /notification/{notificationId}/acknowledged  (model/src/main/java/org/openremote/model/notification/NotificationResource.java)",
+  "PUT /notification/{notificationId}/delivered  (model/src/main/java/org/openremote/model/notification/NotificationResource.java)",
+  "GET /realm/{name}  (model/src/main/java/org/openremote/model/security/RealmResource.java)",
+  "POST /rules/asset  (manager/src/main/java/org/openremote/manager/rules/RulesResourceImpl.java)",
+  "GET /rules/geofences/{assetId}  (manager/src/main/java/org/openremote/manager/rules/RulesResourceImpl.java)",
+  "POST /rules/realm  (manager/src/main/java/org/openremote/manager/rules/RulesResourceImpl.java)",
+  "GET /user/{realm}/disconnect/{sessionID}  (manager/src/main/java/org/openremote/manager/security/UserResourceImpl.java)",
+  "DELETE /user/{realm}/users/{userId}  (model/src/main/java/org/openremote/model/security/UserResource.java)",
+  "PUT <path not extracted>  (agent/src/main/java/org/openremote/agent/protocol/AbstractProtocol.java:109 attribute)  (manager/src/main/java/org/openremote/manager/agent/AgentService.java)",
+  "PUT <path not extracted>  (manager/src/main/java/org/openremote/manager/asset/console/ConsoleResourceImpl.java:160 id)  (manager/src/main/java/org/openremote/manager/asset/console/ConsoleResourceImpl.java)",
+  "PUT <path not extracted>  (manager/src/main/java/org/openremote/manager/mqtt/UserAssetProvisioningMQTTHandler.java:226 connection)  (manager/src/main/java/org/openremote/manager/mqtt/UserAssetProvisioningMQTTHandler.java)",
+  "DELETE <path not extracted>  (ui/component/or-dashboard-builder/src/or-dashboard-tree.ts:203 this.realm)  (ui/component/or-dashboard-builder/src/or-dashboard-tree.ts)",
+  "DELETE <path not extracted>  (ui/component/or-dashboard-builder/src/service/dashboard-service.ts:59 id)  (ui/component/or-dashboard-builder/src/service/dashboard-service.ts)"
+ ],
+ "routes_investigated": 504
+}

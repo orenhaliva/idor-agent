@@ -1,0 +1,193 @@
+{
+ "target": "t47",
+ "method": "v2",
+ "idor_found": true,
+ "confirmed": [
+  {
+   "route": "POST /{inviteID}/cancel  (api/handlers/organisation_invite.go)",
+   "judge": "vulnerable",
+   "refuter": "upheld",
+   "files": [
+    "api/handlers/organisation_invite.go",
+    "internal/organisation_invites/impl.go",
+    "internal/organisation_invites/repo/queries.sql.go",
+    "services/cancel_invite.go"
+   ]
+  },
+  {
+   "route": "PUT /{subscriptionID}  (api/handlers/subscription.go)",
+   "judge": "vulnerable",
+   "refuter": "upheld",
+   "files": [
+    "api/handlers/subscription.go",
+    "internal/subscriptions/repo/queries.sql.go",
+    "services/update_subscription.go"
+   ]
+  },
+  {
+   "route": "PUT /{sourceID}  (api/handlers/source.go)",
+   "judge": "vulnerable",
+   "refuter": "upheld",
+   "files": [
+    "api/handlers/source.go",
+    "internal/sources/impl.go",
+    "internal/sources/repo/queries.sql.go"
+   ]
+  },
+  {
+   "route": "PUT /{portalLinkID}  (api/api.go)",
+   "judge": "vulnerable",
+   "refuter": "upheld",
+   "files": [
+    "api/api.go",
+    "api/handlers/portal_link.go",
+    "internal/portal_links/impl.go"
+   ]
+  },
+  {
+   "route": "GET /portal-api/events/{eventID}  (api/handlers/event.go)",
+   "judge": "vulnerable",
+   "refuter": "upheld",
+   "files": [
+    "api/handlers/event.go"
+   ]
+  },
+  {
+   "route": "PUT /portal-api/subscriptions/{subscriptionID}  (api/handlers/subscription.go)",
+   "judge": "vulnerable",
+   "refuter": "upheld",
+   "files": [
+    "api/handlers/subscription.go",
+    "services/update_subscription.go"
+   ]
+  },
+  {
+   "route": "GET /api/v1/projects  (api/handlers/project.go)",
+   "judge": "vulnerable",
+   "refuter": "upheld",
+   "files": [
+    "api/handlers/handlers.go",
+    "api/handlers/project.go"
+   ]
+  },
+  {
+   "route": "GET /api/v1/projects/{projectID}/events/{eventID}  (api/handlers/event.go)",
+   "judge": "vulnerable",
+   "refuter": "upheld",
+   "files": []
+  },
+  {
+   "route": "GET /api/v1/projects/{projectID}/meta-events/{metaEventID}  (api/handlers/meta_event.go)",
+   "judge": "escalated",
+   "refuter": "upheld",
+   "files": [
+    "api/handlers/meta_event.go",
+    "database/listener/event_delivery_listener.go",
+    "internal/meta_events/impl.go",
+    "services/create_meta_event.go"
+   ]
+  },
+  {
+   "route": "GET /api/v1/projects/{projectID}/sources/{sourceID}  (api/handlers/source.go)",
+   "judge": "vulnerable",
+   "refuter": "upheld",
+   "files": [
+    "api/handlers/source.go",
+    "internal/sources/impl.go",
+    "internal/sources/repo/queries.sql.go"
+   ]
+  },
+  {
+   "route": "POST /{inviteID}/resend  (api/api.go)",
+   "judge": "vulnerable",
+   "refuter": "upheld",
+   "files": [
+    "api/api.go",
+    "api/handlers/organisation_invite.go",
+    "internal/organisation_invites/impl.go",
+    "internal/organisation_invites/repo/queries.sql.go",
+    "services/invite_user.go",
+    "services/resend_invite.go"
+   ]
+  },
+  {
+   "route": "PUT /{portalLinkID}/revoke  (api/api.go)",
+   "judge": "vulnerable",
+   "refuter": "upheld",
+   "files": [
+    "api/api.go",
+    "api/handlers/portal_link.go",
+    "internal/portal_links/impl.go",
+    "internal/portal_links/repo/queries.sql.go"
+   ]
+  },
+  {
+   "route": "GET /ui/admin/organisations/{orgID}/projects  (api/handlers/project.go)",
+   "judge": "escalated",
+   "refuter": "upheld",
+   "files": [
+    "api/api.go",
+    "api/handlers/project.go",
+    "api/models/project.go"
+   ]
+  },
+  {
+   "route": "GET /ui/organisations/{orgID}/projects/{projectID}/sources/{sourceID}  (api/api.go)",
+   "judge": "vulnerable",
+   "refuter": "upheld",
+   "files": [
+    "api/api.go",
+    "api/handlers/source.go",
+    "datastore/models.go",
+    "internal/sources/get_source_test.go",
+    "internal/sources/impl.go",
+    "internal/sources/repo/queries.sql.go"
+   ]
+  }
+ ],
+ "judge_vulnerable": [
+  "POST /{inviteID}/cancel  (api/handlers/organisation_invite.go)",
+  "PUT /{subscriptionID}  (api/handlers/subscription.go)",
+  "PUT /{sourceID}  (api/handlers/source.go)",
+  "PUT /{portalLinkID}  (api/api.go)",
+  "GET /portal-api/events/{eventID}  (api/handlers/event.go)",
+  "PUT /portal-api/subscriptions/{subscriptionID}  (api/handlers/subscription.go)",
+  "GET /api/v1/projects  (api/handlers/project.go)",
+  "GET /api/v1/projects/{projectID}/events/{eventID}  (api/handlers/event.go)",
+  "GET /api/v1/projects/{projectID}/sources/{sourceID}  (api/handlers/source.go)",
+  "POST /{inviteID}/resend  (api/api.go)",
+  "PUT /{portalLinkID}/revoke  (api/api.go)",
+  "GET /ui/organisations/{orgID}/projects/{projectID}/sources/{sourceID}  (api/api.go)"
+ ],
+ "refuted": [],
+ "investigator_vulnerable": [
+  "POST /{inviteID}/cancel  (api/handlers/organisation_invite.go)",
+  "PUT /{subscriptionID}  (api/handlers/subscription.go)",
+  "PUT /{sourceID}  (api/handlers/source.go)",
+  "PUT /{portalLinkID}  (api/api.go)",
+  "PUT /{endpointID}  (api/api.go)",
+  "ANY /monitoring/*  (api/api.go)",
+  "GET /portal-api/events/{eventID}  (api/handlers/event.go)",
+  "PUT /portal-api/subscriptions/{subscriptionID}  (api/handlers/subscription.go)",
+  "GET /api/v1/projects  (api/handlers/project.go)",
+  "GET /api/v1/projects/{projectID}/meta-events/{metaEventID}  (api/handlers/meta_event.go)",
+  "GET /api/v1/projects/{projectID}/portal-links/{portalLinkID}  (api/handlers/portal_link.go)",
+  "GET /api/v1/projects/{projectID}/sources/{sourceID}  (api/handlers/source.go)",
+  "POST /{inviteID}/resend  (api/api.go)",
+  "PUT /{portalLinkID}/revoke  (api/api.go)",
+  "GET /ui/admin/organisations/{orgID}/projects  (api/handlers/project.go)",
+  "GET /ui/organisations/{orgID}/projects/{projectID}  (api/api.go)",
+  "GET /ui/organisations/{orgID}/projects/{projectID}/stats  (api/api.go)",
+  "GET /ui/organisations/{orgID}/projects/{projectID}/endpoints/{endpointID}  (api/api.go)",
+  "GET /ui/organisations/{orgID}/projects/{projectID}/events/countbatchreplayevents  (api/api.go)",
+  "GET /ui/organisations/{orgID}/projects/{projectID}/events/{eventID}  (api/api.go)",
+  "GET /ui/organisations/{orgID}/projects/{projectID}/event-types  (api/api.go)",
+  "GET /ui/organisations/{orgID}/projects/{projectID}/eventdeliveries/countbatchretryevents  (api/api.go)",
+  "GET /ui/organisations/{orgID}/projects/{projectID}/eventdeliveries/{eventDeliveryID}  (api/api.go)",
+  "GET /ui/organisations/{orgID}/projects/{projectID}/eventdeliveries/{eventDeliveryID}/deliveryattempts  (api/api.go)",
+  "GET /ui/organisations/{orgID}/projects/{projectID}/eventdeliveries/{eventDeliveryID}/deliveryattempts/{deliveryAttemptID}  (api/api.go)",
+  "GET /ui/organisations/{orgID}/projects/{projectID}/subscriptions/{subscriptionID}  (api/api.go)",
+  "GET /ui/organisations/{orgID}/projects/{projectID}/sources/{sourceID}  (api/api.go)"
+ ],
+ "routes_investigated": 248
+}
